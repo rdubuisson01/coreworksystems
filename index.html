@@ -4,15 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Corework Systems</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --ink: #0f0e0c;
-      --paper: #f5f2ed;
-      --warm: #c8a96e;
-      --muted: #7a7570;
+      --ink: #0E1117;      /* near-black — logo dark ground */
+      --navy: #1A3A6B;     /* deep navy — structural authority, headlines */
+      --paper: #F7F5F1;    /* warm cream */
+      --warm: #B85C2A;     /* oxide copper — the warm accent */
+      --muted: #76726c;
       --rule: #ddd9d3;
     }
 
@@ -42,16 +43,46 @@
     }
 
     .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 11px;
       text-decoration: none;
     }
 
-    .nav-logo span {
+    .nav-mark { flex-shrink: 0; display: block; }
+
+    .nav-wordmark {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .nav-word {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.18rem;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      line-height: 1;
+    }
+
+    .nav-systems {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 4px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.5rem;
+      font-weight: 500;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
       color: var(--warm);
+    }
+
+    .nav-systems i {
+      height: 1px;
+      width: 14px;
+      background: var(--warm);
+      display: block;
     }
 
     .nav-cta {
@@ -102,7 +133,7 @@
       font-weight: 300;
       line-height: 1.1;
       letter-spacing: -0.01em;
-      color: var(--ink);
+      color: var(--navy);
       margin-bottom: 2rem;
     }
 
@@ -154,7 +185,7 @@
       top: -80px; right: -80px;
       width: 400px; height: 400px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(200,169,110,0.15) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(184,92,42,0.16) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -212,6 +243,7 @@
       font-weight: 400;
       line-height: 1.25;
       margin-bottom: 1.8rem;
+      color: var(--navy);
     }
 
     .problem-body p {
@@ -316,6 +348,7 @@
       font-weight: 300;
       line-height: 1.2;
       margin-bottom: 2rem;
+      color: var(--navy);
     }
 
     .about-left h2 em {
@@ -390,6 +423,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(1.8rem, 3vw, 2.6rem);
       font-weight: 300;
+      color: var(--navy);
     }
 
     .writing-header a {
@@ -440,7 +474,7 @@
       font-size: 1.25rem;
       font-weight: 400;
       line-height: 1.3;
-      color: var(--ink);
+      color: var(--navy);
       margin-bottom: 1rem;
     }
 
@@ -469,6 +503,7 @@
       font-weight: 300;
       line-height: 1.2;
       margin-bottom: 1.5rem;
+      color: var(--navy);
     }
 
     .cta h2 em {
@@ -505,14 +540,46 @@
     }
 
     .footer-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #fff;
-      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    .footer-logo span { color: var(--warm); }
+    .footer-mark { flex-shrink: 0; display: block; }
+
+    .footer-lockup {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .footer-word {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.05rem;
+      color: #fff;
+      letter-spacing: -0.01em;
+      line-height: 1;
+    }
+
+    .footer-systems {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 4px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.46rem;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--warm);
+    }
+
+    .footer-systems i {
+      height: 1px;
+      width: 11px;
+      background: var(--warm);
+      display: block;
+    }
 
     .footer-copy {
       font-size: 0.78rem;
@@ -571,7 +638,17 @@
 
   <!-- NAV -->
   <nav>
-    <a href="#" class="nav-logo">Corework Systems<span>.</span></a>
+    <a href="#" class="nav-logo" aria-label="Corework Systems home">
+      <svg class="nav-mark" width="23" height="26" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
+        <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
+        <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.35"/>
+      </svg>
+      <span class="nav-wordmark">
+        <span class="nav-word">Corework</span>
+        <span class="nav-systems"><i></i>Systems<i></i></span>
+      </span>
+    </a>
     <a href="#contact" class="nav-cta">Let's Talk</a>
   </nav>
 
@@ -585,8 +662,8 @@
     <div class="hero-left">
       <p class="hero-eyebrow">Workforce Systems Advisory</p>
       <h1 class="hero-headline">Fixing the systems behind <em>hiring, learning,</em> and mobility.</h1>
-      <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 400; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.5;">Making workforce capability visible and actionable inside the enterprise.</p>
-      <p class="hero-sub">Most organizations are running skills-first strategies on talent systems that were never designed to support them. We help leaders finish what they started.</p>
+      <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 400; color: var(--navy); margin-bottom: 1.5rem; line-height: 1.5;">Making workforce capability visible and actionable inside the enterprise.</p>
+      <p class="hero-sub">Most organizations are running skills-first strategies on talent systems that were never designed to support them. We help leaders turn that ambition into operating infrastructure.</p>
       <a href="#contact" class="btn-primary">Start the Conversation</a>
     </div>
     <div class="hero-right">
@@ -611,21 +688,19 @@
     <div class="problem-body">
       <h2>We finish the work most organizations start but never operationalize.</h2>
       <p>Most organizations treat skills-first as a mindset shift, pilot, or program — not infrastructure. They invest in the idea without building the system. That's where the work is.</p>
-      <p>The result is predictable: pilots stall, managers are asked to execute what doesn't exist, and equity lives in policy—not practice.</p>
+      <p>The result is predictable: pilots stall, managers are asked to execute what doesn't exist, and workforce strategy stays trapped in policy, platforms, and presentations instead of changing real decisions.</p>
       <ul style="list-style: none; margin-top: 1.2rem; display: flex; flex-direction: column; gap: 0.9rem;">
         <li style="display: flex; gap: 1rem; align-items: flex-start; color: var(--muted);"><span style="color: var(--warm); font-size: 1.1rem; line-height: 1.6; flex-shrink: 0;">→</span> Diagnose where systems break across hiring, development, and mobility</li>
         <li style="display: flex; gap: 1rem; align-items: flex-start; color: var(--muted);"><span style="color: var(--warm); font-size: 1.1rem; line-height: 1.6; flex-shrink: 0;">→</span> Design governance, incentives, and measurement that make capability usable</li>
-        <li style="display: flex; gap: 1rem; align-items: flex-start; color: var(--muted);"><span style="color: var(--warm); font-size: 1.1rem; line-height: 1.6; flex-shrink: 0;">→</span> Align fragmented efforts into a single operating system</li>
+        <li style="display: flex; gap: 1rem; align-items: flex-start; color: var(--muted);"><span style="color: var(--warm); font-size: 1.1rem; line-height: 1.6; flex-shrink: 0;">→</span> Align fragmented hiring, learning, mobility, and workforce planning efforts into one coherent talent operating model</li>
       </ul>
-      <p style="margin-top: 2.5rem;"><strong>We work with:</strong></p>
-      <ul style="list-style: none; margin-top: 1.2rem; display: flex; flex-direction: column; gap: 0.9rem;">
-        <li style="display: flex; gap: 1rem; align-items: flex-start; color: var(--muted);"><span style="color: var(--warm); font-size: 1.1rem; line-height: 1.6; flex-shrink: 0;">→</span> Leadership teams whose systems aren't producing expected outcomes</li>
-      </ul>
+      <p style="margin-top: 2.5rem;"><strong>We work with</strong> leadership teams whose systems aren't producing the outcomes they expect.</p>
       <p style="margin-top: 2rem; color: var(--ink); font-style: italic;">We work directly with senior leaders to diagnose and redesign systems quickly—without adding layers or slowing the business.</p>
       <p style="margin-top: 1rem; color: var(--warm); font-size: 0.9rem; font-weight: 500; letter-spacing: 0.06em;">Typical starting points include:</p>
       <ul style="list-style: none; margin-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem;">
         <li style="display: flex; gap: 1rem; align-items: flex-start; color: var(--muted); font-size: 0.9rem;"><span style="color: var(--warm); flex-shrink: 0;">–</span> 2–3 week system diagnostic</li>
         <li style="display: flex; gap: 1rem; align-items: flex-start; color: var(--muted); font-size: 0.9rem;"><span style="color: var(--warm); flex-shrink: 0;">–</span> Executive cohort sessions to align leadership on governance and operating model</li>
+        <li style="display: flex; gap: 1rem; align-items: flex-start; color: var(--muted); font-size: 0.9rem;"><span style="color: var(--warm); flex-shrink: 0;">–</span> Skills-first / AI readiness working session for senior talent leaders</li>
         <li style="display: flex; gap: 1rem; align-items: flex-start; color: var(--muted); font-size: 0.9rem;"><span style="color: var(--warm); flex-shrink: 0;">–</span> Targeted redesign of hiring, learning, and mobility systems</li>
       </ul>
     </div>
@@ -636,7 +711,7 @@
     <div class="services-inner">
       <div class="services-header">
         <h2>What we build with you</h2>
-        <p>We don't deliver frameworks to admire. We build operating infrastructure — and work with your teams to activate it in practice.</p>
+        <p>We don't deliver frameworks to admire. We build operating infrastructure your leaders, managers, and teams can actually use.</p>
       </div>
       <div class="services-grid">
         <div class="service-item">
@@ -652,17 +727,17 @@
         <div class="service-item">
           <div class="service-number">03</div>
           <div class="service-title">Talent Deployment & Mobility</div>
-          <p class="service-desc">Systems that make capability transferable—so talent moves to where the work is.</p>
+          <p class="service-desc">Systems that make capability transferable, manager-usable, and decision-ready, enabling talent to move to where the work is.</p>
         </div>
         <div class="service-item">
           <div class="service-number">04</div>
-          <div class="service-title">Measurement & Performance Sensing</div>
+          <div class="service-title">Measurement & System Performance</div>
           <p class="service-desc">Moving from activity metrics to performance metrics — the five sensors that reveal whether your system is producing better outcomes.</p>
         </div>
         <div class="service-item">
           <div class="service-number">05</div>
           <div class="service-title">AI Readiness for Talent Systems</div>
-          <p class="service-desc">AI will amplify whatever system exists. We help organizations build the skills infrastructure that AI needs to scale better decisions — not automate yesterday's assumptions.</p>
+          <p class="service-desc">AI will not fix broken talent systems. It will expose and scale them. We help organizations build the governance, skills infrastructure, and decision architecture AI needs to improve workforce decisions instead of automating yesterday's assumptions.</p>
         </div>
         <div class="service-item">
           <div class="service-number">06</div>
@@ -721,19 +796,19 @@
       </div>
       <div class="articles">
         <a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" class="article-card">
-          <div class="article-date">March 2026</div>
-          <div class="article-title">Most Organizations Are Measuring Skills-First the Wrong Way</div>
-          <p class="article-excerpt">Moving from activity metrics to performance metrics — the five sensors that reveal whether a skills-first system is actually working.</p>
+          <div class="article-date">Field Note</div>
+          <div class="article-title">Why Skills-First Pilots Succeed — and Still Don't Scale</div>
+          <p class="article-excerpt">Pilots often prove the idea. What they don't prove is whether the organization has the governance, ownership, and operating model to scale it.</p>
         </a>
         <a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" class="article-card">
-          <div class="article-date">February 2026</div>
+          <div class="article-date">AI and Workforce Systems</div>
           <div class="article-title">AI Won't Fix Broken Talent Systems — It Will Expose Them</div>
-          <p class="article-excerpt">AI amplifies whatever system exists. Skills-first becomes more urgent, not less, in an AI world.</p>
+          <p class="article-excerpt">AI makes skills infrastructure more urgent, not less. Without governance and decision architecture, it scales the assumptions already embedded in the system.</p>
         </a>
         <a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" class="article-card">
-          <div class="article-date">January 2026</div>
+          <div class="article-date">Governance</div>
           <div class="article-title">Who Actually Owns Skills-First?</div>
-          <p class="article-excerpt">The real gap isn't effort. It's ownership. Skills-first is fundamentally a governance challenge — and no one is explicitly accountable for the system.</p>
+          <p class="article-excerpt">The real gap isn't effort. It's ownership. Skills-first becomes operational only when someone is accountable for the system, not just the initiative.</p>
         </a>
       </div>
     </div>
@@ -743,13 +818,23 @@
   <section class="cta" id="contact">
     <span class="section-label">Let's Talk</span>
     <h2>Ready to finish your <em>unfinished system?</em></h2>
-    <p>Whether you're a CHRO navigating skills-first, a CEO connecting workforce to business outcomes, or moving from pilot to operating model—let's see if there's a system worth fixing.</p>
+    <p>If you are trying to move from skills-first ambition, AI experimentation, or talent mobility pilots into an operating model that actually changes decisions, let's talk.</p>
     <a href="mailto:richard@coreworksystems.com" class="cta-email">richard@coreworksystems.com</a>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">Corework Systems<span>.</span></div>
+    <div class="footer-logo">
+      <svg class="footer-mark" width="20" height="23" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
+        <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
+        <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.45"/>
+      </svg>
+      <span class="footer-lockup">
+        <span class="footer-word">Corework</span>
+        <span class="footer-systems"><i></i>Systems<i></i></span>
+      </span>
+    </div>
     <div class="footer-copy">© 2026 Corework Systems</div>
     <a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" class="footer-link">LinkedIn</a>
   </footer>
