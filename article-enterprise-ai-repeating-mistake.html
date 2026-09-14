@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Enterprise AI Is Repeating the Same Mistake We Made With Skills-First | Corework Insights</title>
+<meta name="description" content="MIT found that 95% of enterprises see no measurable return from generative AI. The report also points to organizational design, ownership, and accountability as critical barriers to scaling AI successfully.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #0E1117;
+  --navy: #1A3A6B;
+  --paper: #F7F5F1;
+  --warm: #B85C2A;
+  --muted: #76726c;
+  --rule: #ddd9d3;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.75;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+.nav-mark { flex-shrink: 0; display: block; }
+.nav-wordmark { display: flex; flex-direction: column; line-height: 1; }
+.nav-word { font-family: 'DM Serif Display', serif; font-size: 1.18rem; color: var(--ink); letter-spacing: -0.01em; line-height: 1; }
+.nav-systems { display: flex; align-items: center; gap: 5px; margin-top: 4px; font-family: 'DM Sans', sans-serif; font-size: 0.5rem; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: var(--warm); }
+.nav-systems i { height: 1px; width: 14px; background: var(--warm); display: block; }
+
+.nav-links { display: flex; align-items: center; gap: 2.5rem; }
+.nav-link { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-link:hover, .nav-link.active { color: var(--ink); }
+
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); margin: 5px 0; transition: transform 0.2s ease, opacity 0.2s ease; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.breadcrumb { padding: 8.5rem 4rem 0; max-width: 720px; margin: 0 auto; }
+.breadcrumb a { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--warm); }
+
+.article-header { max-width: 720px; margin: 0 auto; padding: 1.8rem 4rem 2.5rem; }
+.eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm); margin-bottom: 1.4rem; }
+.article-header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.1rem, 4vw, 2.9rem); font-weight: 300; line-height: 1.2; color: var(--navy); margin-bottom: 1.4rem; }
+.byline-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--ink); margin-bottom: 0.2rem; }
+.byline-role { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.2rem; }
+.article-meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.6rem; }
+.original-note { font-size: 0.82rem; color: var(--muted); font-style: italic; }
+.original-note a { color: var(--muted); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+.original-note a:hover { color: var(--warm); text-decoration-color: var(--warm); }
+
+.article-body { max-width: 720px; margin: 0 auto; padding: 0 4rem 3rem; border-top: 1px solid var(--rule); padding-top: 2.5rem; }
+.article-body p { color: var(--ink); margin-bottom: 1.3rem; }
+.article-body p strong { font-weight: 500; }
+.article-body p a { color: var(--navy); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 2px; }
+.article-body p a:hover { color: var(--warm); text-decoration-color: var(--warm); }
+.article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 2.6vw, 1.85rem); font-weight: 300; color: var(--navy); margin: 2.6rem 0 1.2rem; line-height: 1.3; }
+
+.pull-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--navy); line-height: 1.5; margin: 2rem 0; padding: 1.4rem 1.6rem; border-left: 2px solid var(--warm); background: rgba(184,92,42,0.05); }
+
+.closing-note { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--muted); margin-top: 2.4rem; }
+
+.next-step { max-width: 720px; margin: 0 auto; padding: 2.5rem 4rem 3.5rem; }
+.next-step-box { border: 1px solid var(--rule); background: #fff; padding: 2rem; }
+.next-step-box p { color: var(--muted); margin-bottom: 1rem; }
+.next-step-box a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
+.next-step-box a:hover { color: var(--warm); border-color: var(--warm); }
+
+footer { background: var(--ink); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.06); }
+.footer-logo { display: flex; align-items: center; gap: 10px; }
+.footer-lockup { display: flex; flex-direction: column; line-height: 1; }
+.footer-word { font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: #fff; letter-spacing: -0.01em; }
+.footer-systems { display: flex; align-items: center; gap: 4px; margin-top: 4px; font-size: 0.46rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--warm); }
+.footer-systems i { height: 1px; width: 11px; background: var(--warm); display: block; }
+.footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
+.footer-link { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; }
+.footer-link:hover { color: var(--warm); }
+
+@media (max-width: 900px) {
+  nav { padding: 1.2rem 2rem; }
+  .nav-toggle { display: block; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.4rem;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    padding: 1.8rem 2rem 2.2rem;
+  }
+  .nav-links.open { display: flex; }
+  .breadcrumb, .article-header, .article-body, .next-step { padding-left: 2rem; padding-right: 2rem; }
+  footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo" aria-label="Corework Systems home">
+    <svg class="nav-mark" width="23" height="26" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
+      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
+      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.35"/>
+    </svg>
+    <span class="nav-wordmark">
+      <span class="nav-word">Corework</span>
+      <span class="nav-systems"><i></i>Systems<i></i></span>
+    </span>
+  </a>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="how-we-help.html" class="nav-link">How We Help</a>
+    <a href="insights.html" class="nav-link active">Insights</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html#contact" class="nav-link">Contact</a>
+  </div>
+  <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="breadcrumb"><a href="insights.html">← Back to Corework Insights</a></div>
+
+<header class="article-header">
+  <p class="eyebrow">The Unfinished System · AI & Workforce Transformation</p>
+  <h1>Enterprise AI Is Repeating the Same Mistake We Made With Skills-First</h1>
+  <p class="byline-name">Richard Dubuisson</p>
+  <p class="byline-role">Founder & Principal Advisor, Corework Systems</p>
+  <p class="article-meta">July 8, 2026</p>
+  <!-- LINK: replace # with the actual LinkedIn post URL -->
+  <p class="original-note">Originally published on LinkedIn.</p>
+</header>
+
+<article class="article-body">
+
+  <p>MIT recently published a report that landed like a warning shot. <a href="https://github.com/aidecentralized/nandapapers/blob/main/v0.1%20State%20of%20AI%20in%20Business%202025%20Report.pdf" target="_blank" rel="noopener">"The GenAI Divide: State of AI in Business 2025,"</a> from MIT's Project NANDA, found that despite thirty to forty billion dollars in enterprise investment, roughly 95% of organizations have seen no measurable return from generative AI. The findings have raised concerns in boardrooms, and leaders are asking what went wrong with the technology. I believe they are asking the wrong question.</p>
+
+  <p>The report's headline answer is that the technology is the problem: "today's tools don't retain feedback, don't adapt to context, and don't improve over time." That is the technical read, and it is not wrong. But a second conclusion sits inside the same report, quieter and easier to miss. In its section on organizational design, MIT states plainly that the dominant barrier is "not integration or budget, it is organizational design," and that the organizations pulling ahead are the ones that decentralize authority while holding clear ownership and accountability.</p>
+
+  <p>The report unpacked two key themes. While the technical one got the headlines, the organizational one is the one leaders can actually do something about. It is also the one fewer people seem to be talking about.</p>
+
+  <p>Every few years, organizations convince themselves that they have found the technology that will fundamentally change how work gets done. The technology usually does, but the organization usually doesn't. Today that technology is artificial intelligence, and the gap between what it can do and what organizations are getting from it is not, at its core, a technology gap.</p>
+
+  <div class="pull-quote">The models work. The operating system around them doesn't.</div>
+
+  <p>That should sound familiar, because we've actually watched this happen before. <a href="article-ai-wont-fix-broken-systems.html">In February, I wrote that AI would not fix broken talent systems: it would expose them</a>. I did not expect to be proven right this quickly.</p>
+
+  <p>Over the past several years, organizations made remarkably similar promises about Skills-First transformation: The vision was compelling. Skills would replace traditional proxies. Talent, especially historically overlooked talent, would become visible. Internal mobility would accelerate. Learning would get targeted. Organizations would invest heavily in taxonomies, skills graphs, inference engines, talent marketplaces, and dashboards.</p>
+
+  <p>Most of it, however, never really changed workforce decisions. The technology existed, but the operating system around it never changed. <a href="article-pilot-trap.html">Once the pilots ended, managers still hired the way they always had</a>. Performance systems still rewarded yesterday's behaviors. Governance stayed unclear. <a href="article-who-owns-skills-first.html">No one owned the decisions</a> the new infrastructure was supposed to improve.</p>
+
+  <div class="pull-quote">The pilot succeeded. The organization didn't.</div>
+
+  <p>What looked like resistance was often unresolved governance, unclear ownership, and systems that never changed.</p>
+
+  <h2>The same question, arriving again</h2>
+
+  <p>Enterprise AI is now entering the same phase, and most leaders don't seem to see it yet. The conversation still centers on models, prompts, copilots, and licenses. Those matter. But they are not the hard part. The essential question to ask, the one leaders need to wrestle with, is this: what has to change inside the organization before AI becomes normal work instead of an interesting tool?</p>
+
+  <p>That is not a technology question. It is an organizational capability question. And it is a pattern organizations keep repeating. They assume that a new initiative creates a new operating model. It doesn't. Skills-first didn't. AI won't either. New strategies don't replace old systems. They collide with them. Unless the operating system changes, the organization eventually pulls the initiative back toward yesterday's behaviors.</p>
+
+  <h2>A manager with no answers</h2>
+
+  <p>Picture a manager whose team just received access to an AI copilot. She is supportive. But when her reports ask whether they are expected to use it, whether it is safe to use on client work, whether the time it saves should go toward more output or better work, she has no answers. No one gave her any. Her performance targets did not change. Risk guidelines do not exist. So, she does the rational thing and tells her team to use their judgment, which most will reasonably interpret as permission to keep working the way they always have. Within a quarter, the tool is a novelty a few people use and most have quietly abandoned. Leadership concludes that the team is resistant to change. The team is not resistant. The organization never made the new behavior the easier behavior.</p>
+
+  <h2>Where organizations quietly stall</h2>
+
+  <p>This is where most organizations quietly stall. They embed AI into their workflows before they redesign the operating system those workflows depend on. Employees need more than training. They need clarity about when AI should and should not be used. Managers need new expectations for supervising work that is partly delegated to machines. Performance systems need to reward different behaviors. Risk thresholds need to be explicit. Decision rights need to be clear. Leaders need a shared definition of success. And measurement has to move beyond "people completed the training" to "work is being done differently."</p>
+
+  <p>Together, those elements make up the capability infrastructure around AI-enabled work.</p>
+
+  <h2>Resistance that isn't resistance</h2>
+
+  <p>Here is what I've seen get missed: what looks like resistance is often a rational response to organizational ambiguity. When new ways of working are optional, poorly governed, inconsistently measured, and disconnected from how performance is judged, people return to the system they know. The organization never made the new way easier to understand, use, or sustain.</p>
+
+  <p>This is not a new dynamic. The same MIT report found a thriving "shadow AI economy," where employees quietly use personal AI tools to do real work while their companies' official initiatives stall in pilot. People are not waiting for permission. They are routing around systems that never changed to support them.</p>
+
+  <p>AI is not creating organizational weakness. It is exposing it. It is asking organizations to do the thing they have long avoided: redesign how capability is defined, developed, measured, governed, and translated into work. That is a systems challenge, not a technology challenge.</p>
+
+  <h2>The good news</h2>
+
+  <p>And that, oddly, is good news. Leaders do not have to wait for the technology to become perfect before acting. Organizational design, governance, decision rights, management practices, and measurement are already within their control.</p>
+
+  <p>The harder leadership challenge in AI adoption is redesigning the capability infrastructure around the work itself: the leadership expectations, governance, feedback loops, decision rights, performance measures, and management practices that determine whether new ways of working become embedded or remain another promising pilot.</p>
+
+</article>
+
+<div class="next-step">
+  <div class="next-step-box">
+    <p>Whether the starting point is AI, skills-first, or another major initiative, the underlying work is the same: redesigning the capability infrastructure so the change actually holds. That's the lens behind everything Corework does.</p>
+    <a href="how-we-help.html">See How Corework Can Help →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <svg class="footer-mark" width="20" height="23" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
+      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
+      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.45"/>
+    </svg>
+    <span class="footer-lockup">
+      <span class="footer-word">Corework</span>
+      <span class="footer-systems"><i></i>Systems<i></i></span>
+    </span>
+  </div>
+  <div class="footer-copy">© 2026 Corework Systems</div>
+  <a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" class="footer-link">LinkedIn</a>
+</footer>
+
+<script>
+var navToggle = document.getElementById('nav-toggle');
+var navLinks = document.getElementById('nav-links');
+navToggle.addEventListener('click', function() {
+  var isOpen = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+});
+navLinks.querySelectorAll('.nav-link').forEach(function(link) {
+  link.addEventListener('click', function() {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+</script>
+
+</body>
+</html>

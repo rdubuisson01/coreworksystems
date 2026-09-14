@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Won't Fix Broken Talent Systems. It Will Expose Them. | Corework Insights</title>
+<meta name="description" content="AI doesn't create weaknesses in a talent system. It scales the ones that are already there. What organizations need to get right before automating talent decisions.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #0E1117;
+  --navy: #1A3A6B;
+  --paper: #F7F5F1;
+  --warm: #B85C2A;
+  --muted: #76726c;
+  --rule: #ddd9d3;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.75;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+.nav-mark { flex-shrink: 0; display: block; }
+.nav-wordmark { display: flex; flex-direction: column; line-height: 1; }
+.nav-word { font-family: 'DM Serif Display', serif; font-size: 1.18rem; color: var(--ink); letter-spacing: -0.01em; line-height: 1; }
+.nav-systems { display: flex; align-items: center; gap: 5px; margin-top: 4px; font-family: 'DM Sans', sans-serif; font-size: 0.5rem; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: var(--warm); }
+.nav-systems i { height: 1px; width: 14px; background: var(--warm); display: block; }
+
+.nav-links { display: flex; align-items: center; gap: 2.5rem; }
+.nav-link { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-link:hover, .nav-link.active { color: var(--ink); }
+
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); margin: 5px 0; transition: transform 0.2s ease, opacity 0.2s ease; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.breadcrumb { padding: 8.5rem 4rem 0; max-width: 720px; margin: 0 auto; }
+.breadcrumb a { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--warm); }
+
+.article-header { max-width: 720px; margin: 0 auto; padding: 1.8rem 4rem 2.5rem; }
+.eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm); margin-bottom: 1.4rem; }
+.article-header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.1rem, 4vw, 2.9rem); font-weight: 300; line-height: 1.2; color: var(--navy); margin-bottom: 1.4rem; }
+.byline-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--ink); margin-bottom: 0.2rem; }
+.byline-role { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.2rem; }
+.article-meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.6rem; }
+.original-note { font-size: 0.82rem; color: var(--muted); font-style: italic; }
+.original-note a { color: var(--muted); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+.original-note a:hover { color: var(--warm); text-decoration-color: var(--warm); }
+
+.article-body { max-width: 720px; margin: 0 auto; padding: 0 4rem 3rem; border-top: 1px solid var(--rule); padding-top: 2.5rem; }
+.article-body p { color: var(--ink); margin-bottom: 1.3rem; }
+.article-body p strong { font-weight: 500; }
+.article-body p a { color: var(--navy); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 2px; }
+.article-body p a:hover { color: var(--warm); text-decoration-color: var(--warm); }
+.article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 2.6vw, 1.85rem); font-weight: 300; color: var(--navy); margin: 2.6rem 0 1.2rem; line-height: 1.3; }
+
+.arrow-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; margin: 0 0 1.3rem; }
+.arrow-list li { display: flex; gap: 1rem; align-items: flex-start; color: var(--ink); }
+.arrow-list li span { color: var(--warm); font-size: 1.05rem; line-height: 1.6; flex-shrink: 0; }
+
+.pull-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--navy); line-height: 1.5; margin: 2rem 0; padding: 1.4rem 1.6rem; border-left: 2px solid var(--warm); background: rgba(184,92,42,0.05); }
+
+.closing-note { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--muted); margin-top: 2.4rem; }
+
+.next-step { max-width: 720px; margin: 0 auto; padding: 2.5rem 4rem 3.5rem; }
+.next-step-box { border: 1px solid var(--rule); background: #fff; padding: 2rem; }
+.next-step-box p { color: var(--muted); margin-bottom: 1rem; }
+.next-step-box a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
+.next-step-box a:hover { color: var(--warm); border-color: var(--warm); }
+
+footer { background: var(--ink); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.06); }
+.footer-logo { display: flex; align-items: center; gap: 10px; }
+.footer-lockup { display: flex; flex-direction: column; line-height: 1; }
+.footer-word { font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: #fff; letter-spacing: -0.01em; }
+.footer-systems { display: flex; align-items: center; gap: 4px; margin-top: 4px; font-size: 0.46rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--warm); }
+.footer-systems i { height: 1px; width: 11px; background: var(--warm); display: block; }
+.footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
+.footer-link { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; }
+.footer-link:hover { color: var(--warm); }
+
+@media (max-width: 900px) {
+  nav { padding: 1.2rem 2rem; }
+  .nav-toggle { display: block; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.4rem;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    padding: 1.8rem 2rem 2.2rem;
+  }
+  .nav-links.open { display: flex; }
+  .breadcrumb, .article-header, .article-body, .next-step { padding-left: 2rem; padding-right: 2rem; }
+  footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo" aria-label="Corework Systems home">
+    <svg class="nav-mark" width="23" height="26" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
+      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
+      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.35"/>
+    </svg>
+    <span class="nav-wordmark">
+      <span class="nav-word">Corework</span>
+      <span class="nav-systems"><i></i>Systems<i></i></span>
+    </span>
+  </a>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="how-we-help.html" class="nav-link">How We Help</a>
+    <a href="insights.html" class="nav-link active">Insights</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html#contact" class="nav-link">Contact</a>
+  </div>
+  <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="breadcrumb"><a href="insights.html">← Back to Corework Insights</a></div>
+
+<header class="article-header">
+  <p class="eyebrow">The Unfinished System · AI & Talent Systems</p>
+  <h1>AI Won't Fix Broken Talent Systems. It Will Expose Them.</h1>
+  <p class="byline-name">Richard Dubuisson</p>
+  <p class="byline-role">Founder & Principal Advisor, Corework Systems</p>
+  <p class="article-meta">February 3, 2026</p>
+  <!-- LINK: replace # with the actual LinkedIn post URL -->
+  <p class="original-note">Originally published on LinkedIn.</p>
+</header>
+
+<article class="article-body">
+
+  <p>There is no shortage of excitement about how AI could change hiring, talent, and workforce decisions. Organizations are using it to screen candidates, map skills, personalize learning, and support decisions about people and work.</p>
+
+  <p>AI can make those processes faster and more powerful. It can also scale the weaknesses already built into them.</p>
+
+  <p>If an organization has vague skills definitions, inconsistent assessments, outdated job structures, or unclear ownership, AI will carry those problems forward. In some cases, it may make them harder to see and more difficult to unwind.</p>
+
+  <p>AI depends on structure. It learns from patterns and scales what already exists. If the underlying talent system is unclear or inconsistent, the technology does not resolve that ambiguity on its own.</p>
+
+  <div class="pull-quote">AI does not create those system problems. It reveals them.</div>
+
+  <p>Just as <a href="article-managers-stress-test.html">managers can expose the weaknesses in a skills-first strategy</a>, AI is becoming another test of whether the talent system underneath it is coherent enough to scale.</p>
+
+  <h2>The risk of automating old proxies</h2>
+
+  <p>Many organizations want to reduce their reliance on credentials and pedigree as signals of talent. Yet much of the historical data available to AI systems was produced by talent processes that relied heavily on those same signals.</p>
+
+  <p>If a model learns from hiring patterns that favored degrees, elite institutions, narrow career paths, or biased performance measures, those patterns become part of what the system learns to recognize as success.</p>
+
+  <p>That can turn familiar assumptions into automated decisions.</p>
+
+  <p>Consider an AI hiring model trained primarily on the resumes of successful employees who came from a narrow set of universities. The system may learn to treat those credentials as evidence of future success, even if the organization now says it wants to evaluate candidates based on demonstrated capability.</p>
+
+  <p>AI can give those inherited assumptions the appearance of greater precision while carrying them into more decisions at greater speed.</p>
+
+  <div class="pull-quote">We get automated tradition.</div>
+
+  <p>Organizations need to understand what their data represents before asking AI to learn from it.</p>
+
+  <h2>Why clear skill definitions matter more with AI</h2>
+
+  <p>Roles are changing more quickly, and career paths are becoming less predictable. That makes clearly defined capabilities increasingly important.</p>
+
+  <p>Skills can help organizations describe what work requires, identify what people can do, and understand where capabilities can move across roles and functions. But that only works when skills are defined clearly and assessed consistently.</p>
+
+  <p>AI raises the stakes because organizations are beginning to use technology to infer skills and influence talent decisions at scale.</p>
+
+  <p>Before that happens, leaders should be able to answer some basic questions:</p>
+  <ul class="arrow-list">
+    <li><span>→</span> What do we mean when we call something a skill?</li>
+    <li><span>→</span> How is that skill defined across different roles?</li>
+    <li><span>→</span> What evidence do we use to assess it?</li>
+    <li><span>→</span> Who is responsible for maintaining those standards as work changes?</li>
+  </ul>
+
+  <p>As AI plays a larger role in talent decisions, clear skill definitions and consistent assessment become more important because the technology needs reliable standards to work from.</p>
+
+  <h2>Start by asking what AI would scale</h2>
+
+  <p>Before introducing AI into a hiring or talent decision, organizations should understand the system the technology is about to enter.</p>
+
+  <p>A useful starting point is a simple readiness review. Pick a small set of capabilities that matter to the business and ask:</p>
+  <ul class="arrow-list">
+    <li><span>→</span> How are these skills defined today?</li>
+    <li><span>→</span> How are they actually assessed?</li>
+    <li><span>→</span> Do different teams use the same standards?</li>
+    <li><span>→</span> Who owns those definitions when they need to change?</li>
+  </ul>
+
+  <p>That exercise often reveals that the organization needs clearer definitions, stronger assessment practices, or <a href="article-who-owns-skills-first.html">more explicit ownership</a> before automation can help.</p>
+
+  <h2>What responsible progress looks like</h2>
+
+  <p>Organizations making thoughtful use of AI in talent decisions tend to have a few things in common.</p>
+
+  <p><strong>They establish standards before they automate.</strong> Skills, roles, and assessment expectations are defined clearly enough that AI is working from something the organization has deliberately chosen rather than trying to infer the entire model on its own.</p>
+
+  <p><strong>They use AI to support accountable decisions.</strong> The technology can surface information, identify patterns, and make recommendations, while people remain clear about where judgment and accountability sit.</p>
+
+  <p><strong>They examine the data feeding the system.</strong> Leaders need to understand what historical patterns the data contains, whose experience it reflects, and which assumptions may be reproduced if that history is treated as a model for future decisions.</p>
+
+  <p><strong>They assign clear ownership for system integrity.</strong> Someone has responsibility for maintaining skills standards, job architecture, assessment quality, and the rules governing how AI is used in talent decisions.</p>
+
+  <p><strong>They are explicit about what the organization wants AI to optimize.</strong> Faster decisions are not automatically better decisions. Leaders have to decide how efficiency, access, fairness, transparency, quality, and business performance should be balanced.</p>
+
+  <p>Those choices cannot be delegated to the technology.</p>
+
+  <h2>Questions leaders should be able to answer</h2>
+
+  <p>Before AI begins influencing decisions about hiring, development, mobility, or advancement, leaders should be able to answer questions such as:</p>
+  <ul class="arrow-list">
+    <li><span>→</span> Can we clearly define the capabilities that matter for our most critical roles?</li>
+    <li><span>→</span> Do we know how those capabilities are assessed today and by whom?</li>
+    <li><span>→</span> Who owns the standards when they change?</li>
+    <li><span>→</span> What patterns or biases are embedded in the historical data the system will use?</li>
+    <li><span>→</span> Who is accountable when an AI-supported decision produces harm or an unintended result?</li>
+  </ul>
+
+  <p>These are governance and leadership questions. They determine what the technology is allowed to learn, recommend, and influence.</p>
+
+  <h2>What AI will reveal</h2>
+
+  <p>AI is going to expose the quality of the talent systems organizations have built.</p>
+
+  <p>Where roles, skills, assessments, ownership, and accountability are clear, AI has the potential to make better information available faster and help organizations make more consistent talent decisions.</p>
+
+  <p>Where those foundations are weak, the same technology can scale ambiguity, outdated proxies, and inconsistent judgment.</p>
+
+  <p>Organizations are encoding assumptions about people, capability, and opportunity into systems that will increasingly shape real decisions. Leaders need to be deliberate about what those systems are learning and who remains accountable for the consequences.</p>
+
+  <p class="closing-note">The future of talent will depend as much on the systems around the technology as on the technology itself.</p>
+
+</article>
+
+<div class="next-step">
+  <div class="next-step-box">
+    <p>If you're considering where AI fits into hiring, development, or mobility decisions, the Workforce System Diagnostic can help identify the strengths and gaps in the surrounding talent system and what should be addressed first.</p>
+    <a href="workforce-diagnostic.html">Explore the Workforce System Diagnostic →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <svg class="footer-mark" width="20" height="23" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
+      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
+      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.45"/>
+    </svg>
+    <span class="footer-lockup">
+      <span class="footer-word">Corework</span>
+      <span class="footer-systems"><i></i>Systems<i></i></span>
+    </span>
+  </div>
+  <div class="footer-copy">© 2026 Corework Systems</div>
+  <a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" class="footer-link">LinkedIn</a>
+</footer>
+
+<script>
+var navToggle = document.getElementById('nav-toggle');
+var navLinks = document.getElementById('nav-links');
+navToggle.addEventListener('click', function() {
+  var isOpen = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+});
+navLinks.querySelectorAll('.nav-link').forEach(function(link) {
+  link.addEventListener('click', function() {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+</script>
+
+</body>
+</html>

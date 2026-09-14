@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Why Skills-First Talent Strategies Stall at Scale | Corework Insights</title>
+<meta name="description" content="Skills-first efforts stall not from lack of commitment, but because organizations run them on talent systems never designed to support them.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #0E1117;
+  --navy: #1A3A6B;
+  --paper: #F7F5F1;
+  --warm: #B85C2A;
+  --muted: #76726c;
+  --rule: #ddd9d3;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.75;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+.nav-mark { flex-shrink: 0; display: block; }
+.nav-wordmark { display: flex; flex-direction: column; line-height: 1; }
+.nav-word { font-family: 'DM Serif Display', serif; font-size: 1.18rem; color: var(--ink); letter-spacing: -0.01em; line-height: 1; }
+.nav-systems { display: flex; align-items: center; gap: 5px; margin-top: 4px; font-family: 'DM Sans', sans-serif; font-size: 0.5rem; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: var(--warm); }
+.nav-systems i { height: 1px; width: 14px; background: var(--warm); display: block; }
+
+.nav-links { display: flex; align-items: center; gap: 2.5rem; }
+.nav-link { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-link:hover, .nav-link.active { color: var(--ink); }
+
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); margin: 5px 0; transition: transform 0.2s ease, opacity 0.2s ease; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.breadcrumb { padding: 8.5rem 4rem 0; max-width: 720px; margin: 0 auto; }
+.breadcrumb a { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--warm); }
+
+.article-header { max-width: 720px; margin: 0 auto; padding: 1.8rem 4rem 2.5rem; }
+.eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm); margin-bottom: 1.4rem; }
+.article-header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.1rem, 4vw, 2.9rem); font-weight: 300; line-height: 1.2; color: var(--navy); margin-bottom: 1.4rem; }
+.article-meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.6rem; }
+.byline-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--ink); margin-bottom: 0.2rem; }
+.byline-role { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.2rem; }
+.original-note { font-size: 0.82rem; color: var(--muted); font-style: italic; }
+.original-note a { color: var(--muted); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+.original-note a:hover { color: var(--warm); text-decoration-color: var(--warm); }
+
+.article-body { max-width: 720px; margin: 0 auto; padding: 0 4rem 3rem; border-top: 1px solid var(--rule); padding-top: 2.5rem; }
+.article-body p { color: var(--ink); margin-bottom: 1.3rem; }
+.article-body p strong { font-weight: 500; }
+.article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 2.6vw, 1.85rem); font-weight: 300; color: var(--navy); margin: 2.6rem 0 1.2rem; line-height: 1.3; }
+.article-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 500; color: var(--ink); margin: 2rem 0 0.8rem; }
+
+.line-stack { margin-bottom: 1.3rem; }
+.line-stack p { margin-bottom: 0.35rem; color: var(--ink); }
+
+.arrow-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; margin: 0 0 1.3rem; }
+.arrow-list li { display: flex; gap: 1rem; align-items: flex-start; color: var(--ink); }
+.arrow-list li span { color: var(--warm); font-size: 1.05rem; line-height: 1.6; flex-shrink: 0; }
+
+.pull-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--navy); line-height: 1.5; margin: 2rem 0; padding: 1.4rem 1.6rem; border-left: 2px solid var(--warm); background: rgba(184,92,42,0.05); }
+
+.closing-note { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--muted); margin-top: 2.4rem; }
+
+.next-step { max-width: 720px; margin: 0 auto; padding: 2.5rem 4rem 3.5rem; }
+.next-step-box { border: 1px solid var(--rule); background: #fff; padding: 2rem; }
+.next-step-box p { color: var(--muted); margin-bottom: 1rem; }
+.next-step-box a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
+.next-step-box a:hover { color: var(--warm); border-color: var(--warm); }
+
+footer { background: var(--ink); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.06); }
+.footer-logo { display: flex; align-items: center; gap: 10px; }
+.footer-lockup { display: flex; flex-direction: column; line-height: 1; }
+.footer-word { font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: #fff; letter-spacing: -0.01em; }
+.footer-systems { display: flex; align-items: center; gap: 4px; margin-top: 4px; font-size: 0.46rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--warm); }
+.footer-systems i { height: 1px; width: 11px; background: var(--warm); display: block; }
+.footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
+.footer-link { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; }
+.footer-link:hover { color: var(--warm); }
+
+@media (max-width: 900px) {
+  nav { padding: 1.2rem 2rem; }
+  .nav-toggle { display: block; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.4rem;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    padding: 1.8rem 2rem 2.2rem;
+  }
+  .nav-links.open { display: flex; }
+  .breadcrumb, .article-header, .article-body, .next-step { padding-left: 2rem; padding-right: 2rem; }
+  footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo" aria-label="Corework Systems home">
+    <svg class="nav-mark" width="23" height="26" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
+      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
+      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.35"/>
+    </svg>
+    <span class="nav-wordmark">
+      <span class="nav-word">Corework</span>
+      <span class="nav-systems"><i></i>Systems<i></i></span>
+    </span>
+  </a>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="how-we-help.html" class="nav-link">How We Help</a>
+    <a href="insights.html" class="nav-link active">Insights</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html#contact" class="nav-link">Contact</a>
+  </div>
+  <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="breadcrumb"><a href="insights.html">← Back to Corework Insights</a></div>
+
+<header class="article-header">
+  <p class="eyebrow">The Unfinished System · Skills-First Transformation</p>
+  <h1>Why Skills-First Talent Strategies Stall at Scale (and What Actually Fixes Them)</h1>
+  <p class="byline-name">Richard Dubuisson</p>
+  <p class="byline-role">Founder & Principal Advisor, Corework Systems</p>
+  <p class="article-meta">January 13, 2026</p>
+  <!-- LINK: replace # with the actual LinkedIn post URL -->
+  <p class="original-note">Originally published on LinkedIn.</p>
+</header>
+
+<article class="article-body">
+
+  <p>Over the past several years, "skills-first" has become one of the most widely endorsed ideas in talent strategy. Employers across industries have made public commitments to move away from credential-based hiring, invest in upskilling, and expand opportunity by focusing on what people can do rather than where they come from.</p>
+
+  <p>And yet, despite genuine intent and growing sophistication, many of these efforts stall.</p>
+
+  <div class="line-stack">
+    <p>It's not because leaders lack commitment.</p>
+    <p>It's not because skills frameworks are flawed.</p>
+    <p>The business case isn't the holdup either.</p>
+  </div>
+
+  <p>They stall because most organizations are trying to run <strong>skills-first strategies on talent systems that were never designed to support them</strong>.</p>
+
+  <h2>The Real Failure Mode: Skills Without Systems</h2>
+
+  <p>In practice, many skills-first efforts take the form of pilots:</p>
+  <ul class="arrow-list">
+    <li><span>→</span> A revised job description here</li>
+    <li><span>→</span> A new assessment tool there</li>
+    <li><span>→</span> A reskilling initiative for a single function</li>
+    <li><span>→</span> A promising partnership with an external provider</li>
+  </ul>
+
+  <p>Each of these can be well designed. Some even show early success. But collectively, they rarely change how talent actually flows through an organization.</p>
+
+  <p>The pilot itself is rarely the issue. What's missing is that <strong>skills are being introduced as a concept, not as an operating system</strong>.</p>
+
+  <div class="line-stack">
+    <p>Hiring still runs on legacy job architectures.</p>
+    <p>Advancement still depends on informal sponsorship and opaque criteria.</p>
+    <p>Learning investments are still disconnected from workforce demand.</p>
+    <p>Managers are still evaluated on short-term delivery, not talent development.</p>
+  </div>
+
+  <p>In that environment, skills-first becomes additive: another initiative layered on top of existing systems, rather than transformative.</p>
+
+  <h2>Why Scaling Is Harder Than Leaders Expect</h2>
+
+  <p>Many organizations believe that if a skills pilot works, scaling is simply a matter of expanding it. In reality, scaling requires a <strong>qualitatively different kind of work</strong>.</p>
+
+  <p>Moving from pilot to enterprise adoption forces leaders to confront questions that pilots conveniently avoid:</p>
+  <ul class="arrow-list">
+    <li><span>→</span> Who owns skills governance across the organization?</li>
+    <li><span>→</span> How are skills defined, validated, and updated as work changes?</li>
+    <li><span>→</span> How do skills data influence hiring, deployment, pay, and advancement decisions?</li>
+    <li><span>→</span> What incentives ensure managers actually use skills-based tools?</li>
+    <li><span>→</span> What metrics matter enough to change behavior?</li>
+  </ul>
+
+  <p>Without clear answers, skills efforts remain fragile. They depend on champions, funding cycles, or external pressure. When priorities shift, they fade.</p>
+
+  <h2>What Organizations That Succeed Do Differently</h2>
+
+  <p>Organizations that successfully operationalize skills-first strategies share several characteristics. They treat skills not as an HR innovation, but as <strong>core workforce infrastructure</strong>.</p>
+
+  <h3>1. They Start With Demand, Not Supply</h3>
+  <p>Effective skills systems are anchored in real workforce demand:</p>
+  <ul class="arrow-list">
+    <li><span>→</span> What capabilities does the business actually need to execute its strategy?</li>
+    <li><span>→</span> Where are gaps constraining performance or growth?</li>
+    <li><span>→</span> Which roles and transitions matter most?</li>
+  </ul>
+  <p>Learning investments, hiring changes, and partnerships are then aligned to those signals. Skills are not abstract. They are operational.</p>
+
+  <h3>2. They Design Governance Early</h3>
+  <p>Skills-based systems require clear governance:</p>
+  <ul class="arrow-list">
+    <li><span>→</span> Decision rights across HR, learning, and business leaders</li>
+    <li><span>→</span> Shared definitions and standards</li>
+    <li><span>→</span> Processes for updating skills as work evolves</li>
+  </ul>
+  <p>Without governance, fragmentation is inevitable.</p>
+
+  <h3>3. They Integrate Skills Across the Talent Lifecycle</h3>
+  <p>Skills matter only when they influence:</p>
+  <ul class="arrow-list">
+    <li><span>→</span> Hiring and role design</li>
+    <li><span>→</span> Deployment and internal mobility</li>
+    <li><span>→</span> Learning and development investment</li>
+    <li><span>→</span> Performance and advancement decisions</li>
+  </ul>
+  <p>Partial integration creates confusion. Full integration creates momentum.</p>
+
+  <h3>4. They Measure What Drives Adoption</h3>
+  <p>Successful organizations define a small set of metrics that matter:</p>
+  <ul class="arrow-list">
+    <li><span>→</span> Time to productivity</li>
+    <li><span>→</span> Internal mobility</li>
+    <li><span>→</span> Advancement and retention</li>
+    <li><span>→</span> Talent supply for critical roles</li>
+  </ul>
+  <p>These metrics are used not just for reporting, but for <strong>managing tradeoffs and reinforcing behavior</strong>.</p>
+
+  <h3>5. They Treat Equity as a Design Requirement</h3>
+  <p>Equity does not emerge automatically from skills-first rhetoric. It must be embedded intentionally:</p>
+  <ul class="arrow-list">
+    <li><span>→</span> In how roles are defined</li>
+    <li><span>→</span> In how potential is recognized</li>
+    <li><span>→</span> In how development opportunities are allocated</li>
+    <li><span>→</span> In how advancement decisions are governed</li>
+  </ul>
+  <p>When equity is designed into the system, it becomes durable. When it is layered on top, it remains fragile.</p>
+
+  <h2>The Leadership Shift This Requires</h2>
+
+  <p>Operationalizing skills-first talent strategies requires leaders to move from sponsorship to <strong>ownership</strong>.</p>
+
+  <p>This work cannot live solely in HR or learning. It demands sustained executive attention, cross-functional alignment, and a willingness to redesign legacy systems that no longer serve the business or workforce.</p>
+
+  <p>It also requires patience. Skills-first is not a quick win. It is infrastructure work. But when done well, it unlocks something powerful: a talent system that is more adaptive, more inclusive, and more aligned to how work actually happens.</p>
+
+  <h2>From Intent to Execution</h2>
+
+  <p>The organizations that succeed are not those with the most sophisticated skills taxonomy or the loudest commitments. They are the ones willing to do the harder work of system design: aligning governance, incentives, data, and leadership behavior around skills as a core organizing principle.</p>
+
+  <div class="line-stack">
+    <p>Skills-first is a practical idea.</p>
+    <p>Where it fails is when organizations underestimate what it actually takes to make it real.</p>
+  </div>
+
+  <p class="closing-note">For leaders exploring skills-first strategies, the challenge is whether the organization is ready to redesign the systems required to support them.</p>
+
+</article>
+
+<div class="next-step">
+  <div class="next-step-box">
+    <p>If this describes where your skills-first or workforce strategy is stuck, the Workforce System Diagnostic is designed to identify where the system is breaking down and what should be addressed first.</p>
+    <a href="workforce-diagnostic.html">Explore the Workforce System Diagnostic →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <svg class="footer-mark" width="20" height="23" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
+      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
+      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.45"/>
+    </svg>
+    <span class="footer-lockup">
+      <span class="footer-word">Corework</span>
+      <span class="footer-systems"><i></i>Systems<i></i></span>
+    </span>
+  </div>
+  <div class="footer-copy">© 2026 Corework Systems</div>
+  <a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" class="footer-link">LinkedIn</a>
+</footer>
+
+<script>
+var navToggle = document.getElementById('nav-toggle');
+var navLinks = document.getElementById('nav-links');
+navToggle.addEventListener('click', function() {
+  var isOpen = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+});
+navLinks.querySelectorAll('.nav-link').forEach(function(link) {
+  link.addEventListener('click', function() {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+</script>
+
+</body>
+</html>

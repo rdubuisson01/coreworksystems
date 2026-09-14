@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Who Actually Owns Skills-First? | Corework Insights</title>
+<meta name="description" content="Skills-first becomes difficult to sustain when no one is explicitly accountable for the standards, governance, and integrity of the system.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #0E1117;
+  --navy: #1A3A6B;
+  --paper: #F7F5F1;
+  --warm: #B85C2A;
+  --muted: #76726c;
+  --rule: #ddd9d3;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.75;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+.nav-mark { flex-shrink: 0; display: block; }
+.nav-wordmark { display: flex; flex-direction: column; line-height: 1; }
+.nav-word { font-family: 'DM Serif Display', serif; font-size: 1.18rem; color: var(--ink); letter-spacing: -0.01em; line-height: 1; }
+.nav-systems { display: flex; align-items: center; gap: 5px; margin-top: 4px; font-family: 'DM Sans', sans-serif; font-size: 0.5rem; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: var(--warm); }
+.nav-systems i { height: 1px; width: 14px; background: var(--warm); display: block; }
+
+.nav-links { display: flex; align-items: center; gap: 2.5rem; }
+.nav-link { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-link:hover, .nav-link.active { color: var(--ink); }
+
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); margin: 5px 0; transition: transform 0.2s ease, opacity 0.2s ease; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.breadcrumb { padding: 8.5rem 4rem 0; max-width: 720px; margin: 0 auto; }
+.breadcrumb a { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--warm); }
+
+.article-header { max-width: 720px; margin: 0 auto; padding: 1.8rem 4rem 2.5rem; }
+.eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm); margin-bottom: 1.4rem; }
+.article-header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.1rem, 4vw, 2.9rem); font-weight: 300; line-height: 1.2; color: var(--navy); margin-bottom: 1.4rem; }
+.byline-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--ink); margin-bottom: 0.2rem; }
+.byline-role { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.2rem; }
+.article-meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.6rem; }
+.original-note { font-size: 0.82rem; color: var(--muted); font-style: italic; }
+.original-note a { color: var(--muted); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+.original-note a:hover { color: var(--warm); text-decoration-color: var(--warm); }
+
+.article-body { max-width: 720px; margin: 0 auto; padding: 0 4rem 3rem; border-top: 1px solid var(--rule); padding-top: 2.5rem; }
+.article-body p { color: var(--ink); margin-bottom: 1.3rem; }
+.article-body p strong { font-weight: 500; }
+.article-body p a { color: var(--navy); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 2px; }
+.article-body p a:hover { color: var(--warm); text-decoration-color: var(--warm); }
+.article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 2.6vw, 1.85rem); font-weight: 300; color: var(--navy); margin: 2.6rem 0 1.2rem; line-height: 1.3; }
+
+.arrow-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; margin: 0 0 1.3rem; }
+.arrow-list li { display: flex; gap: 1rem; align-items: flex-start; color: var(--ink); }
+.arrow-list li span { color: var(--warm); font-size: 1.05rem; line-height: 1.6; flex-shrink: 0; }
+
+.pull-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--navy); line-height: 1.5; margin: 2rem 0; padding: 1.4rem 1.6rem; border-left: 2px solid var(--warm); background: rgba(184,92,42,0.05); }
+
+.closing-note { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--muted); margin-top: 2.4rem; }
+
+.next-step { max-width: 720px; margin: 0 auto; padding: 2.5rem 4rem 3.5rem; }
+.next-step-box { border: 1px solid var(--rule); background: #fff; padding: 2rem; }
+.next-step-box p { color: var(--muted); margin-bottom: 1rem; }
+.next-step-box a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
+.next-step-box a:hover { color: var(--warm); border-color: var(--warm); }
+
+footer { background: var(--ink); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.06); }
+.footer-logo { display: flex; align-items: center; gap: 10px; }
+.footer-lockup { display: flex; flex-direction: column; line-height: 1; }
+.footer-word { font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: #fff; letter-spacing: -0.01em; }
+.footer-systems { display: flex; align-items: center; gap: 4px; margin-top: 4px; font-size: 0.46rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--warm); }
+.footer-systems i { height: 1px; width: 11px; background: var(--warm); display: block; }
+.footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
+.footer-link { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; }
+.footer-link:hover { color: var(--warm); }
+
+@media (max-width: 900px) {
+  nav { padding: 1.2rem 2rem; }
+  .nav-toggle { display: block; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.4rem;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    padding: 1.8rem 2rem 2.2rem;
+  }
+  .nav-links.open { display: flex; }
+  .breadcrumb, .article-header, .article-body, .next-step { padding-left: 2rem; padding-right: 2rem; }
+  footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo" aria-label="Corework Systems home">
+    <svg class="nav-mark" width="23" height="26" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
+      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
+      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.35"/>
+    </svg>
+    <span class="nav-wordmark">
+      <span class="nav-word">Corework</span>
+      <span class="nav-systems"><i></i>Systems<i></i></span>
+    </span>
+  </a>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="how-we-help.html" class="nav-link">How We Help</a>
+    <a href="insights.html" class="nav-link active">Insights</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html#contact" class="nav-link">Contact</a>
+  </div>
+  <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="breadcrumb"><a href="insights.html">← Back to Corework Insights</a></div>
+
+<header class="article-header">
+  <p class="eyebrow">The Unfinished System · Ownership & Governance</p>
+  <h1>Who Actually Owns Skills-First?</h1>
+  <p class="byline-name">Richard Dubuisson</p>
+  <p class="byline-role">Founder & Principal Advisor, Corework Systems</p>
+  <p class="article-meta">January 27, 2026</p>
+  <!-- LINK: replace # with the actual LinkedIn post URL -->
+  <p class="original-note">Originally published on LinkedIn.</p>
+</header>
+
+<article class="article-body">
+
+  <p>If skills-first is going to become part of how an organization hires, develops, and moves talent, managers cannot be the only people responsible for making it work.</p>
+
+  <p>In the last piece, I argued that <a href="article-managers-stress-test.html">managers are the stress test</a> for skills-first. They are being asked to make different hiring and talent decisions inside systems that often have not been redesigned to support those decisions. When the system is unclear or inconsistent, managers absorb much of the risk.</p>
+
+  <p>That raises an important issue: who owns the system managers are operating inside? In many organizations, the answer is unclear.</p>
+
+  <h2>The ownership gap</h2>
+
+  <p>Skills-first requires more than a new hiring philosophy. It depends on a set of shared standards and responsibilities across the talent system.</p>
+
+  <p>Organizations need common definitions of skills, consistent job and role architecture, credible assessment methods, clear rules for how skills influence talent decisions, and accountability for how the system performs over time.</p>
+
+  <p>Those responsibilities are often spread across HR, Talent Acquisition, Learning, Compensation, Workforce Planning, business leaders, and managers.</p>
+
+  <p>That distribution is understandable. Each function owns part of the work.</p>
+
+  <div class="pull-quote">The problem arises when no one is clearly responsible for the integrity of the whole system.</div>
+
+  <p>When ownership is assumed rather than assigned, standards begin to vary. Definitions drift. Managers fill in the gaps themselves. Different parts of the organization start applying the same strategy in different ways.</p>
+
+  <p>Over time, responsibility becomes diluted.</p>
+
+  <p>Managers may still be held accountable for individual decisions, even when they have little control over the standards, tools, or processes shaping those decisions.</p>
+
+  <p>That makes skills-first difficult to sustain.</p>
+
+  <h2>HR cannot carry this alone</h2>
+
+  <p>HR will usually play a central role because many of the systems involved sit within the talent function. But ownership requires more than participation.</p>
+
+  <p>The organization has to be explicit about who has the authority to establish standards, resolve inconsistencies, update the system as work changes, and examine whether it is producing the intended outcomes.</p>
+
+  <p>Without that clarity, the operating model can easily become:</p>
+  <ul class="arrow-list">
+    <li><span>→</span> HR provides tools and support</li>
+    <li><span>→</span> Business leaders make local decisions</li>
+    <li><span>→</span> Managers execute</li>
+    <li><span>→</span> Different functions manage separate parts of the infrastructure</li>
+  </ul>
+
+  <p>Each part may be doing reasonable work, while no one is accountable for how the pieces fit together. Skills-first needs this kind of stewardship because skills have to be defined, updated, and applied consistently across many talent decisions.</p>
+
+  <p>That work needs a clear home.</p>
+
+  <h2>What ownership looks like in practice</h2>
+
+  <p>Organizations making progress on skills-first tend to clarify ownership early.</p>
+
+  <p>The exact structure varies. Some create a formal skills governance function. Others establish a cross-functional council or assign responsibility to an existing enterprise talent team.</p>
+
+  <p>The structure matters less than the authority that comes with it.</p>
+
+  <p>A clear system owner should be able to:</p>
+  <ul class="arrow-list">
+    <li><span>→</span> Define and update skills standards</li>
+    <li><span>→</span> Govern changes to job and role architecture</li>
+    <li><span>→</span> Establish expectations for assessment</li>
+    <li><span>→</span> Resolve inconsistencies across functions or business units</li>
+    <li><span>→</span> Review system-level outcomes and determine where changes are needed</li>
+  </ul>
+
+  <div class="pull-quote">That does not mean approving every hiring or talent decision. The role is to maintain the integrity of the system within which those decisions are made.</div>
+
+  <h2>What stronger systems have in common</h2>
+
+  <p>In organizations where skills-first is becoming part of normal operating practice, several patterns tend to appear.</p>
+
+  <p><strong>Standards are shared across the organization.</strong> Job architecture and skills expectations may be applied locally, but managers are not inventing criteria role by role.</p>
+
+  <p><strong>Managers have clearer guidance.</strong> They understand what is expected, have tools that support the process, and know where to turn when the situation is unclear.</p>
+
+  <p><strong>Accountability is shared.</strong> When outcomes fall short, leaders examine the decision and the system around it rather than placing the entire burden on one manager.</p>
+
+  <p><strong>Leadership commitment is visible in operating choices.</strong> Policies, incentives, investment, and decision processes reinforce the direction the organization says it wants to take.</p>
+
+  <p>These conditions reduce ambiguity and unnecessary improvisation. They also make it easier for managers to apply skills-first consistently because the surrounding system supports the behavior being asked of them.</p>
+
+  <h2>Governance is part of the strategy</h2>
+
+  <p>Many organizations begin skills-first as a pilot, a hiring initiative, or a change in mindset. As the work expands, governance becomes increasingly important. Someone has to maintain the standards, coordinate the pieces, resolve conflicts, and ensure that the system continues to work as roles and workforce needs change.</p>
+
+  <p>That responsibility cannot remain implicit.</p>
+
+  <p>Skills-first becomes more sustainable when ownership is clear, authority matches responsibility, and leaders know who is accountable for maintaining the system over time.</p>
+
+  <p class="closing-note">For organizations trying to scale skills-first, the challenge is to decide who owns the system and give that owner the authority required to keep it coherent. Without that clarity, managers will continue to compensate for gaps they did not create and cannot fully control.</p>
+
+</article>
+
+<div class="next-step">
+  <div class="next-step-box">
+    <p>If ownership across your talent or workforce system feels unclear or fragmented, the Workforce System Diagnostic is designed to identify where ownership, decision rights, or accountability are unclear and what should be addressed first.</p>
+    <a href="workforce-diagnostic.html">Explore the Workforce System Diagnostic →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <svg class="footer-mark" width="20" height="23" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
+      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
+      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.45"/>
+    </svg>
+    <span class="footer-lockup">
+      <span class="footer-word">Corework</span>
+      <span class="footer-systems"><i></i>Systems<i></i></span>
+    </span>
+  </div>
+  <div class="footer-copy">© 2026 Corework Systems</div>
+  <a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" class="footer-link">LinkedIn</a>
+</footer>
+
+<script>
+var navToggle = document.getElementById('nav-toggle');
+var navLinks = document.getElementById('nav-links');
+navToggle.addEventListener('click', function() {
+  var isOpen = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+});
+navLinks.querySelectorAll('.nav-link').forEach(function(link) {
+  link.addEventListener('click', function() {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+</script>
+
+</body>
+</html>

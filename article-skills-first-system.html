@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>What a Skills-First Talent System Actually Looks Like | Corework Insights</title>
+<meta name="description" content="Skills-first only works at scale when architecture, assessment, talent movement, learning, and governance function together as a system.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #0E1117;
+  --navy: #1A3A6B;
+  --paper: #F7F5F1;
+  --warm: #B85C2A;
+  --muted: #76726c;
+  --rule: #ddd9d3;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.75;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+.nav-mark { flex-shrink: 0; display: block; }
+.nav-wordmark { display: flex; flex-direction: column; line-height: 1; }
+.nav-word { font-family: 'DM Serif Display', serif; font-size: 1.18rem; color: var(--ink); letter-spacing: -0.01em; line-height: 1; }
+.nav-systems { display: flex; align-items: center; gap: 5px; margin-top: 4px; font-family: 'DM Sans', sans-serif; font-size: 0.5rem; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: var(--warm); }
+.nav-systems i { height: 1px; width: 14px; background: var(--warm); display: block; }
+
+.nav-links { display: flex; align-items: center; gap: 2.5rem; }
+.nav-link { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-link:hover, .nav-link.active { color: var(--ink); }
+
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); margin: 5px 0; transition: transform 0.2s ease, opacity 0.2s ease; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.breadcrumb { padding: 8.5rem 4rem 0; max-width: 720px; margin: 0 auto; }
+.breadcrumb a { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--warm); }
+
+.article-header { max-width: 720px; margin: 0 auto; padding: 1.8rem 4rem 2.5rem; }
+.eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm); margin-bottom: 1.4rem; }
+.article-header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.1rem, 4vw, 2.9rem); font-weight: 300; line-height: 1.2; color: var(--navy); margin-bottom: 1.4rem; }
+.byline-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--ink); margin-bottom: 0.2rem; }
+.byline-role { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.2rem; }
+.article-meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.6rem; }
+.original-note { font-size: 0.82rem; color: var(--muted); font-style: italic; }
+.original-note a { color: var(--muted); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+.original-note a:hover { color: var(--warm); text-decoration-color: var(--warm); }
+
+.article-body { max-width: 720px; margin: 0 auto; padding: 0 4rem 3rem; border-top: 1px solid var(--rule); padding-top: 2.5rem; }
+.article-body p { color: var(--ink); margin-bottom: 1.3rem; }
+.article-body p strong { font-weight: 500; }
+.article-body p a { color: var(--navy); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 2px; }
+.article-body p a:hover { color: var(--warm); text-decoration-color: var(--warm); }
+.article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 2.6vw, 1.85rem); font-weight: 300; color: var(--navy); margin: 2.6rem 0 1.2rem; line-height: 1.3; }
+
+.arrow-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; margin: 0 0 1.3rem; }
+.arrow-list li { display: flex; gap: 1rem; align-items: flex-start; color: var(--ink); }
+.arrow-list li span { color: var(--warm); font-size: 1.05rem; line-height: 1.6; flex-shrink: 0; }
+
+.pull-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--navy); line-height: 1.5; margin: 2rem 0; padding: 1.4rem 1.6rem; border-left: 2px solid var(--warm); background: rgba(184,92,42,0.05); }
+
+.closing-note { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--muted); margin-top: 2.4rem; }
+
+.next-step { max-width: 720px; margin: 0 auto; padding: 2.5rem 4rem 3.5rem; }
+.next-step-box { border: 1px solid var(--rule); background: #fff; padding: 2rem; }
+.next-step-box p { color: var(--muted); margin-bottom: 1rem; }
+.next-step-box a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
+.next-step-box a:hover { color: var(--warm); border-color: var(--warm); }
+
+footer { background: var(--ink); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.06); }
+.footer-logo { display: flex; align-items: center; gap: 10px; }
+.footer-lockup { display: flex; flex-direction: column; line-height: 1; }
+.footer-word { font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: #fff; letter-spacing: -0.01em; }
+.footer-systems { display: flex; align-items: center; gap: 4px; margin-top: 4px; font-size: 0.46rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--warm); }
+.footer-systems i { height: 1px; width: 11px; background: var(--warm); display: block; }
+.footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
+.footer-link { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; }
+.footer-link:hover { color: var(--warm); }
+
+@media (max-width: 900px) {
+  nav { padding: 1.2rem 2rem; }
+  .nav-toggle { display: block; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.4rem;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    padding: 1.8rem 2rem 2.2rem;
+  }
+  .nav-links.open { display: flex; }
+  .breadcrumb, .article-header, .article-body, .next-step { padding-left: 2rem; padding-right: 2rem; }
+  footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo" aria-label="Corework Systems home">
+    <svg class="nav-mark" width="23" height="26" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
+      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
+      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.35"/>
+    </svg>
+    <span class="nav-wordmark">
+      <span class="nav-word">Corework</span>
+      <span class="nav-systems"><i></i>Systems<i></i></span>
+    </span>
+  </a>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="how-we-help.html" class="nav-link">How We Help</a>
+    <a href="insights.html" class="nav-link active">Insights</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html#contact" class="nav-link">Contact</a>
+  </div>
+  <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="breadcrumb"><a href="insights.html">← Back to Corework Insights</a></div>
+
+<header class="article-header">
+  <p class="eyebrow">The Unfinished System · Talent Systems</p>
+  <h1>What a Skills-First Talent System Actually Looks Like</h1>
+  <p class="byline-name">Richard Dubuisson</p>
+  <p class="byline-role">Founder & Principal Advisor, Corework Systems</p>
+  <p class="article-meta">February 24, 2026</p>
+  <!-- LINK: replace # with the actual LinkedIn post URL -->
+  <p class="original-note">Originally published on LinkedIn.</p>
+</header>
+
+<article class="article-body">
+
+  <p>If skills-first is going to move from aspiration to operating reality, organizations need to be clearer about what the system actually looks like, how it functions, and what leaders have to build to make it work at scale.</p>
+
+  <p>Over the past several articles, I've examined why skills-first talent strategies stall, even in organizations deeply committed to making them work. The patterns are consistent: <a href="article-managers-stress-test.html">managers are asked to execute a new model without the infrastructure to support it</a>. <a href="article-who-owns-skills-first.html">Ownership is fragmented or unclear</a>. Governance is incomplete. And as <a href="article-ai-wont-fix-broken-systems.html">AI plays a larger role in talent decisions, weaknesses in the underlying system become more visible</a>.</p>
+
+  <p>These problems are often treated as implementation issues. Many of them are really problems of system design. Organizations are frequently trying to implement individual pieces of skills-first without building the system those pieces depend on.</p>
+
+  <p>Traditional talent systems have long relied on proxies such as degrees, titles, pedigree, and tenure because they are familiar, easy to administer, and widely understood. Skills-first shifts more of those decisions toward demonstrated capability.</p>
+
+  <p>For capability to become a reliable foundation for hiring, development, mobility, and advancement, organizations need structures that define, assess, and use skills consistently.</p>
+
+  <div class="pull-quote">Skills-first requires a redesign of the talent system itself.</div>
+
+  <p>Too often, organizations describe themselves as skills-first because they have a skills platform, a taxonomy, or a pilot program. But tools are not systems, and pilots are not operating models.</p>
+
+  <p>A functioning skills-first system is a coherent way of defining, assessing, governing, and using skills across the organization. In practice, five system components need to work together.</p>
+
+  <h2>1. Skills and Job Architecture</h2>
+
+  <p>In effective systems, skills are explicitly defined, governed, and connected to how work is structured. That creates clearer, more consistent definitions of capability across roles and reduces reliance on vague job descriptions or locally invented hiring criteria.</p>
+
+  <p>This does not require perfect agreement on every detail. It requires enough shared meaning that people are working from the same language. Skills should not be reinvented team by team. They need to function as a common way of describing what work requires. Without that foundation, everything else becomes harder to apply consistently.</p>
+
+  <h2>2. Assessment and Validation Systems</h2>
+
+  <p>Skills-first organizations need credible and consistent ways to evaluate capability for hiring, development, and internal mobility. Human judgment still matters. The system should make that judgment stronger and more reliable.</p>
+
+  <p>Managers are less dependent on proxies such as degrees or pedigree when they have structured ways to evaluate capability directly. Without reliable assessment, skills-first remains difficult to use in real decisions.</p>
+
+  <h2>3. Talent Movement and Deployment</h2>
+
+  <p>Skills need to shape how talent moves through the organization, including hiring, internal mobility, project staffing, and advancement. Roles should be defined around what the work actually requires, and talent decisions should reflect those requirements. There will always be roles where specific credentials are necessary. Outside of those cases, capability should carry more weight than familiar assumptions or proxies.</p>
+
+  <p>Job architecture becomes a structured way of describing what work requires, while skills data becomes useful because it is connected to real talent decisions. Without that connection, the organization may have skills data without having a skills-first system.</p>
+
+  <h2>4. Learning and Capability Development Systems</h2>
+
+  <p>Learning needs to connect directly to capability needs identified through the system. In many organizations, learning operates somewhat independently, shaped heavily by available content or broad development priorities.</p>
+
+  <p>In a skills-first system, learning is more tightly connected to real capability gaps and changing workforce needs. The goal is to help people build the capabilities the organization actually needs and prepare them for work that is evolving. That alignment makes learning part of how workforce capability is built over time.</p>
+
+  <h2>5. Governance and System Ownership</h2>
+
+  <p>Someone has to own the integrity of the system. That includes maintaining skill definitions, governing job architecture, establishing assessment standards, and reviewing how the system is performing over time.</p>
+
+  <p>Without governance, fragmentation returns. Definitions drift. Standards weaken. Managers fill in the gaps themselves. Over time, the organization can slide back toward the proxies it was trying to reduce.</p>
+
+  <p>Skills-first becomes more durable when it's managed as part of the organization's infrastructure.</p>
+
+  <h2>Integration determines whether the system works</h2>
+
+  <p>Many organizations already have some of these components in place. They may have a skills taxonomy, new assessment tools, or learning investments tied to emerging capabilities. The challenge is making those components work together.</p>
+
+  <p>When one piece is weak or disconnected, managers compensate. Proxies reappear. Practices vary across teams. The organization may still describe itself as skills-first while everyday decisions continue to operate much as they did before.</p>
+
+  <p>Operationalizing skills-first requires deliberate design across the talent system. Ownership, governance, job architecture, assessment, learning, and talent decisions all have to reinforce one another.</p>
+
+  <h2>What leaders have to build</h2>
+
+  <p>Describing the system is only the beginning. Leaders also have to make several choices that determine whether it can function in practice.</p>
+
+  <p><strong>Leaders must decide who owns skills.</strong> This is one of the most important decisions.</p>
+
+  <div class="pull-quote">Without clear ownership, coherence becomes optional.</div>
+
+  <p>Someone needs responsibility for skill standards, resolving conflicts, reviewing outcomes, and evolving the system as work changes. When that responsibility is unclear, fragmentation is almost inevitable.</p>
+
+  <p><strong>Leaders must treat skills as infrastructure.</strong> Infrastructure is maintained, resourced, and protected over time. Skills-first becomes more sustainable when the underlying system can survive budget cycles, leadership changes, and shifts in organizational priorities.</p>
+
+  <p><strong>Leaders must align incentives with the system they want.</strong> If performance measures reward speed at the expense of quality, or continue to favor familiar credentials over evidence of capability, managers will respond accordingly. Progress becomes more likely when incentives reinforce the talent decisions the organization says it wants.</p>
+
+  <p><strong>Leaders must reduce the risk managers carry.</strong> <a href="article-managers-stress-test.html">Managers are the stress test</a> of any talent system. If they feel exposed when making skills-based decisions, they will hedge. They need clear expectations, credible tools, guardrails, and shared accountability so they can make those decisions with greater confidence.</p>
+
+  <p><strong>Leaders must decide how AI interacts with the system.</strong> <a href="article-ai-wont-fix-broken-systems.html">AI will amplify the system it enters</a>. Before using it to influence talent decisions, leaders should understand what skills and assumptions are being scaled, whose history shaped the data, and who remains accountable for the outcomes. Without that clarity, AI can automate yesterday's assumptions at speed.</p>
+
+  <h2>From system design to system performance</h2>
+
+  <p>Many organizations still treat skills-first as a program, a platform, or a mindset initiative.</p>
+
+  <p>A functioning skills-first system depends on shared standards, clear decision rights, defined ownership, and accountability that holds over time.</p>
+
+  <p>Once those pieces are in place, attention can shift toward a different issue: whether the system is producing better outcomes.</p>
+
+  <ul class="arrow-list">
+    <li><span>→</span> Are people moving more easily across roles?</li>
+    <li><span>→</span> Are important capability gaps closing faster?</li>
+    <li><span>→</span> Is hiring becoming more predictive of performance?</li>
+    <li><span>→</span> Is the workforce becoming more adaptable as work changes?</li>
+  </ul>
+
+  <p>Those are system performance questions. Answering them requires organizations to measure skills-first differently than many do today.</p>
+
+  <p class="closing-note">Ultimately, skills-first is defined by what the system produces.</p>
+
+</article>
+
+<div class="next-step">
+  <div class="next-step-box">
+    <p>If parts of your talent system are strong individually but are not working together, Corework can help identify where the disconnects are and what needs to change.</p>
+    <a href="how-we-help.html">See How Corework Can Help →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <svg class="footer-mark" width="20" height="23" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
+      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
+      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.45"/>
+    </svg>
+    <span class="footer-lockup">
+      <span class="footer-word">Corework</span>
+      <span class="footer-systems"><i></i>Systems<i></i></span>
+    </span>
+  </div>
+  <div class="footer-copy">© 2026 Corework Systems</div>
+  <a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" class="footer-link">LinkedIn</a>
+</footer>
+
+<script>
+var navToggle = document.getElementById('nav-toggle');
+var navLinks = document.getElementById('nav-links');
+navToggle.addEventListener('click', function() {
+  var isOpen = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+});
+navLinks.querySelectorAll('.nav-link').forEach(function(link) {
+  link.addEventListener('click', function() {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+</script>
+
+</body>
+</html>

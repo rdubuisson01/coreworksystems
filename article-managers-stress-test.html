@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Skills-First Talent Strategies Live or Die With Managers | Corework Insights</title>
+<meta name="description" content="Managers aren't the barrier to skills-first adoption — they're the stress test for whether the surrounding talent system actually works.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #0E1117;
+  --navy: #1A3A6B;
+  --paper: #F7F5F1;
+  --warm: #B85C2A;
+  --muted: #76726c;
+  --rule: #ddd9d3;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.75;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+.nav-mark { flex-shrink: 0; display: block; }
+.nav-wordmark { display: flex; flex-direction: column; line-height: 1; }
+.nav-word { font-family: 'DM Serif Display', serif; font-size: 1.18rem; color: var(--ink); letter-spacing: -0.01em; line-height: 1; }
+.nav-systems { display: flex; align-items: center; gap: 5px; margin-top: 4px; font-family: 'DM Sans', sans-serif; font-size: 0.5rem; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: var(--warm); }
+.nav-systems i { height: 1px; width: 14px; background: var(--warm); display: block; }
+
+.nav-links { display: flex; align-items: center; gap: 2.5rem; }
+.nav-link { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-link:hover, .nav-link.active { color: var(--ink); }
+
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); margin: 5px 0; transition: transform 0.2s ease, opacity 0.2s ease; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.breadcrumb { padding: 8.5rem 4rem 0; max-width: 720px; margin: 0 auto; }
+.breadcrumb a { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--warm); }
+
+.article-header { max-width: 720px; margin: 0 auto; padding: 1.8rem 4rem 2.5rem; }
+.eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm); margin-bottom: 1.4rem; }
+.article-header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.1rem, 4vw, 2.9rem); font-weight: 300; line-height: 1.2; color: var(--navy); margin-bottom: 1.4rem; }
+.byline-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--ink); margin-bottom: 0.2rem; }
+.byline-role { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.2rem; }
+.article-meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.6rem; }
+.original-note { font-size: 0.82rem; color: var(--muted); font-style: italic; }
+.original-note a { color: var(--muted); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+.original-note a:hover { color: var(--warm); text-decoration-color: var(--warm); }
+
+.article-body { max-width: 720px; margin: 0 auto; padding: 0 4rem 3rem; border-top: 1px solid var(--rule); padding-top: 2.5rem; }
+.article-body p { color: var(--ink); margin-bottom: 1.3rem; }
+.article-body p strong { font-weight: 500; }
+.article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 2.6vw, 1.85rem); font-weight: 300; color: var(--navy); margin: 2.6rem 0 1.2rem; line-height: 1.3; }
+
+.line-stack { margin-bottom: 1.3rem; }
+.line-stack p { margin-bottom: 0.35rem; color: var(--ink); }
+
+.pull-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--navy); line-height: 1.5; margin: 2rem 0; padding: 1.4rem 1.6rem; border-left: 2px solid var(--warm); background: rgba(184,92,42,0.05); }
+
+.closing-note { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--muted); margin-top: 2.4rem; }
+
+.next-step { max-width: 720px; margin: 0 auto; padding: 2.5rem 4rem 3.5rem; }
+.next-step-box { border: 1px solid var(--rule); background: #fff; padding: 2rem; }
+.next-step-box p { color: var(--muted); margin-bottom: 1rem; }
+.next-step-box a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
+.next-step-box a:hover { color: var(--warm); border-color: var(--warm); }
+
+footer { background: var(--ink); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.06); }
+.footer-logo { display: flex; align-items: center; gap: 10px; }
+.footer-lockup { display: flex; flex-direction: column; line-height: 1; }
+.footer-word { font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: #fff; letter-spacing: -0.01em; }
+.footer-systems { display: flex; align-items: center; gap: 4px; margin-top: 4px; font-size: 0.46rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--warm); }
+.footer-systems i { height: 1px; width: 11px; background: var(--warm); display: block; }
+.footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
+.footer-link { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; }
+.footer-link:hover { color: var(--warm); }
+
+@media (max-width: 900px) {
+  nav { padding: 1.2rem 2rem; }
+  .nav-toggle { display: block; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.4rem;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    padding: 1.8rem 2rem 2.2rem;
+  }
+  .nav-links.open { display: flex; }
+  .breadcrumb, .article-header, .article-body, .next-step { padding-left: 2rem; padding-right: 2rem; }
+  footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo" aria-label="Corework Systems home">
+    <svg class="nav-mark" width="23" height="26" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
+      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
+      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.35"/>
+    </svg>
+    <span class="nav-wordmark">
+      <span class="nav-word">Corework</span>
+      <span class="nav-systems"><i></i>Systems<i></i></span>
+    </span>
+  </a>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="how-we-help.html" class="nav-link">How We Help</a>
+    <a href="insights.html" class="nav-link active">Insights</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html#contact" class="nav-link">Contact</a>
+  </div>
+  <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="breadcrumb"><a href="insights.html">← Back to Corework Insights</a></div>
+
+<header class="article-header">
+  <p class="eyebrow">The Unfinished System · Managers & Execution</p>
+  <h1>Skills-First Talent Strategies Live or Die With Managers</h1>
+  <p class="byline-name">Richard Dubuisson</p>
+  <p class="byline-role">Founder & Principal Advisor, Corework Systems</p>
+  <p class="article-meta">January 20, 2026</p>
+  <!-- LINK: replace # with the actual LinkedIn post URL -->
+  <p class="original-note">Originally published on LinkedIn.</p>
+</header>
+
+<article class="article-body">
+
+  <p>Most organizations now say they believe in skills-first hiring and talent practices. Many managers do too. Research has shown strong support among hiring managers for skills-first approaches and real interest in using them more consistently.</p>
+
+  <p>Yet day-to-day implementation remains uneven.</p>
+
+  <p>The challenge becomes clearer when we look at what managers are actually being asked to do. They are expected to operate a new talent model inside systems designed for a different way of hiring and managing talent. Degree filters remain embedded in hiring processes. Skill definitions are often unclear. Managers receive limited training, while still carrying most of the accountability when a hiring or talent decision goes wrong.</p>
+
+  <div class="pull-quote">We've made managers the main point of execution for skills-first without making them the beneficiaries of a skills-first system.</div>
+
+  <h2>Where the friction shows up</h2>
+
+  <p>Managers are being asked to assess skills more rigorously, even though many have never been trained to do so consistently. They are encouraged to hire for potential while working from job descriptions that still rely on degrees, proxies, and vague requirements.</p>
+
+  <p>They are also being asked to broaden talent pools while applicant tracking systems, and increasingly AI-enabled screening tools, may remove candidates before a manager ever sees them.</p>
+
+  <p>Then there is the question of accountability. When a hire does not work out, the consequences are usually felt most directly by the manager. The system that shaped the decision rarely carries the same burden.</p>
+
+  <p>That changes behavior.</p>
+
+  <p>Managers begin to hedge. They use skills-first approaches selectively, often in roles or situations where the perceived risk feels manageable. They fall back on familiar criteria when the stakes are higher or when expectations are unclear.</p>
+
+  <p>That response makes sense inside a system where the new approach is encouraged, but the surrounding infrastructure has not caught up.</p>
+
+  <h2>When skills-first feels riskier</h2>
+
+  <p>There is another factor that receives less attention: managers know their decisions are being watched.</p>
+
+  <p>A hiring decision can affect how a manager is viewed by peers, senior leaders, and HR partners. When skills-first is still treated as an experiment, managers may feel they are taking on extra risk by departing from familiar hiring patterns.</p>
+
+  <p>That risk becomes more pronounced when outcomes are judged inconsistently. A traditional hire that struggles may be seen as an ordinary hiring miss. A skills-first hire that struggles can become evidence that the approach itself is questionable.</p>
+
+  <p>Over time, that kind of uneven scrutiny encourages managers to return to what feels familiar and defensible.</p>
+
+  <h2>What changes when the system is coherent</h2>
+
+  <p>The pattern looks different in organizations that have done more of the implementation work.</p>
+
+  <p>When roles are clearly defined, assessments are consistent, managers are trained, and leaders visibly support the approach, skills-first becomes easier to use. Managers have a clearer sense of what strong evidence looks like and greater confidence in the decisions they are being asked to make.</p>
+
+  <p>The surrounding system reduces uncertainty.</p>
+
+  <p>Managers need that kind of coherence. They need clear expectations, tools that support those expectations, and shared accountability for the outcomes that follow. They also need confidence that the organization will support skills-based decisions in practice, especially when a decision produces an imperfect result.</p>
+
+  <p>Those conditions matter because belief alone does not change operating behavior.</p>
+
+  <h2>Managers are the stress test</h2>
+
+  <p>Managers sit at the point where workforce strategy becomes a real decision. They decide who gets interviewed, who gets hired, who gets developed, who receives stretch opportunities, and who is considered ready for something more. If the surrounding talent system is clear and coherent, managers can make those decisions with greater confidence.</p>
+
+  <p>If the system is fragmented, managers are forced to compensate for the gaps.</p>
+
+  <p>That is why manager hesitation can tell us something important. It may be evidence that the organization has not yet created the conditions required for the new model to work consistently.</p>
+
+  <p>Manager support tells us very little about whether the system is ready. The better test is whether managers can use skills-based approaches confidently and consistently in the decisions they already make.</p>
+
+  <p>When they can, skills-first starts to become part of normal operating practice. When they cannot, implementation remains dependent on individual judgment, local champions, and the willingness of managers to absorb the risk created by an unfinished system.</p>
+
+  <h2>What organizations need to finish</h2>
+
+  <p>Skills-first places new expectations on managers. Those expectations need to be matched by changes in the systems around them.</p>
+
+  <p>Managers need clearer definitions of skills and readiness. They need credible ways to assess them. They need job structures and technology that reinforce the same expectations. They need training that prepares them for the decisions they are being asked to make. They need leaders who treat skills-first as an operating approach rather than a temporary initiative. And they need accountability to be shared across the system.</p>
+
+  <p>Without those conditions, organizations will continue to interpret uneven adoption as a manager problem when the deeper issue sits in the infrastructure around them.</p>
+
+  <p>Managers are the stress test. Their behavior shows us whether the organization has built enough of the system for skills-first to work in practice.</p>
+
+  <p class="closing-note">For leaders trying to move skills-first from aspiration to operating reality, the challenge is making sure managers are working inside a system that supports the decisions you are asking them to make.</p>
+
+</article>
+
+<div class="next-step">
+  <div class="next-step-box">
+    <p>If skills-first is making sense in principle but breaking down in day-to-day execution, the Workforce System Diagnostic is designed to identify where the surrounding system is getting in the way and what should be addressed first.</p>
+    <a href="workforce-diagnostic.html">Explore the Workforce System Diagnostic →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <svg class="footer-mark" width="20" height="23" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
+      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
+      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.45"/>
+    </svg>
+    <span class="footer-lockup">
+      <span class="footer-word">Corework</span>
+      <span class="footer-systems"><i></i>Systems<i></i></span>
+    </span>
+  </div>
+  <div class="footer-copy">© 2026 Corework Systems</div>
+  <a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" class="footer-link">LinkedIn</a>
+</footer>
+
+<script>
+var navToggle = document.getElementById('nav-toggle');
+var navLinks = document.getElementById('nav-links');
+navToggle.addEventListener('click', function() {
+  var isOpen = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+});
+navLinks.querySelectorAll('.nav-link').forEach(function(link) {
+  link.addEventListener('click', function() {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+</script>
+
+</body>
+</html>

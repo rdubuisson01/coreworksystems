@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Most Organizations Are Measuring Skills-First the Wrong Way | Corework Insights</title>
+<meta name="description" content="Tracking adoption and activity tells you skills-first is happening. It doesn't tell you whether the talent system is actually performing better.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #0E1117;
+  --navy: #1A3A6B;
+  --paper: #F7F5F1;
+  --warm: #B85C2A;
+  --muted: #76726c;
+  --rule: #ddd9d3;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.75;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+.nav-mark { flex-shrink: 0; display: block; }
+.nav-wordmark { display: flex; flex-direction: column; line-height: 1; }
+.nav-word { font-family: 'DM Serif Display', serif; font-size: 1.18rem; color: var(--ink); letter-spacing: -0.01em; line-height: 1; }
+.nav-systems { display: flex; align-items: center; gap: 5px; margin-top: 4px; font-family: 'DM Sans', sans-serif; font-size: 0.5rem; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: var(--warm); }
+.nav-systems i { height: 1px; width: 14px; background: var(--warm); display: block; }
+
+.nav-links { display: flex; align-items: center; gap: 2.5rem; }
+.nav-link { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-link:hover, .nav-link.active { color: var(--ink); }
+
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); margin: 5px 0; transition: transform 0.2s ease, opacity 0.2s ease; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.breadcrumb { padding: 8.5rem 4rem 0; max-width: 720px; margin: 0 auto; }
+.breadcrumb a { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--warm); }
+
+.article-header { max-width: 720px; margin: 0 auto; padding: 1.8rem 4rem 2.5rem; }
+.eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm); margin-bottom: 1.4rem; }
+.article-header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.1rem, 4vw, 2.9rem); font-weight: 300; line-height: 1.2; color: var(--navy); margin-bottom: 1.4rem; }
+.byline-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--ink); margin-bottom: 0.2rem; }
+.byline-role { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.2rem; }
+.article-meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.6rem; }
+.original-note { font-size: 0.82rem; color: var(--muted); font-style: italic; }
+.original-note a { color: var(--muted); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+.original-note a:hover { color: var(--warm); text-decoration-color: var(--warm); }
+
+.article-body { max-width: 720px; margin: 0 auto; padding: 0 4rem 3rem; border-top: 1px solid var(--rule); padding-top: 2.5rem; }
+.article-body p { color: var(--ink); margin-bottom: 1.3rem; }
+.article-body p strong { font-weight: 500; }
+.article-body p a { color: var(--navy); text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 2px; }
+.article-body p a:hover { color: var(--warm); text-decoration-color: var(--warm); }
+.article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 2.6vw, 1.85rem); font-weight: 300; color: var(--navy); margin: 2.6rem 0 1.2rem; line-height: 1.3; }
+
+.arrow-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; margin: 0 0 1.3rem; }
+.arrow-list li { display: flex; gap: 1rem; align-items: flex-start; color: var(--ink); }
+.arrow-list li span { color: var(--warm); font-size: 1.05rem; line-height: 1.6; flex-shrink: 0; }
+
+.pull-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--navy); line-height: 1.5; margin: 2rem 0; padding: 1.4rem 1.6rem; border-left: 2px solid var(--warm); background: rgba(184,92,42,0.05); }
+
+.closing-note { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--muted); margin-top: 2.4rem; }
+
+.table-scroll { overflow-x: auto; margin: 1.6rem 0 1.8rem; }
+.metric-table { width: 100%; min-width: 600px; border-collapse: collapse; font-size: 0.9rem; }
+.metric-table th { text-align: left; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--warm); padding: 0.8rem 1rem 0.8rem 0; border-bottom: 2px solid var(--rule); }
+.metric-table td { padding: 0.9rem 1rem 0.9rem 0; border-bottom: 1px solid var(--rule); color: var(--ink); vertical-align: top; }
+.metric-table td:first-child, .metric-table th:first-child { color: var(--muted); }
+
+.next-step { max-width: 720px; margin: 0 auto; padding: 2.5rem 4rem 3.5rem; }
+.next-step-box { border: 1px solid var(--rule); background: #fff; padding: 2rem; }
+.next-step-box p { color: var(--muted); margin-bottom: 1rem; }
+.next-step-box a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
+.next-step-box a:hover { color: var(--warm); border-color: var(--warm); }
+
+footer { background: var(--ink); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.06); }
+.footer-logo { display: flex; align-items: center; gap: 10px; }
+.footer-lockup { display: flex; flex-direction: column; line-height: 1; }
+.footer-word { font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: #fff; letter-spacing: -0.01em; }
+.footer-systems { display: flex; align-items: center; gap: 4px; margin-top: 4px; font-size: 0.46rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--warm); }
+.footer-systems i { height: 1px; width: 11px; background: var(--warm); display: block; }
+.footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
+.footer-link { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; }
+.footer-link:hover { color: var(--warm); }
+
+@media (max-width: 900px) {
+  nav { padding: 1.2rem 2rem; }
+  .nav-toggle { display: block; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.4rem;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    padding: 1.8rem 2rem 2.2rem;
+  }
+  .nav-links.open { display: flex; }
+  .breadcrumb, .article-header, .article-body, .next-step { padding-left: 2rem; padding-right: 2rem; }
+  footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo" aria-label="Corework Systems home">
+    <svg class="nav-mark" width="23" height="26" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
+      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
+      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.35"/>
+    </svg>
+    <span class="nav-wordmark">
+      <span class="nav-word">Corework</span>
+      <span class="nav-systems"><i></i>Systems<i></i></span>
+    </span>
+  </a>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="how-we-help.html" class="nav-link">How We Help</a>
+    <a href="insights.html" class="nav-link active">Insights</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html#contact" class="nav-link">Contact</a>
+  </div>
+  <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="breadcrumb"><a href="insights.html">← Back to Corework Insights</a></div>
+
+<header class="article-header">
+  <p class="eyebrow">The Unfinished System · Measurement & Adaptation</p>
+  <h1>Most Organizations Are Measuring Skills-First the Wrong Way</h1>
+  <p class="byline-name">Richard Dubuisson</p>
+  <p class="byline-role">Founder & Principal Advisor, Corework Systems</p>
+  <p class="article-meta">March 17, 2026</p>
+  <!-- LINK: replace # with the actual LinkedIn post URL -->
+  <p class="original-note">Originally published on LinkedIn.</p>
+</header>
+
+<article class="article-body">
+
+  <p>Much of the early conversation around skills-first focused on making the business case for skills and on practical changes such as removing degree requirements, expanding hiring pipelines, and creating new pathways into opportunity.</p>
+
+  <p>Those efforts remain important. But as organizations move from skills-first pilots toward system redesign, measurement needs to evolve as well. Leaders need to understand whether the systems behind those practices are actually producing better outcomes.</p>
+
+  <p>In the previous article, I argued that <a href="article-skills-first-system.html">operationalizing skills-first requires a coherent talent system</a>: shared skills architecture, credible assessments, mechanisms for moving talent, learning aligned to capability needs, and governance that keeps the system working over time.</p>
+
+  <p>Once that system begins to take shape, another issue becomes important: How do we know whether it is working?</p>
+
+  <p>I have been thinking about talent systems in the same way we think about other systems inside organizations, including financial, operational, and technology systems, and about how we observe their performance. Supply chains track inventory and delivery times. Technology platforms monitor latency, uptime, and throughput. Engineers install sensors in machines.</p>
+
+  <p>Those signals tell leaders whether a system is performing as intended. Talent systems need signals too.</p>
+
+  <p>If skills-first is becoming part of the infrastructure through which organizations hire, develop, and move talent, leaders need ways to see whether that infrastructure is producing better decisions and stronger workforce capability.</p>
+
+  <p>Yet many organizations are still measuring the wrong things.</p>
+
+  <h2>The measurement problem</h2>
+
+  <p>Skills-first measurement often focuses on adoption and activity. Organizations track things like the percentage of job postings that no longer require degrees, the number of employees completing training, the volume of candidates coming through new talent pipelines, or the number of skills added to a platform or taxonomy.</p>
+
+  <p>Those measures are useful. They tell leaders whether new practices are being introduced and whether adoption is growing.</p>
+
+  <p>They tell us much less about whether the talent system itself is performing better.</p>
+
+  <p>Activity measures cannot tell us whether hiring decisions are improving, whether people are becoming productive faster, whether workforce capability is growing, or whether talent is moving more effectively to meet business needs.</p>
+
+  <p>Many organizations are still measuring the presence of skills-first practices when they also need to measure the performance of the system behind them. That distinction matters.</p>
+
+  <div class="pull-quote">A company would never evaluate its logistics infrastructure by counting how many trucks it owns.</div>
+
+  <p>Leaders would want to know whether deliveries are faster, more reliable, and more efficient. Talent systems deserve the same level of scrutiny.</p>
+
+  <h2>From activity to performance</h2>
+
+  <p>As skills-first becomes part of the organization's infrastructure, measurement should extend beyond whether new practices have been adopted. Leaders need indicators that show what those practices are producing.</p>
+
+  <div class="table-scroll">
+    <table class="metric-table">
+      <thead>
+        <tr>
+          <th>What Organizations Often Track</th>
+          <th>What Leaders Also Need to Measure</th>
+          <th>Executive Question</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Degree requirements removed</td>
+          <td>Skill-to-role ramp-up time</td>
+          <td>Are new hires reaching productivity faster?</td>
+        </tr>
+        <tr>
+          <td>Candidate volume and source mix</td>
+          <td>Candidate quality</td>
+          <td>Are we delivering stronger signals about capability to managers?</td>
+        </tr>
+        <tr>
+          <td>Training participation and completion</td>
+          <td>Workforce capability</td>
+          <td>Is learning building capability the organization actually needs?</td>
+        </tr>
+        <tr>
+          <td>Internal mobility programs or applications</td>
+          <td>Talent mobility</td>
+          <td>Can we move people effectively as work changes?</td>
+        </tr>
+        <tr>
+          <td>Skills mapped, profiles completed, or assessments administered</td>
+          <td>Prediction accuracy</td>
+          <td>Are skill signals helping us predict performance more accurately?</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>The measures in the middle column tell us something different. They show whether the system is improving how talent decisions are made and how effectively the workforce can respond to changing needs.</p>
+
+  <h2>Five sensors of a skills-first system</h2>
+
+  <p><strong>1. Skill-to-role ramp-up time.</strong> One of the clearest tests of hiring effectiveness is how quickly someone reaches proficiency in the capabilities required for the role. If skills-based hiring is improving the quality of talent decisions, organizations should begin to see faster and more predictable movement toward productivity. This measure connects hiring decisions directly to operational performance.</p>
+
+  <p><strong>2. Talent mobility.</strong> Traditional talent systems can make movement across teams, functions, and career paths difficult. Employees often have to navigate informal networks, unclear criteria, and organizational boundaries before their capabilities can be used somewhere else. A functioning skills-first system should make capability more visible and transferable. Talent mobility measures how effectively people move across roles, projects, or functions in response to opportunity and changing business needs. The goal is not movement for its own sake. The signal is whether the organization can deploy capability more fluidly when the work requires it.</p>
+
+  <p><strong>3. Candidate quality.</strong> Many hiring systems produce large volumes of applicants without giving managers enough confidence about who can actually do the work. Skills-based screening should improve the signal. Organizations can examine the proportion of candidates who demonstrate the capabilities required for a role as they move through meaningful assessment stages. The important question is whether recruiting is producing a stronger pool of qualified candidates rather than simply generating more resumes.</p>
+
+  <p><strong>4. Workforce capability.</strong> Learning investments are often measured through participation: course completions, attendance, hours consumed, or satisfaction. Those measures tell us whether learning happened. They tell us much less about whether capability changed. Workforce capability looks at changes in demonstrated proficiency across a team, business unit, or workforce segment over time. That gives leaders a way to see whether learning investments are strengthening the organization's ability to perform and adapt.</p>
+
+  <p><strong>5. Prediction accuracy.</strong> Traditional hiring systems have relied heavily on degrees, pedigree, tenure, and other proxies because organizations assumed those signals told them something about likely performance. A mature skills-first system gives leaders the opportunity to test that assumption. Prediction accuracy examines how well demonstrated skills and skills-based assessments predict later job performance, and how those signals compare with the proxies the organization has historically relied on. That is a significant test of system integrity. If skills-first is working, the organization should become better at identifying who is likely to succeed based on evidence of capability.</p>
+
+  <p>This becomes even more important as AI begins influencing hiring and workforce decisions. <a href="article-ai-wont-fix-broken-systems.html">AI scales the signals organizations give it</a>. When those signals are rooted in old proxies, technology can automate the past. When the signals reflect credible evidence of capability, AI has a stronger foundation for supporting better decisions.</p>
+
+  <h2>What leaders should be asking</h2>
+
+  <p>When skills-first is treated as infrastructure, the measurement conversation becomes practical. Leaders should be able to answer a handful of fundamental questions:</p>
+
+  <ul class="arrow-list">
+    <li><span>→</span> Are new hires becoming productive faster?</li>
+    <li><span>→</span> Is talent moving more effectively to where the work is?</li>
+    <li><span>→</span> Are hiring systems giving managers stronger signals about capability?</li>
+    <li><span>→</span> Is learning measurably increasing workforce capability?</li>
+    <li><span>→</span> Are we getting better at predicting who will succeed?</li>
+  </ul>
+
+  <p>These are operating questions. They require organizations to evaluate what the talent system is producing, how reliably it is producing it, and whether those outcomes are improving over time.</p>
+
+  <h2>The next phase of skills-first</h2>
+
+  <p>Moving from activity to performance is an important part of finishing what I have called the Unfinished System. Organizations have spent years tracking effort: degree requirements removed, candidates sourced, training completed, skills mapped. Those measures helped establish momentum. Now leaders also need to know what that effort is producing. Are we gaining capability? Are people moving more easily into work where their skills are needed? Are new hires reaching proficiency faster? Are talent decisions becoming more predictive?</p>
+
+  <div class="pull-quote">Good intentions cannot be the measure of whether the system works.</div>
+
+  <p>Organizations that are serious about skills-first need to install the sensors, examine the evidence, and hold the talent system accountable for what it produces.</p>
+
+  <p class="closing-note">Ultimately, a skills-first system should be measured by the capability it enables an organization to build, move, and use.</p>
+
+</article>
+
+<div class="next-step">
+  <div class="next-step-box">
+    <p>Measurement and Adaptation is one of the six areas the Workforce System Diagnostic examines. If you're not confident your talent system is producing better outcomes, the Diagnostic is designed to identify what to examine first.</p>
+    <a href="workforce-diagnostic.html">Explore the Workforce System Diagnostic →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <svg class="footer-mark" width="20" height="23" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
+      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
+      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.45"/>
+    </svg>
+    <span class="footer-lockup">
+      <span class="footer-word">Corework</span>
+      <span class="footer-systems"><i></i>Systems<i></i></span>
+    </span>
+  </div>
+  <div class="footer-copy">© 2026 Corework Systems</div>
+  <a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" class="footer-link">LinkedIn</a>
+</footer>
+
+<script>
+var navToggle = document.getElementById('nav-toggle');
+var navLinks = document.getElementById('nav-links');
+navToggle.addEventListener('click', function() {
+  var isOpen = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+});
+navLinks.querySelectorAll('.nav-link').forEach(function(link) {
+  link.addEventListener('click', function() {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+</script>
+
+</body>
+</html>
