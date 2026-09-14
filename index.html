@@ -1,839 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Corework Systems | Workforce, Talent & Leadership Advisory</title>
-  <meta name="description" content="Corework Systems helps organizations strengthen leadership and manager capability, improve succession and mobility, and diagnose where workforce and talent strategies break between intent and execution.">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --ink: #0E1117;      /* near-black — logo dark ground */
-      --navy: #1A3A6B;     /* deep navy — structural authority, headlines */
-      --paper: #F7F5F1;    /* warm cream */
-      --warm: #B85C2A;     /* oxide copper — the warm accent */
-      --muted: #76726c;
-      --rule: #ddd9d3;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      line-height: 1.7;
-      font-size: 17px;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 4rem;
-      background: var(--paper);
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      text-decoration: none;
-    }
-
-    .nav-mark { flex-shrink: 0; display: block; }
-
-    .nav-wordmark {
-      display: flex;
-      flex-direction: column;
-      line-height: 1;
-    }
-
-    .nav-word {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.18rem;
-      color: var(--ink);
-      letter-spacing: -0.01em;
-      line-height: 1;
-    }
-
-    .nav-systems {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      margin-top: 4px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.5rem;
-      font-weight: 500;
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
-      color: var(--warm);
-    }
-
-    .nav-systems i {
-      height: 1px;
-      width: 14px;
-      background: var(--warm);
-      display: block;
-    }
-
-    .nav-cta {
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--ink);
-      text-decoration: none;
-      border-bottom: 1px solid var(--ink);
-      padding-bottom: 2px;
-      transition: color 0.2s, border-color 0.2s;
-    }
-
-    .nav-cta:hover {
-      color: var(--warm);
-      border-color: var(--warm);
-    }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding-top: 80px;
-    }
-
-    .hero-left {
-      padding: 8rem 4rem 6rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      border-right: 1px solid var(--rule);
-    }
-
-    .hero-eyebrow {
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--warm);
-      margin-bottom: 2rem;
-    }
-
-    .hero-headline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 4.5vw, 4.2rem);
-      font-weight: 300;
-      line-height: 1.1;
-      letter-spacing: -0.01em;
-      color: var(--navy);
-      margin-bottom: 2rem;
-    }
-
-    .hero-headline em {
-      font-style: italic;
-      color: var(--warm);
-    }
-
-    .hero-sub {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 440px;
-      line-height: 1.75;
-      margin-bottom: 3rem;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      padding: 1rem 2.2rem;
-      background: var(--ink);
-      color: var(--paper);
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-      align-self: flex-start;
-    }
-
-    .btn-primary:hover {
-      background: var(--warm);
-      transform: translateY(-1px);
-    }
-
-    .hero-right {
-      padding: 8rem 4rem 6rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background: var(--ink);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-right::before {
-      content: '';
-      position: absolute;
-      top: -80px; right: -80px;
-      width: 400px; height: 400px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(184,92,42,0.16) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-stat {
-      margin-bottom: 3.5rem;
-      padding-bottom: 3.5rem;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .hero-stat:last-child {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: none;
-    }
-
-    .stat-number {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3.5rem;
-      font-weight: 300;
-      color: var(--warm);
-      line-height: 1;
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-label {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.5);
-      letter-spacing: 0.08em;
-      line-height: 1.5;
-    }
-
-    /* PROBLEM */
-    .problem {
-      padding: 7rem 4rem;
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 6rem;
-      border-bottom: 1px solid var(--rule);
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--warm);
-      padding-top: 0.4rem;
-    }
-
-    .problem-body h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      font-weight: 400;
-      line-height: 1.25;
-      margin-bottom: 1.8rem;
-      color: var(--navy);
-    }
-
-    .problem-body p {
-      color: var(--muted);
-      margin-bottom: 1.2rem;
-      max-width: 580px;
-    }
-
-    .problem-body p strong {
-      color: var(--ink);
-      font-weight: 500;
-    }
-
-    /* WHAT WE DO */
-    .services {
-      background: var(--ink);
-      padding: 7rem 4rem;
-    }
-
-    .services-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .services-header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      margin-bottom: 5rem;
-      padding-bottom: 4rem;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .services-header h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 300;
-      color: #fff;
-      line-height: 1.15;
-    }
-
-    .services-header p {
-      color: rgba(255,255,255,0.5);
-      font-size: 1rem;
-      line-height: 1.8;
-      padding-top: 0.5rem;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 3rem;
-    }
-
-    .service-item {
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255,255,255,0.12);
-    }
-
-    .service-number {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.9rem;
-      color: var(--warm);
-      margin-bottom: 1.2rem;
-      letter-spacing: 0.1em;
-    }
-
-    .service-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      font-weight: 400;
-      color: #fff;
-      margin-bottom: 0.8rem;
-      line-height: 1.2;
-    }
-
-    .service-desc {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.45);
-      line-height: 1.75;
-    }
-
-    /* WHO */
-    .about {
-      padding: 7rem 4rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8rem;
-      align-items: start;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .about-left .section-label {
-      margin-bottom: 2rem;
-    }
-
-    .about-left h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3vw, 2.8rem);
-      font-weight: 300;
-      line-height: 1.2;
-      margin-bottom: 2rem;
-      color: var(--navy);
-    }
-
-    .about-left h2 em {
-      font-style: italic;
-      color: var(--warm);
-    }
-
-    .about-left p {
-      color: var(--muted);
-      margin-bottom: 1.2rem;
-      line-height: 1.8;
-    }
-
-    .about-left p strong {
-      color: var(--ink);
-      font-weight: 500;
-    }
-
-    .about-right {
-      padding-top: 3.5rem;
-    }
-
-    .credential {
-      padding: 1.8rem 0;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .credential:first-child {
-      border-top: 1px solid var(--rule);
-    }
-
-    .credential-org {
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--warm);
-      margin-bottom: 0.3rem;
-    }
-
-    .credential-role {
-      font-size: 0.95rem;
-      color: var(--ink);
-      line-height: 1.4;
-    }
-
-    .credential-years {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 0.2rem;
-    }
-
-    /* WRITING */
-    .writing {
-      background: #f0ece5;
-      padding: 7rem 4rem;
-    }
-
-    .writing-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .writing-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 4rem;
-    }
-
-    .writing-header h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      font-weight: 300;
-      color: var(--navy);
-    }
-
-    .writing-header a {
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--ink);
-      text-decoration: none;
-      border-bottom: 1px solid var(--ink);
-      padding-bottom: 2px;
-      transition: color 0.2s;
-      white-space: nowrap;
-      margin-left: 2rem;
-    }
-
-    .writing-header a:hover { color: var(--warm); border-color: var(--warm); }
-
-    .articles {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-    }
-
-    .article-card {
-      background: var(--paper);
-      padding: 2.5rem;
-      text-decoration: none;
-      color: inherit;
-      transition: background 0.2s;
-      display: block;
-    }
-
-    .article-card:hover {
-      background: #fff;
-    }
-
-    .article-date {
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--warm);
-      margin-bottom: 1rem;
-    }
-
-    .article-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem;
-      font-weight: 400;
-      line-height: 1.3;
-      color: var(--navy);
-      margin-bottom: 1rem;
-    }
-
-    .article-excerpt {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    /* CTA */
-    .cta {
-      padding: 8rem 4rem;
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .cta .section-label {
-      margin-bottom: 2rem;
-      display: block;
-    }
-
-    .cta h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 4vw, 3.5rem);
-      font-weight: 300;
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-      color: var(--navy);
-    }
-
-    .cta h2 em {
-      font-style: italic;
-      color: var(--warm);
-    }
-
-    .cta p {
-      color: var(--muted);
-      margin-bottom: 3rem;
-      font-size: 1.05rem;
-    }
-
-    .cta-email {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      color: var(--ink);
-      text-decoration: none;
-      border-bottom: 1px solid var(--warm);
-      padding-bottom: 3px;
-      transition: color 0.2s;
-    }
-
-    .cta-email:hover { color: var(--warm); }
-
-    /* FOOTER */
-    footer {
-      background: var(--ink);
-      padding: 3rem 4rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .footer-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .footer-mark { flex-shrink: 0; display: block; }
-
-    .footer-lockup {
-      display: flex;
-      flex-direction: column;
-      line-height: 1;
-    }
-
-    .footer-word {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.05rem;
-      color: #fff;
-      letter-spacing: -0.01em;
-      line-height: 1;
-    }
-
-    .footer-systems {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      margin-top: 4px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.46rem;
-      font-weight: 500;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--warm);
-    }
-
-    .footer-systems i {
-      height: 1px;
-      width: 11px;
-      background: var(--warm);
-      display: block;
-    }
-
-    .footer-copy {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.3);
-      letter-spacing: 0.06em;
-    }
-
-    .footer-link {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.4);
-      text-decoration: none;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-
-    .footer-link:hover { color: var(--warm); }
-
-    /* ANIMATIONS */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .hero-left > * {
-      animation: fadeUp 0.7s ease both;
-    }
-
-    .hero-eyebrow { animation-delay: 0.1s; }
-    .hero-headline { animation-delay: 0.25s; }
-    .hero-sub { animation-delay: 0.4s; }
-    .btn-primary { animation-delay: 0.55s; }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      nav { padding: 1.2rem 2rem; }
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-left { padding: 6rem 2rem 3rem; border-right: none; border-bottom: 1px solid var(--rule); }
-      .hero-right { padding: 3rem 2rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; background: var(--ink); }
-      .hero-stat { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-      .stat-number { font-size: 2.2rem; }
-      .problem { grid-template-columns: 1fr; gap: 2rem; padding: 4rem 2rem; }
-      .services { padding: 4rem 2rem; }
-      .services-header { grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 3rem; }
-      .services-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .about { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 2rem; }
-      .writing { padding: 4rem 2rem; }
-      .writing-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
-      .articles { grid-template-columns: 1fr; }
-      .cta { padding: 5rem 2rem; }
-      footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Corework Systems | Workforce & Talent Strategy Advisory</title>
+<meta name="description" content="Corework Systems helps organizations turn workforce and talent priorities into clearer decisions, stronger manager practices, practical capability, and operating systems that can sustain the change.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #0E1117;
+  --navy: #1A3A6B;
+  --paper: #F7F5F1;
+  --warm: #B85C2A;
+  --muted: #76726c;
+  --rule: #ddd9d3;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+.nav-mark { flex-shrink: 0; display: block; }
+.nav-wordmark { display: flex; flex-direction: column; line-height: 1; }
+.nav-word { font-family: 'DM Serif Display', serif; font-size: 1.18rem; color: var(--ink); letter-spacing: -0.01em; line-height: 1; }
+.nav-systems { display: flex; align-items: center; gap: 5px; margin-top: 4px; font-family: 'DM Sans', sans-serif; font-size: 0.5rem; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: var(--warm); }
+.nav-systems i { height: 1px; width: 14px; background: var(--warm); display: block; }
+
+.nav-links { display: flex; align-items: center; gap: 2.5rem; }
+.nav-link { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-link:hover, .nav-link.active { color: var(--ink); }
+
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); margin: 5px 0; transition: transform 0.2s ease, opacity 0.2s ease; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.hero { max-width: 800px; margin: 0 auto; padding: 11rem 4rem 4rem; }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.6rem, 5vw, 3.8rem); font-weight: 300; line-height: 1.15; color: var(--navy); margin-bottom: 1.6rem; }
+.hero p { color: var(--muted); max-width: 640px; margin-bottom: 2rem; }
+
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 2.2rem; margin-bottom: 2.4rem; }
+.hero-cta { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
+.hero-cta:hover { color: var(--warm); border-color: var(--warm); }
+.hero-cta.secondary { color: var(--muted); border-color: var(--rule); }
+.hero-cta.secondary:hover { color: var(--warm); border-color: var(--warm); }
+
+.tag-strip { font-size: 0.82rem; color: var(--muted); padding-top: 1.8rem; border-top: 1px solid var(--rule); font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; }
+
+section.block { max-width: 800px; margin: 0 auto; padding: 3rem 4rem; border-top: 1px solid var(--rule); }
+section.block h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.2vw, 2.4rem); font-weight: 300; color: var(--navy); margin-bottom: 1.4rem; line-height: 1.25; }
+section.block p { color: var(--muted); margin-bottom: 1.1rem; max-width: 660px; }
+
+.pull-line { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--navy); font-weight: 400; margin-top: 1.8rem; padding: 1.2rem 1.6rem; border-left: 2px solid var(--warm); background: rgba(184,92,42,0.05); }
+
+.section-eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm); margin-bottom: 1.6rem; }
+
+.problem-grid { display: flex; flex-direction: column; gap: 2rem; margin-top: 0.5rem; }
+.problem-item { padding-top: 1.8rem; border-top: 1px solid var(--rule); }
+.problem-item:first-child { border-top: none; padding-top: 0; }
+.problem-headline { font-size: 1.02rem; color: var(--ink); font-weight: 500; margin-bottom: 0.6rem; }
+.problem-item a.product-link { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--navy); text-decoration: none; display: inline-block; margin-bottom: 0.5rem; }
+.problem-item a.product-link:hover { color: var(--warm); }
+.problem-item p { margin-bottom: 0; }
+
+.see-more { margin-top: 2rem; display: inline-block; }
+
+.dim-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1.4rem 0 1.6rem; }
+.dim-tags span { font-size: 0.8rem; font-weight: 500; color: var(--navy); background: rgba(26,58,107,0.06); border: 1px solid rgba(26,58,107,0.15); padding: 0.4rem 0.9rem; border-radius: 100px; }
+
+.arrow-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin: 1.4rem 0 1.6rem; }
+.arrow-list li { display: flex; gap: 1rem; align-items: flex-start; color: var(--muted); }
+.arrow-list li span { color: var(--warm); font-size: 1.05rem; line-height: 1.6; flex-shrink: 0; }
+
+.about-block p strong { color: var(--ink); font-weight: 500; }
+
+.subscribe-inline { display: flex; gap: 0.6rem; margin-top: 1rem; flex-wrap: wrap; }
+.subscribe-inline input[type="email"] {
+  flex: 1; min-width: 200px; font-family: 'DM Sans', sans-serif; font-size: 0.92rem; font-weight: 300; color: var(--ink);
+  padding: 0.7rem 0.9rem; border: 1px solid var(--rule); background: #fff;
+}
+.subscribe-inline input[type="email"]:focus { outline: none; border-color: var(--warm); }
+.subscribe-inline button {
+  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+  background: var(--navy); color: #fff; border: none; padding: 0.7rem 1.4rem; cursor: pointer; transition: background 0.2s;
+}
+.subscribe-inline button:hover { background: var(--ink); }
+
+.cta { padding: 6.5rem 4rem; text-align: center; max-width: 700px; margin: 0 auto; }
+.cta .section-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm); margin-bottom: 1.5rem; display: block; }
+.cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 300; line-height: 1.2; margin-bottom: 1.3rem; color: var(--navy); }
+.cta p { color: var(--muted); margin-bottom: 2rem; }
+.cta-email { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--warm); padding-bottom: 3px; }
+.cta-email:hover { color: var(--warm); }
+
+footer { background: var(--ink); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.06); }
+.footer-logo { display: flex; align-items: center; gap: 10px; }
+.footer-lockup { display: flex; flex-direction: column; line-height: 1; }
+.footer-word { font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: #fff; letter-spacing: -0.01em; }
+.footer-systems { display: flex; align-items: center; gap: 4px; margin-top: 4px; font-size: 0.46rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--warm); }
+.footer-systems i { height: 1px; width: 11px; background: var(--warm); display: block; }
+.footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
+.footer-link { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; }
+.footer-link:hover { color: var(--warm); }
+
+@media (max-width: 900px) {
+  nav { padding: 1.2rem 2rem; }
+  .nav-toggle { display: block; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.4rem;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    padding: 1.8rem 2rem 2.2rem;
+  }
+  .nav-links.open { display: flex; }
+  .hero, section.block, .cta { padding-left: 2rem; padding-right: 2rem; }
+  footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
+}
+</style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#" class="nav-logo" aria-label="Corework Systems home">
-      <svg class="nav-mark" width="23" height="26" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
-        <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
-        <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.35"/>
-      </svg>
-      <span class="nav-wordmark">
-        <span class="nav-word">Corework</span>
-        <span class="nav-systems"><i></i>Systems<i></i></span>
-      </span>
-    </a>
-    <a href="#contact" class="nav-cta">Let's Talk</a>
-  </nav>
-
-  <!-- OPENING STATEMENT -->
-  <div style="background: var(--ink); padding: 1.1rem 4rem; text-align: center; margin-top: 80px;">
-    <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 400; color: rgba(255,255,255,0.85); letter-spacing: 0.03em; margin: 0;">Most organizations don't have a skills problem. They have a <em style="color: var(--warm); font-style: italic;">system</em> problem.</p>
+<nav>
+  <a href="index.html" class="nav-logo" aria-label="Corework Systems home">
+    <svg class="nav-mark" width="23" height="26" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
+      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
+      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.35"/>
+    </svg>
+    <span class="nav-wordmark">
+      <span class="nav-word">Corework</span>
+      <span class="nav-systems"><i></i>Systems<i></i></span>
+    </span>
+  </a>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html" class="nav-link active">Home</a>
+    <a href="how-we-help.html" class="nav-link">How We Help</a>
+    <a href="insights.html" class="nav-link">Insights</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html#contact" class="nav-link">Contact</a>
   </div>
+  <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-  <!-- HERO -->
-  <section class="hero" style="padding-top: 0;">
-    <div class="hero-left">
-      <p class="hero-eyebrow">Workforce Systems Advisory</p>
-      <h1 class="hero-headline">Building the systems and leadership capability organizations need to turn workforce strategy into practice.</h1>
-      <p class="hero-sub">Organizations often change strategy, technology, and workforce expectations without changing the systems and leadership practices underneath them. Corework helps leaders build the capability, decision infrastructure, and operating conditions needed to make those changes stick.</p>
-      <a href="#contact" class="btn-primary">Start the Conversation</a>
-    </div>
-    <div class="hero-right">
-      <div class="hero-stat">
-        <div class="stat-number">25+</div>
-        <div class="stat-label">Years designing and scaling<br>talent and workforce systems</div>
-      </div>
-      <div class="hero-stat">
-        <div class="stat-number">2M+</div>
-        <div class="stat-label">Workers impacted through<br>employer coalition work</div>
-      </div>
-      <div class="hero-stat">
-        <div class="stat-number">50+</div>
-        <div class="stat-label">Fortune 500 employers advised<br>on skills-first strategy</div>
-      </div>
-    </div>
-  </section>
+<section class="hero">
+  <h1>Workforce strategy only matters when it changes how the organization works.</h1>
+  <p>Corework Systems helps organizations turn workforce and talent priorities into clearer decisions, stronger manager practices, practical capability, and operating systems that can sustain the change.</p>
+  <div class="hero-ctas">
+    <a href="how-we-help.html" class="hero-cta">Explore How We Help →</a>
+    <a href="contact.html#contact" class="hero-cta secondary">Talk with Corework →</a>
+  </div>
+</section>
 
-  <!-- PROBLEM -->
-  <section class="problem">
-    <div class="section-label">The Problem</div>
-    <div class="problem-body">
-      <h2>We finish the work most organizations start but never operationalize.</h2>
-      <p>Most organizations treat skills-first as a mindset shift, pilot, or program — not infrastructure. They invest in the idea without building the system. That's where the work is.</p>
-      <p>The result is predictable: pilots stall, managers are asked to execute what doesn't exist, and workforce strategy stays trapped in policy, platforms, and presentations instead of changing real decisions.</p>
-      <ul style="list-style: none; margin-top: 1.2rem; display: flex; flex-direction: column; gap: 0.9rem;">
-        <li style="display: flex; gap: 1rem; align-items: flex-start; color: var(--muted);"><span style="color: var(--warm); font-size: 1.1rem; line-height: 1.6; flex-shrink: 0;">→</span> Diagnose where systems break across hiring, development, and mobility</li>
-        <li style="display: flex; gap: 1rem; align-items: flex-start; color: var(--muted);"><span style="color: var(--warm); font-size: 1.1rem; line-height: 1.6; flex-shrink: 0;">→</span> Design governance, incentives, and measurement that make capability usable</li>
-        <li style="display: flex; gap: 1rem; align-items: flex-start; color: var(--muted);"><span style="color: var(--warm); font-size: 1.1rem; line-height: 1.6; flex-shrink: 0;">→</span> Align fragmented hiring, learning, mobility, and workforce planning efforts into one coherent talent operating model</li>
-      </ul>
-      <p style="margin-top: 2.5rem;"><strong>We work with</strong> leadership teams whose systems aren't producing the outcomes they expect.</p>
-      <p style="margin-top: 2rem; color: var(--ink); font-style: italic;">We work directly with senior leaders to diagnose and redesign systems quickly—without adding layers or slowing the business.</p>
-      <p style="margin-top: 1rem; color: var(--warm); font-size: 0.9rem; font-weight: 500; letter-spacing: 0.06em;">Typical starting points include:</p>
-      <ul style="list-style: none; margin-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem;">
-        <li style="display: flex; gap: 1rem; align-items: flex-start; color: var(--muted); font-size: 0.9rem;"><span style="color: var(--warm); flex-shrink: 0;">–</span> Corework Leadership Pathway</li>
-        <li style="display: flex; gap: 1rem; align-items: flex-start; color: var(--muted); font-size: 0.9rem;"><span style="color: var(--warm); flex-shrink: 0;">–</span> Manager Effectiveness Program</li>
-        <li style="display: flex; gap: 1rem; align-items: flex-start; color: var(--muted); font-size: 0.9rem;"><span style="color: var(--warm); flex-shrink: 0;">–</span> Workforce System Diagnostic</li>
-        <li style="display: flex; gap: 1rem; align-items: flex-start; color: var(--muted); font-size: 0.9rem;"><span style="color: var(--warm); flex-shrink: 0;">–</span> Workforce & Talent Strategy Intensive</li>
-        <li style="display: flex; gap: 1rem; align-items: flex-start; color: var(--muted); font-size: 0.9rem;"><span style="color: var(--warm); flex-shrink: 0;">–</span> Targeted redesign of workforce and talent systems</li>
-      </ul>
-    </div>
-  </section>
+<section class="block">
+  <h2>The gap between strategy and execution is where good ideas get stuck.</h2>
+  <p>Organizations change strategy, introduce new technology, redefine skills, invest in leaders, and redesign talent practices. But execution still depends on what sits underneath that work:</p>
+  <ul class="arrow-list">
+    <li><span>→</span> Who owns the work</li>
+    <li><span>→</span> What people need to be able to do</li>
+    <li><span>→</span> How decisions get made</li>
+    <li><span>→</span> What managers are expected and enabled to do</li>
+    <li><span>→</span> How the change becomes part of everyday work</li>
+    <li><span>→</span> How the organization knows what is working and adapts</li>
+  </ul>
+  <p>When those pieces do not change together, good strategies remain unfinished.</p>
+  <p class="pull-line">Corework works in that gap.</p>
+</section>
 
-  <!-- SERVICES -->
-  <section class="services">
-    <div class="services-inner">
-      <div class="services-header">
-        <h2>What we build with you</h2>
-        <p>We don't deliver frameworks to admire. We build operating infrastructure your leaders, managers, and teams can actually use.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-item">
-          <div class="service-number">01</div>
-          <div class="service-title">Corework Leadership Pathway</div>
-          <p class="service-desc">A three-level, cohort-based leadership model — from new managers to enterprise leaders — deployable as a full pathway or at the level where the need is.</p>
-        </div>
-        <div class="service-item">
-          <div class="service-number">02</div>
-          <div class="service-title">Manager Effectiveness Program</div>
-          <p class="service-desc">A focused two-week sprint for a current manager-performance problem, starting with a rapid context scan and built around the behaviors that need to change now.</p>
-        </div>
-        <div class="service-item">
-          <div class="service-number">03</div>
-          <div class="service-title">Succession & Internal Mobility Design</div>
-          <p class="service-desc">Clarifying what "ready for the next level" actually means, how it's assessed, and whether it's applied consistently across the organization.</p>
-        </div>
-        <div class="service-item">
-          <div class="service-number">04</div>
-          <div class="service-title">Workforce & Talent Strategy Intensive</div>
-          <p class="service-desc">A facilitated engagement that turns workforce and talent priorities into an executable strategy — clarifying ownership and what has to change to move from intention to practice.</p>
-        </div>
-        <div class="service-item">
-          <div class="service-number">05</div>
-          <div class="service-title">Workforce System Diagnostic</div>
-          <p class="service-desc">A fixed-scope diagnostic that identifies where a workforce or talent strategy is breaking between intent and execution, and what to fix first.</p>
-        </div>
-      </div>
+<section class="block">
+  <h2>Start with the problem in front of you.</h2>
+  <div class="problem-grid">
+    <div class="problem-item">
+      <div class="problem-headline">Build stronger leaders at every level</div>
+      <a href="leadership-pathway.html" class="product-link">Corework Leadership Pathway</a>
+      <p>Prepare leaders for the different work required as their responsibility grows.</p>
     </div>
-  </section>
+    <div class="problem-item">
+      <div class="problem-headline">Improve how managers execute</div>
+      <a href="manager-effectiveness.html" class="product-link">Manager Effectiveness Program</a>
+      <p>Address a specific manager-performance challenge and the conditions affecting execution.</p>
+    </div>
+    <div class="problem-item">
+      <div class="problem-headline">Make better succession and mobility decisions</div>
+      <a href="succession-mobility.html" class="product-link">Succession & Internal Mobility Design</a>
+      <p>Strengthen how readiness is defined, assessed, and used in advancement decisions.</p>
+    </div>
+    <div class="problem-item">
+      <div class="problem-headline">Turn an important workforce priority into a workable strategy</div>
+      <a href="strategy-intensive.html" class="product-link">Workforce & Talent Strategy Intensive</a>
+      <p>Help senior leaders make the choices, tradeoffs, and ownership decisions needed to move forward.</p>
+    </div>
+    <div class="problem-item">
+      <div class="problem-headline">Find where a strategy is breaking down</div>
+      <a href="workforce-diagnostic.html" class="product-link">Workforce System Diagnostic</a>
+      <p>Identify what is preventing a workforce or talent strategy from becoming operating practice and where to focus first.</p>
+    </div>
+  </div>
+  <a href="how-we-help.html" class="hero-cta see-more">See How We Help →</a>
+</section>
 
-  <!-- ABOUT -->
-  <section class="about">
-    <div class="about-left">
-      <p class="section-label">Who We Are</p>
-      <h2>A practitioner who has <em>built</em> these systems — not just advised on them</h2>
-      <p>Corework Systems is led by <strong>Richard Dubuisson</strong>, a workforce and talent strategist with 25+ years at the intersection of employers, workforce systems, and learning.</p>
-      <p>Richard helped shape early employer efforts behind today's skills-first movement — leading coalitions, building enterprise learning architectures, and advising CHROs and CEOs.</p>
-      <p>His approach is grounded in a simple conviction: <strong>skills-first is not a program to adopt. It is infrastructure to build.</strong> Infrastructure requires governance, ownership, and the willingness to redesign systems.</p>
-      <p>He writes regularly about the "unfinished systems" of the talent economy — and what leadership actually requires to complete them.</p>
-    </div>
-    <div class="about-right">
-      <div class="credential">
-        <div class="credential-org">OneTen</div>
-        <div class="credential-role">EVP, Talent Solutions — National coalition of 50+ Fortune 500 employers</div>
-        <div class="credential-years">2025 – 2026</div>
-      </div>
-      <div class="credential">
-        <div class="credential-org">Grads of Life</div>
-        <div class="credential-role">Partner, Learning & Advisory — Workforce transformation for major enterprise employers</div>
-        <div class="credential-years">2018 – 2025</div>
-      </div>
-      <div class="credential">
-        <div class="credential-org">Year Up</div>
-        <div class="credential-role">Founding Academic Director & Senior Executive Roles</div>
-        <div class="credential-years">2001 – 2019</div>
-      </div>
-      <div class="credential">
-        <div class="credential-org">LinkedIn Learning</div>
-        <div class="credential-role">Instructor — Skills-First Talent Acquisition (20,000+ learners globally)</div>
-        <div class="credential-years">2023 – Present</div>
-      </div>
-      <div class="credential">
-        <div class="credential-org">Duke University</div>
-        <div class="credential-role">BA, French, History & Education</div>
-        <div class="credential-years"></div>
-      </div>
-    </div>
-  </section>
+<section class="block about-block">
+  <h2>Principal-led advisory grounded in real operating experience.</h2>
+  <p>Corework Systems was founded by <strong>Richard Dubuisson</strong>, a workforce and talent strategist with more than 25 years of experience helping employers, leaders, and workforce organizations translate strategy into practice.</p>
+  <p>His work has spanned enterprise workforce strategy, skills-first transformation, leadership and manager development, talent systems, learning, and executive advisory work with major employers and national workforce initiatives.</p>
+  <a href="about.html" class="hero-cta">About Corework →</a>
+</section>
 
-  <!-- WRITING -->
-  <section class="writing">
-    <div class="writing-inner">
-      <div class="writing-header">
-        <h2>The Unfinished System</h2>
-        <a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank">Read on LinkedIn →</a>
-      </div>
-      <div class="articles">
-        <a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" class="article-card">
-          <div class="article-date">Field Note</div>
-          <div class="article-title">Why Skills-First Pilots Succeed — and Still Don't Scale</div>
-          <p class="article-excerpt">Pilots often prove the idea. What they don't prove is whether the organization has the governance, ownership, and operating model to scale it.</p>
-        </a>
-        <a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" class="article-card">
-          <div class="article-date">AI and Workforce Systems</div>
-          <div class="article-title">AI Won't Fix Broken Talent Systems — It Will Expose Them</div>
-          <p class="article-excerpt">AI makes skills infrastructure more urgent, not less. Without governance and decision architecture, it scales the assumptions already embedded in the system.</p>
-        </a>
-        <a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" class="article-card">
-          <div class="article-date">Governance</div>
-          <div class="article-title">Who Actually Owns Skills-First?</div>
-          <p class="article-excerpt">The real gap isn't effort. It's ownership. Skills-first becomes operational only when someone is accountable for the system, not just the initiative.</p>
-        </a>
-      </div>
-    </div>
-  </section>
+<section class="block">
+  <h2>Corework Insights</h2>
+  <p>Ideas and practical frameworks for leaders working through workforce transformation, AI adoption, skills, leadership, and the systems underneath them.</p>
+  <a href="insights.html" class="hero-cta">Read Corework Insights →</a>
+  <!-- FORM: wired to Formspree -->
+  <form action="https://formspree.io/f/xvkojgqv" method="POST" class="subscribe-inline">
+    <input type="email" name="email" placeholder="Work email" required>
+    <button type="submit">Subscribe to Corework Insights</button>
+  </form>
+</section>
 
-  <!-- CTA -->
-  <section class="cta" id="contact">
-    <span class="section-label">Let's Talk</span>
-    <h2>Ready to finish your <em>unfinished system?</em></h2>
-    <p>If you are trying to strengthen your leadership pipeline, improve manager performance, or move a workforce strategy from intention into operating practice, let's talk.</p>
-    <a href="mailto:richard@coreworksystems.com" class="cta-email">richard@coreworksystems.com</a>
-  </section>
+<section class="cta" id="contact">
+  <span class="section-label">Something Should Be Working Better by Now</span>
+  <h2>Start with what you are seeing.</h2>
+  <p>You do not need to know yet whether the issue is strategy, capability, manager execution, decision-making, or the system around them.</p>
+  <a href="contact.html#contact" class="cta-email">Let's Talk</a>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-logo">
-      <svg class="footer-mark" width="20" height="23" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
-        <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
-        <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.45"/>
-      </svg>
-      <span class="footer-lockup">
-        <span class="footer-word">Corework</span>
-        <span class="footer-systems"><i></i>Systems<i></i></span>
-      </span>
-    </div>
-    <div class="footer-copy">© 2026 Corework Systems</div>
-    <a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" class="footer-link">LinkedIn</a>
-  </footer>
+<footer>
+  <div class="footer-logo">
+    <svg class="footer-mark" width="20" height="23" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
+      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
+      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.45"/>
+    </svg>
+    <span class="footer-lockup">
+      <span class="footer-word">Corework</span>
+      <span class="footer-systems"><i></i>Systems<i></i></span>
+    </span>
+  </div>
+  <div class="footer-copy">© 2026 Corework Systems</div>
+  <a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" class="footer-link">LinkedIn</a>
+</footer>
+
+<script>
+var navToggle = document.getElementById('nav-toggle');
+var navLinks = document.getElementById('nav-links');
+navToggle.addEventListener('click', function() {
+  var isOpen = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+});
+navLinks.querySelectorAll('.nav-link').forEach(function(link) {
+  link.addEventListener('click', function() {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+</script>
 
 </body>
 </html>

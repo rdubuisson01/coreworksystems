@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Corework Insights | Corework Systems</title>
+<meta name="description" content="Ideas, frameworks, and observations on workforce transformation, leadership, AI, skills, and the systems that determine whether change actually takes hold.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #0E1117;
+  --navy: #1A3A6B;
+  --paper: #F7F5F1;
+  --warm: #B85C2A;
+  --muted: #76726c;
+  --rule: #ddd9d3;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+.nav-mark { flex-shrink: 0; display: block; }
+.nav-wordmark { display: flex; flex-direction: column; line-height: 1; }
+.nav-word { font-family: 'DM Serif Display', serif; font-size: 1.18rem; color: var(--ink); letter-spacing: -0.01em; line-height: 1; }
+.nav-systems { display: flex; align-items: center; gap: 5px; margin-top: 4px; font-family: 'DM Sans', sans-serif; font-size: 0.5rem; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: var(--warm); }
+.nav-systems i { height: 1px; width: 14px; background: var(--warm); display: block; }
+
+.nav-links { display: flex; align-items: center; gap: 2.5rem; }
+.nav-link { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-link:hover, .nav-link.active { color: var(--ink); }
+
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); margin: 5px 0; transition: transform 0.2s ease, opacity 0.2s ease; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.hero { max-width: 800px; margin: 0 auto; padding: 11rem 4rem 3rem; }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 4vw, 3.4rem); font-weight: 300; line-height: 1.15; color: var(--navy); margin-bottom: 1.4rem; }
+.hero p { color: var(--muted); max-width: 620px; margin-bottom: 1.6rem; }
+.hero-cta { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
+.hero-cta:hover { color: var(--warm); border-color: var(--warm); }
+
+section.block { max-width: 800px; margin: 0 auto; padding: 2.75rem 4rem; border-top: 1px solid var(--rule); }
+.section-eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm); margin-bottom: 1.8rem; }
+
+.featured-card { border: 1px solid var(--rule); background: #fff; padding: 2.4rem; }
+.featured-title { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; color: var(--navy); text-decoration: none; line-height: 1.3; display: inline-block; margin-bottom: 1rem; }
+.featured-title:hover { color: var(--warm); }
+.featured-card p { color: var(--muted); margin-bottom: 1.2rem; max-width: 100%; }
+.insight-meta { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--warm); margin-bottom: 1.2rem; }
+.insight-meta .dot { color: var(--muted); margin: 0 0.5rem; font-weight: 300; text-transform: none; letter-spacing: 0; }
+.read-link { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
+.read-link:hover { color: var(--warm); border-color: var(--warm); }
+
+.insight-list { display: flex; flex-direction: column; gap: 2.2rem; }
+.insight-item { padding-top: 2rem; border-top: 1px solid var(--rule); }
+.insight-item:first-child { border-top: none; padding-top: 0; }
+.insight-title { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; color: var(--navy); text-decoration: none; line-height: 1.3; display: inline-block; margin-bottom: 0.7rem; }
+.insight-title:hover { color: var(--warm); }
+.insight-item p { color: var(--muted); margin-bottom: 1rem; max-width: 100%; }
+
+section.block p { color: var(--muted); margin-bottom: 1.1rem; max-width: 660px; }
+section.block h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 2.8vw, 2rem); font-weight: 300; color: var(--navy); margin-bottom: 1.2rem; line-height: 1.3; }
+section.block p strong { color: var(--ink); font-weight: 500; }
+
+.subscribe-inline { display: flex; gap: 0.6rem; margin-top: 1.4rem; flex-wrap: wrap; }
+.subscribe-inline input[type="email"] {
+  flex: 1; min-width: 200px; font-family: 'DM Sans', sans-serif; font-size: 0.92rem; font-weight: 300; color: var(--ink);
+  padding: 0.7rem 0.9rem; border: 1px solid var(--rule); background: #fff;
+}
+.subscribe-inline input[type="email"]:focus { outline: none; border-color: var(--warm); }
+.subscribe-inline button {
+  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+  background: var(--navy); color: #fff; border: none; padding: 0.9rem 1.6rem; cursor: pointer; transition: background 0.2s;
+}
+.subscribe-inline button:hover { background: var(--ink); }
+
+footer { background: var(--ink); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.06); }
+.footer-logo { display: flex; align-items: center; gap: 10px; }
+.footer-lockup { display: flex; flex-direction: column; line-height: 1; }
+.footer-word { font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: #fff; letter-spacing: -0.01em; }
+.footer-systems { display: flex; align-items: center; gap: 4px; margin-top: 4px; font-size: 0.46rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--warm); }
+.footer-systems i { height: 1px; width: 11px; background: var(--warm); display: block; }
+.footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
+.footer-link { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; }
+.footer-link:hover { color: var(--warm); }
+
+@media (max-width: 900px) {
+  nav { padding: 1.2rem 2rem; }
+  .nav-toggle { display: block; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.4rem;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    padding: 1.8rem 2rem 2.2rem;
+  }
+  .nav-links.open { display: flex; }
+  .hero, section.block { padding-left: 2rem; padding-right: 2rem; }
+  .featured-card { padding: 1.6rem; }
+  footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo" aria-label="Corework Systems home">
+    <svg class="nav-mark" width="23" height="26" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
+      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
+      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.35"/>
+    </svg>
+    <span class="nav-wordmark">
+      <span class="nav-word">Corework</span>
+      <span class="nav-systems"><i></i>Systems<i></i></span>
+    </span>
+  </a>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="how-we-help.html" class="nav-link">How We Help</a>
+    <a href="insights.html" class="nav-link active">Insights</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html#contact" class="nav-link">Contact</a>
+  </div>
+  <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section class="hero">
+  <h1>Corework Insights</h1>
+  <p>Ideas, frameworks, and observations on workforce transformation, leadership, AI, skills, and the systems that determine whether change actually takes hold.</p>
+  <a href="#subscribe" class="hero-cta">Subscribe to Corework Insights →</a>
+</section>
+
+<section class="block">
+  <p class="section-eyebrow">Featured Insight</p>
+  <div class="featured-card">
+    <a href="article-enterprise-ai-repeating-mistake.html" class="featured-title">Enterprise AI Is Repeating The Same Mistake We Made With Skills-First</a>
+    <p>Organizations are investing heavily in AI while leaving the operating systems around the work largely unchanged. Skills-first followed the same pattern. The technology or strategy may be sound, but unclear ownership, decision rights, manager expectations, and measures can prevent it from becoming normal operating practice.</p>
+    <div class="insight-meta">AI & Workforce Transformation <span class="dot">·</span> July 8, 2026</div>
+    <a href="article-enterprise-ai-repeating-mistake.html" class="read-link">Read the Article →</a>
+  </div>
+</section>
+
+<section class="block">
+  <p class="section-eyebrow">Latest Insights</p>
+  <div class="insight-list">
+
+    <div class="insight-item">
+      <a href="article-pilot-trap.html" class="insight-title">The Skills-First Pilot Trap: Why "Successful" Pilots Rarely Scale</a>
+      <p>Many pilots succeed because they operate with support, attention, and protections that disappear at scale. The more important question is whether the organization has changed enough for the new approach to survive under normal operating conditions.</p>
+      <div class="insight-meta">Scaling & System Design <span class="dot">·</span> May 12, 2026</div>
+      <a href="article-pilot-trap.html" class="read-link">Read →</a>
+    </div>
+
+    <div class="insight-item">
+      <a href="article-measuring-skills-first-wrong-way.html" class="insight-title">Most Organizations are Measuring Skills-First the Wrong Way</a>
+      <p>Adoption metrics can tell leaders whether skills-first activity is happening. They cannot tell them whether the talent system is actually performing better. This piece looks at the shift from measuring activity to measuring system performance.</p>
+      <div class="insight-meta">Measurement & Adaptation <span class="dot">·</span> March 17, 2026</div>
+      <a href="article-measuring-skills-first-wrong-way.html" class="read-link">Read →</a>
+    </div>
+
+    <div class="insight-item">
+      <a href="article-skills-first-system.html" class="insight-title">What a Skills-First Talent System Actually Looks Like</a>
+      <p>Skills-first becomes operating reality only when organizations build the infrastructure around it: shared skills and job architecture, credible assessment, talent deployment, capability development, and governance. Individual tools and pilots are not a talent system.</p>
+      <div class="insight-meta">Talent Systems <span class="dot">·</span> February 24, 2026</div>
+      <a href="article-skills-first-system.html" class="read-link">Read →</a>
+    </div>
+
+    <div class="insight-item">
+      <a href="article-ai-wont-fix-broken-systems.html" class="insight-title">AI Won't Fix Broken Talent Systems. It Will Expose Them.</a>
+      <p>AI scales the patterns already embedded in talent systems. If roles, skills, assessments, and decision standards are unclear, automation can amplify those weaknesses rather than solve them.</p>
+      <div class="insight-meta">AI & Talent Systems <span class="dot">·</span> February 3, 2026</div>
+      <a href="article-ai-wont-fix-broken-systems.html" class="read-link">Read →</a>
+    </div>
+
+    <div class="insight-item">
+      <a href="article-who-owns-skills-first.html" class="insight-title">Who Actually Owns Skills-First?</a>
+      <p>When ownership is fragmented across HR, talent, learning, workforce planning, and the business, standards drift and managers are left to improvise. Sustainable skills-first systems require explicit stewardship, authority, and accountability.</p>
+      <div class="insight-meta">Ownership & Governance <span class="dot">·</span> January 27, 2026</div>
+      <a href="article-who-owns-skills-first.html" class="read-link">Read →</a>
+    </div>
+
+    <div class="insight-item">
+      <a href="article-managers-stress-test.html" class="insight-title">Skills-First Talent Strategies Live or Die With Managers, But We've Set Most of Them Up to Fail</a>
+      <p>Managers are often treated as the barrier to skills-first adoption even though they are being asked to make different talent decisions inside systems that still reward old behavior. Managers are less the problem than the stress test for whether the surrounding system actually works.</p>
+      <div class="insight-meta">Managers & Execution <span class="dot">·</span> January 20, 2026</div>
+      <a href="article-managers-stress-test.html" class="read-link">Read →</a>
+    </div>
+
+    <div class="insight-item">
+      <a href="article-skills-first-stalls.html" class="insight-title">Why Skills-First Talent Strategies Stall at Scale</a>
+      <p>Skills-first efforts often stall because organizations layer new practices onto talent systems built around older assumptions. Moving from promising pilots to enterprise adoption requires governance, integration, manager support, and clear links to business demand.</p>
+      <div class="insight-meta">Skills-First Transformation <span class="dot">·</span> January 13, 2026</div>
+      <a href="article-skills-first-stalls.html" class="read-link">Read →</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="block">
+  <h2>The Unfinished System</h2>
+  <p>Across these pieces, one pattern keeps resurfacing: organizations change strategy, technology, and workforce expectations faster than they change the systems through which people make decisions and get work done.</p>
+  <p>That gap between intent and operating reality is the <strong>Unfinished System</strong>.</p>
+  <p>Corework Insights continues to explore what it takes to close it.</p>
+</section>
+
+<section class="block" id="subscribe">
+  <h2>Stay connected to the work.</h2>
+  <p>Occasional Corework thinking on workforce systems, leadership, talent, skills, and AI transformation.</p>
+  <!-- FORM: wired to Formspree -->
+  <form action="https://formspree.io/f/xwlkdpqa" method="POST" class="subscribe-inline">
+    <input type="email" name="email" placeholder="Work email" required>
+    <button type="submit">Subscribe to Corework Insights</button>
+  </form>
+</section>
+
+<footer>
+  <div class="footer-logo">
+    <svg class="footer-mark" width="20" height="23" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
+      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
+      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.45"/>
+    </svg>
+    <span class="footer-lockup">
+      <span class="footer-word">Corework</span>
+      <span class="footer-systems"><i></i>Systems<i></i></span>
+    </span>
+  </div>
+  <div class="footer-copy">© 2026 Corework Systems</div>
+  <a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" class="footer-link">LinkedIn</a>
+</footer>
+
+<script>
+var navToggle = document.getElementById('nav-toggle');
+var navLinks = document.getElementById('nav-links');
+navToggle.addEventListener('click', function() {
+  var isOpen = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+});
+navLinks.querySelectorAll('.nav-link').forEach(function(link) {
+  link.addEventListener('click', function() {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+</script>
+
+</body>
+</html>
