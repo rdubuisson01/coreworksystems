@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Workforce & Talent Strategy Intensive | Corework Systems</title>
+<meta name="description" content="Turn an important workforce or talent priority into an executable strategy. Corework works with senior leadership teams to build clearer decisions, ownership, and a practical path forward.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #0E1117;
+  --navy: #1A3A6B;
+  --paper: #F7F5F1;
+  --warm: #B85C2A;
+  --muted: #76726c;
+  --rule: #ddd9d3;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+.nav-mark { flex-shrink: 0; display: block; }
+.nav-wordmark { display: flex; flex-direction: column; line-height: 1; }
+.nav-word { font-family: 'DM Serif Display', serif; font-size: 1.18rem; color: var(--ink); letter-spacing: -0.01em; line-height: 1; }
+.nav-systems { display: flex; align-items: center; gap: 5px; margin-top: 4px; font-family: 'DM Sans', sans-serif; font-size: 0.5rem; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: var(--warm); }
+.nav-systems i { height: 1px; width: 14px; background: var(--warm); display: block; }
+
+.nav-links { display: flex; align-items: center; gap: 2.5rem; }
+.nav-link { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-link:hover, .nav-link.active { color: var(--ink); }
+
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); margin: 5px 0; transition: transform 0.2s ease, opacity 0.2s ease; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.breadcrumb { padding: 8.5rem 4rem 0; max-width: 800px; margin: 0 auto; }
+.breadcrumb a { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--warm); }
+
+.hero { padding: 1.5rem 4rem 3rem; max-width: 800px; margin: 0 auto; }
+.eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm); margin-bottom: 1.5rem; }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 4vw, 3.4rem); font-weight: 300; line-height: 1.15; color: var(--navy); margin-bottom: 1rem; }
+.hero .tagline { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: var(--ink); margin-bottom: 1.8rem; }
+.hero p { color: var(--muted); max-width: 640px; margin-bottom: 1.1rem; }
+.hero p strong { color: var(--ink); font-weight: 500; }
+
+.hero-cta { display: inline-block; margin-top: 0.5rem; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
+.hero-cta:hover { color: var(--warm); border-color: var(--warm); }
+
+.stat-strip {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 0;
+  margin: 2rem 0 0.5rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid var(--rule);
+}
+.stat-strip span { font-size: 0.82rem; color: var(--ink); font-weight: 500; }
+.stat-strip .sep { color: var(--warm); margin: 0 0.9rem; font-weight: 300; }
+
+section.block { max-width: 800px; margin: 0 auto; padding: 2.75rem 4rem; border-top: 1px solid var(--rule); }
+section.block h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.7rem, 3vw, 2.2rem); font-weight: 300; color: var(--navy); margin-bottom: 1.4rem; line-height: 1.25; }
+section.block p { color: var(--muted); margin-bottom: 1.1rem; max-width: 660px; }
+
+.arrow-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin: 1.2rem 0 0.4rem; }
+.arrow-list li { display: flex; gap: 1rem; align-items: flex-start; color: var(--muted); }
+.arrow-list li span { color: var(--warm); font-size: 1.05rem; line-height: 1.6; flex-shrink: 0; }
+
+.pull-question { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--navy); font-style: italic; margin: 1.6rem 0; line-height: 1.4; }
+
+.flow-chain { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--navy); line-height: 1.6; margin: 1.6rem 0; padding: 1.4rem 1.6rem; border-left: 2px solid var(--warm); background: rgba(184,92,42,0.05); }
+
+.result-line { color: var(--ink); font-size: 1rem; margin-top: 1.4rem; }
+.result-line strong { font-weight: 500; }
+
+.brief-box { background: #fff; border: 1px solid var(--rule); padding: 2.5rem; margin-top: 0.5rem; }
+.brief-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--navy); font-weight: 400; margin-bottom: 0.8rem; }
+.brief-box > p { margin-bottom: 1.8rem; }
+.brief-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.2rem; margin-bottom: 1.4rem; }
+.brief-fields label { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.brief-fields input {
+  font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 300; color: var(--ink);
+  padding: 0.7rem 0.8rem; border: 1px solid var(--rule); background: var(--paper);
+}
+.brief-fields input:focus { outline: none; border-color: var(--warm); }
+.brief-opt { display: flex; align-items: flex-start; gap: 0.6rem; margin-bottom: 1.6rem; }
+.brief-opt input { margin-top: 0.3rem; }
+.brief-opt label { font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
+.brief-submit {
+  font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+  background: var(--navy); color: #fff; border: none; padding: 0.9rem 1.8rem; cursor: pointer; transition: background 0.2s;
+}
+.brief-submit:hover { background: var(--ink); }
+
+.cta { padding: 6.5rem 4rem; text-align: center; max-width: 700px; margin: 0 auto; }
+.cta .section-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm); margin-bottom: 1.5rem; display: block; }
+.cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 300; line-height: 1.2; margin-bottom: 1.3rem; color: var(--navy); }
+.cta p { color: var(--muted); margin-bottom: 2rem; }
+.cta-email { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--warm); padding-bottom: 3px; }
+.cta-email:hover { color: var(--warm); }
+
+footer { background: var(--ink); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.06); }
+.footer-logo { display: flex; align-items: center; gap: 10px; }
+.footer-lockup { display: flex; flex-direction: column; line-height: 1; }
+.footer-word { font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: #fff; letter-spacing: -0.01em; }
+.footer-systems { display: flex; align-items: center; gap: 4px; margin-top: 4px; font-size: 0.46rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--warm); }
+.footer-systems i { height: 1px; width: 11px; background: var(--warm); display: block; }
+.footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
+.footer-link { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; }
+.footer-link:hover { color: var(--warm); }
+
+@media (max-width: 900px) {
+  nav { padding: 1.2rem 2rem; }
+  .nav-toggle { display: block; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.4rem;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    padding: 1.8rem 2rem 2.2rem;
+  }
+  .nav-links.open { display: flex; }
+  .breadcrumb, .hero, section.block, .cta { padding-left: 2rem; padding-right: 2rem; }
+  .brief-box { padding: 1.6rem; }
+  .brief-fields { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo" aria-label="Corework Systems home">
+    <svg class="nav-mark" width="23" height="26" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
+      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
+      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.35"/>
+    </svg>
+    <span class="nav-wordmark">
+      <span class="nav-word">Corework</span>
+      <span class="nav-systems"><i></i>Systems<i></i></span>
+    </span>
+  </a>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="how-we-help.html" class="nav-link active">How We Help</a>
+    <a href="insights.html" class="nav-link">Insights</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html#contact" class="nav-link">Contact</a>
+  </div>
+  <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="breadcrumb"><a href="how-we-help.html">← Back to How We Help</a></div>
+
+<section class="hero">
+  <p class="eyebrow">Engagement</p>
+  <h1>Workforce & Talent Strategy Intensive</h1>
+  <p class="tagline">Turn an important workforce or talent priority into a strategy you can act on.</p>
+  <p>Major workforce priorities often arrive before the organization has resolved what they actually require. Leaders may agree on the ambition while holding different views about the priorities, tradeoffs, ownership, or changes needed to make it real.</p>
+  <p>Corework works with senior leadership teams to turn consequential workforce and talent priorities into a focused strategy with clearer decisions, ownership, and a practical path forward.</p>
+  <a href="contact.html#contact" class="hero-cta">Talk with us about your workforce priority →</a>
+  <div class="stat-strip">
+    <span>Senior leadership team</span><span class="sep">·</span>
+    <span>1–2 day intensive</span><span class="sep">·</span>
+    <span>Pre-work and alignment scan</span><span class="sep">·</span>
+    <span>Clear path forward</span>
+  </div>
+</section>
+
+<section class="block">
+  <h2>When the priority is clear, but the path forward isn't</h2>
+  <p>A new business direction, AI initiative, workforce shift, talent challenge, or leadership mandate can create pressure to act before the underlying choices have been worked through.</p>
+  <p>Teams may be dealing with too many priorities, unclear ownership, competing assumptions, or broad goals that have not yet been translated into operating decisions.</p>
+  <p>The question underneath the work is:</p>
+  <p class="pull-question">What should we actually do, who owns it, and what has to change to make it work?</p>
+  <p style="color: var(--ink); font-weight: 500;">This engagement may be a fit when:</p>
+  <ul class="arrow-list">
+    <li><span>→</span> Leaders agree something needs to change but are not aligned on what comes first</li>
+    <li><span>→</span> A major initiative needs a workforce or talent strategy underneath it</li>
+    <li><span>→</span> Competing priorities are making execution difficult</li>
+    <li><span>→</span> Ownership, dependencies, or implementation requirements remain unclear</li>
+  </ul>
+</section>
+
+<section class="block">
+  <h2>How it works</h2>
+  <p>Before the leadership team convenes, Corework does focused pre-work to understand the priority, current assumptions, ownership, dependencies, and likely barriers to execution.</p>
+  <p>The intensive then moves the team from broad intent to concrete choices.</p>
+  <div class="flow-chain">Clarify the Priority → Surface the Choices → Align on Ownership → Build the Path Forward</div>
+  <p>The goal is a strategy the leadership team can actually act on after the session.</p>
+</section>
+
+<section class="block">
+  <h2>What you get</h2>
+  <p>Depending on the challenge and scope, Corework helps the leadership team leave with:</p>
+  <ul class="arrow-list">
+    <li><span>→</span> A clearer set of workforce or talent priorities</li>
+    <li><span>→</span> Explicit decisions and tradeoffs</li>
+    <li><span>→</span> Clearer ownership and responsibilities</li>
+    <li><span>→</span> A practical set of implementation priorities and next steps</li>
+  </ul>
+  <p class="result-line">The result is greater clarity about <strong>what the organization will do, who will own it, and what has to happen next.</strong></p>
+</section>
+
+<section class="block">
+  <h2>Get the detailed brief.</h2>
+  <div class="brief-box">
+    <h3>Get the Workforce & Talent Strategy Intensive brief</h3>
+    <p>The detailed Workforce & Talent Strategy Intensive brief goes deeper into the pre-work, session design, engagement structure, potential outputs, and what a full intensive can look like.</p>
+    <!-- FORM: wired to Formspree -->
+    <form action="https://formspree.io/f/mjyvqkoq" method="POST">
+      <input type="hidden" name="_next" value="https://coreworksystems.com/thank-you.html?brief=strategy-intensive">
+      <div class="brief-fields">
+        <label>Name<input type="text" name="name" required></label>
+        <label>Work email<input type="email" name="email" required></label>
+        <label>Role / Title<input type="text" name="role"></label>
+        <label>Company<input type="text" name="company" required></label>
+      </div>
+      <div class="brief-opt">
+        <input type="checkbox" id="opt-in" name="opt_in">
+        <label for="opt-in">Send me occasional Corework insights on workforce, talent, leadership, and AI transformation.</label>
+      </div>
+      <button type="submit" class="brief-submit">Get the Product Brief →</button>
+    </form>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <span class="section-label">Have a Workforce Priority to Work Through?</span>
+  <h2>Start with the priority you're facing.</h2>
+  <p>You do not need a finished strategy before reaching out. Bring us the priority in front of you. We'll help you get from intent to a path forward.</p>
+  <a href="contact.html#contact" class="cta-email">Let's Talk</a>
+</section>
+
+<footer>
+  <div class="footer-logo">
+    <svg class="footer-mark" width="20" height="23" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
+      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
+      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.45"/>
+    </svg>
+    <span class="footer-lockup">
+      <span class="footer-word">Corework</span>
+      <span class="footer-systems"><i></i>Systems<i></i></span>
+    </span>
+  </div>
+  <div class="footer-copy">© 2026 Corework Systems</div>
+  <a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" class="footer-link">LinkedIn</a>
+</footer>
+
+<script>
+var navToggle = document.getElementById('nav-toggle');
+var navLinks = document.getElementById('nav-links');
+navToggle.addEventListener('click', function() {
+  var isOpen = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+});
+navLinks.querySelectorAll('.nav-link').forEach(function(link) {
+  link.addEventListener('click', function() {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+</script>
+
+</body>
+</html>
