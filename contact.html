@@ -1,233 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Contact | Corework Systems</title>
-<meta name="description" content="Start with what you are seeing. Tell Corework about the workforce or talent challenge in front of you, and we'll start there.">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Contact | Corework Systems</title><meta name="description" content="Start with what you are seeing. Tell Corework about the workforce or talent challenge in front of you, and we&#39;ll start there."><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>
+:root{--navy:#1A3A6B;--ink:#172e43;--copper:#B85C2A;--slate:#94A1B5;--gold:#E8A92A;--yellow:#ffd257;--cream:#fffaf0;--blue:#e9f1f8;--line:#d7dfe4}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;color:var(--ink);font-family:'DM Sans',Arial,sans-serif;background:var(--cream);font-size:17px;line-height:1.6}a{color:inherit;text-decoration:none}button{font:inherit}img{display:block;width:100%;object-fit:cover}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:Manrope,Arial,sans-serif;line-height:1.13;letter-spacing:-.045em}p{color:#4b5e6c}.wrap{width:min(1200px,90%);margin:auto}.eyebrow{text-transform:uppercase;letter-spacing:.15em;font-size:11px;font-weight:800;color:var(--copper);display:block;margin-bottom:20px}.button{display:inline-flex;align-items:center;justify-content:center;gap:24px;border:0;background:var(--navy);color:white;border-radius:7px;padding:16px 23px;font-size:14px;font-weight:700;transition:transform .2s,background .2s}.button:hover{background:#254d77;transform:translateY(-2px)}.button.light{background:var(--yellow);color:var(--ink)}.text-link{font-size:14px;font-weight:700;border-bottom:1px solid currentColor;padding-bottom:5px}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--copper);outline-offset:5px}header{background:var(--cream);border-bottom:1px solid #e8e3d7;position:sticky;top:0;z-index:20}nav{height:88px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;gap:12px;align-items:center}.mark{display:block;flex-shrink:0}.brand strong{display:block;font-family:'DM Serif Display',Georgia,serif;font-size:27px;font-weight:400;line-height:1;letter-spacing:-.01em;color:#0E1117}.brand small{display:flex;align-items:center;gap:6px;font-size:8.5px;font-weight:500;letter-spacing:.28em;color:var(--copper);margin-top:5px}.brand small i{flex:1;height:1px;background:var(--copper)}.links{display:flex;align-items:center;gap:32px;font-size:13px;font-weight:600}.links .button{padding:11px 19px}.menu{display:none}.hero{padding:65px 0 0;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}.hero h1{font-size:clamp(44px,5.2vw,70px);font-weight:800;max-width:620px}.highlight{background:linear-gradient(transparent 66%,var(--yellow) 66%);box-decoration-break:clone;-webkit-box-decoration-break:clone}.hero-copy p{font-size:18px;max-width:495px;margin:25px 0 28px}.actions{display:flex;align-items:center;flex-wrap:wrap;gap:25px}.hero-art{position:relative;padding:0 0 25px 20px}.hero-art:before{content:'';position:absolute;inset:24px -65px 0 0;background:var(--yellow);border-radius:90px 0 0 12px}.hero-art img{background:#e9f1f8;color:transparent;height:370px;border-radius:65px 10px 10px 10px;position:relative;object-position:53% center}.photo-note{position:absolute;bottom:5px;left:0;background:var(--navy);padding:16px 24px;color:#fff;border-radius:8px;font-family:Manrope,Arial,sans-serif;font-size:17px;font-weight:800;letter-spacing:-.02em;line-height:1.2}.photo-note b{color:var(--yellow)}.product-strip{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 18px;margin-top:45px;padding:24px 0;border-top:1px solid #dedfd8;font-size:13px;font-weight:600;color:var(--navy)}.product-strip a{display:flex;align-items:center;gap:18px}.product-strip a:hover{color:var(--copper)}.product-strip a+a:before{content:'';width:6px;height:6px;border-radius:50%;background:var(--sep);flex-shrink:0}.product-strip a:nth-child(2){--sep:var(--copper)}.product-strip a:nth-child(3){--sep:var(--slate)}.product-strip a:nth-child(4){--sep:var(--gold)}.product-strip a:nth-child(5){--sep:var(--navy)}.problems{padding:80px 0 90px;background:#fff}.section-head{display:flex;justify-content:space-between;gap:35px;align-items:end;margin-bottom:35px}h2{font-size:clamp(34px,3.6vw,49px);font-weight:800}.section-head p{max-width:380px;font-size:15px}.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.problem{display:flex;flex-direction:column;min-height:275px;padding:27px;background:var(--blue);border-radius:9px;transition:transform .2s,box-shadow .2s}.problem:nth-child(2),.problem:nth-child(5){background:#fcf0df}.problem:nth-child(3){background:#edf2e9}.problem:hover{transform:translateY(-5px);box-shadow:0 14px 22px #17385e12}.num{font-size:11px;letter-spacing:.14em;color:#5b6c78;margin-bottom:22px}.problem h3{font-size:23px;font-weight:700;letter-spacing:-.035em;line-height:1.28}.problem-foot{border-top:1px solid #17385e22;margin-top:auto;padding-top:18px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:11px;font-weight:700}.problem h3{margin-bottom:27px}.arrow{font-size:24px;line-height:1}.problem.last{background:var(--navy);color:#fff}.last .num{color:var(--yellow)}.last .problem-foot{border-color:#ffffff33}.compare{margin-top:28px;display:flex;justify-content:end}.system{padding:90px 0}.system-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:75px;align-items:start}.system h2{max-width:470px}.system p{margin:25px 0;max-width:440px}.system-photo{background:#e9f1f8;color:transparent;height:270px;border-radius:8px;margin-top:32px;object-position:center 44%}.dimensions{border-top:1px solid var(--line)}details{border-bottom:1px solid var(--line)}summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:20px;padding:22px 0;font-weight:600;font-size:17px}summary::-webkit-details-marker{display:none}summary span{font-size:11px;color:var(--copper)}summary:after{content:'+';margin-left:auto;font-size:23px;font-weight:400}details[open] summary:after{content:'−'}details p{margin:0 25px 22px 38px!important;font-size:15px}.founder{background:var(--blue);padding:65px 0}.founder-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center}.founder-title{font-size:clamp(32px,4vw,49px);line-height:1.15;font-weight:800;letter-spacing:-.05em}.founder-title .sun{color:var(--copper);display:block;font-family:Georgia,serif;font-weight:400;font-style:italic;letter-spacing:-.04em}.founder p{font-size:17px;margin:18px 0 25px}.name{font-size:12px;font-weight:700}.founder-bio{display:flex;align-items:center;gap:32px}.founder-photo{width:140px;height:140px;flex-shrink:0;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 0 0 2px var(--copper)}.founder-bio p{margin:10px 0 20px}.insights{background:#fff;padding:80px 0}.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}.editorial{height:190px;position:relative;overflow:hidden;border-radius:8px;background:var(--blue);display:flex;align-items:center;justify-content:center;margin-bottom:20px}.editorial svg{width:100%;height:100%}.insight h3{font-size:22px;line-height:1.3;letter-spacing:-.03em;margin:12px 0 15px}.insight:hover h3{color:var(--copper)}.tag{font-size:10px;letter-spacing:.14em;font-weight:700;color:var(--copper);text-transform:uppercase}.read{font-size:12px;font-weight:700}.closing{padding:75px 0;background:var(--yellow)}.closing .wrap{display:flex;align-items:center;justify-content:space-between;gap:40px}.closing h2{max-width:670px}.closing p{margin-top:17px;color:#344451;max-width:590px}.closing .eyebrow{color:#6f381e}.closing .button{white-space:nowrap}footer{padding:35px 0;background:var(--navy);color:white}footer .wrap{display:flex;justify-content:space-between;gap:25px;align-items:center}footer p{color:#c0cedb;font-size:11px}footer a{font-size:12px}.footer-links{display:flex;gap:24px}.skip{position:absolute;top:-100px}.skip:focus{top:0;z-index:50;background:white;padding:10px}@media(min-width:1500px){.hero-art img{height:390px}}@media(max-width:900px){.hero-grid{gap:25px}.hero h1{font-size:45px}.hero-art img{height:300px}.problem-grid{grid-template-columns:repeat(2,1fr)}.system-grid{gap:35px}.founder-grid{gap:40px}.links{gap:20px}.insight h3{font-size:19px}}@media(max-width:650px){nav{height:74px}.menu{display:block;background:none;border:1px solid var(--line);border-radius:5px;padding:7px 11px;color:var(--navy)}.links{display:none;position:absolute;top:74px;left:0;right:0;background:var(--cream);padding:22px 5%;border-bottom:1px solid var(--line)}.links.open{display:flex;flex-direction:column;align-items:stretch}.hero{padding-top:38px}.hero-grid,.system-grid,.founder-grid{grid-template-columns:1fr;gap:35px}.hero h1{font-size:46px}.hero-copy p{font-size:17px}.hero-art{padding-left:12px}.hero-art img{height:250px;border-top-left-radius:45px}.product-strip{justify-content:flex-start;gap:10px 14px;margin-top:30px;font-size:12px}.product-strip a{gap:14px}.section-head{display:block}.section-head p{margin-top:20px}.problems,.system,.insights{padding:55px 0}.problem-grid,.insight-grid{grid-template-columns:1fr}.problem{min-height:225px}.problem h3{font-size:24px}.problem-foot{font-size:12px}.system-photo{height:260px}.founder{padding:50px 0}.founder-bio{align-items:flex-start;gap:20px}.founder-photo{width:88px;height:88px;border-width:3px}.insight-grid{gap:35px}.editorial{height:185px}.insight h3{font-size:24px}.closing{padding:50px 0}.closing .wrap,footer .wrap{align-items:start;flex-direction:column}.closing h2{font-size:39px}h2{font-size:36px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+.subscribe{margin-top:40px;padding:25px;background:var(--cream);border-radius:8px;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}.subscribe label{font-weight:600}.subscribe input{font:inherit;padding:14px;border:1px solid var(--line);border-radius:6px;max-width:100%;min-width:0}.subscribe div{display:flex;gap:8px;flex-wrap:wrap}.crumb{padding-top:28px;font-size:13px;font-weight:600}.crumb a{color:var(--copper)}.crumb a:hover{color:var(--navy)}
+.p-hero{padding:30px 0 0;overflow:hidden}.p-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}.p-hero h1{font-size:clamp(40px,4.6vw,60px);font-weight:800}.tagline{font-family:Manrope,Arial,sans-serif;font-size:clamp(20px,1.9vw,25px);font-weight:700;color:var(--navy);letter-spacing:-.02em;margin:16px 0 22px}.p-hero p+p{margin-top:12px}.p-hero .actions{margin-top:28px}.p-hero .hero-art img{height:400px}.p-hero .photo-note{max-width:330px;font-size:16px;line-height:1.35}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:50px;padding:26px 0;border-top:1px solid #dedfd8}.fact{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}.fact:before{content:'';width:7px;height:7px;border-radius:50%;background:var(--dot);align-self:center}.fact b{font-family:Manrope,Arial,sans-serif;font-size:22px;font-weight:800;color:var(--navy);letter-spacing:-.03em}.fact span{font-size:14px;color:#4b5e6c}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.problem-sec{background:#fff;padding:85px 0}.problem-sec h2{margin-bottom:20px}.question{margin-top:28px;background:var(--navy);color:#fff;border-radius:12px;padding:26px 28px;font-family:Manrope,Arial,sans-serif;font-size:21px;font-weight:700;line-height:1.35;letter-spacing:-.02em}.question span{display:block;font-family:'DM Sans',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow);margin-bottom:10px}.fit-lead{font-weight:700;color:var(--navy);margin-bottom:16px}
+.checks{list-style:none;padding:0;margin:0;display:grid;gap:12px}.checks li{position:relative;background:var(--cream);border:1px solid #efe7d6;border-radius:10px;padding:18px 20px 18px 56px;color:var(--ink);font-weight:500}.checks li:before{content:'';position:absolute;left:20px;top:19px;width:22px;height:22px;border-radius:50%;background:var(--yellow)}.checks li:after{content:'';position:absolute;left:27px;top:24px;width:6px;height:10px;border:solid var(--navy);border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+.how{padding:85px 0}.how-head{align-items:end;margin-bottom:38px}.flow{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;counter-reset:none}.flow li{position:relative;background:#fff;border-radius:12px;padding:20px 18px;border-top:5px solid var(--c,var(--line));display:flex;flex-direction:column;gap:8px;min-height:120px}.flow li b{font-family:Manrope,Arial,sans-serif;font-size:17px;line-height:1.25;letter-spacing:-.02em;color:var(--navy)}.flow .step{font-size:11px;font-weight:700;letter-spacing:.14em;color:#5b6c78}.flow li:not(:last-child):after{content:'→';position:absolute;right:-12px;top:50%;transform:translateY(-50%);width:20px;text-align:center;color:var(--copper);font-weight:700;z-index:1}.flow .bookend{background:var(--blue);border-top-color:var(--navy);border-top-style:dashed}.tag-sm{align-self:flex-start;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--navy);color:#fff;padding:3px 8px;border-radius:100px}
+.how-detail{margin-top:46px;align-items:center}.how-photo{height:330px;border-radius:14px;background:var(--blue);color:transparent}.how-detail p+p{margin-top:16px}.goal{font-family:Manrope,Arial,sans-serif;font-size:22px;font-weight:700;color:var(--navy)!important;letter-spacing:-.02em;line-height:1.3}
+.get{background:#fff;padding:85px 0}.get h2{max-width:720px}.get-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:34px}.get-card{background:var(--tint);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:16px}.get-card svg{width:46px;height:46px}.get-card b{font-weight:600;color:var(--ink);line-height:1.45}.result{margin-top:34px;font-size:19px;max-width:860px}.result strong{color:var(--navy);background:linear-gradient(transparent 70%,var(--yellow) 70%)}
+.brief{padding:85px 0}.brief-card{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;background:var(--blue);border-radius:16px;padding:48px}.brief-card h2{font-size:clamp(28px,2.8vw,38px);margin-bottom:16px}.brief-form{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;align-content:start}.brief-form label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:var(--navy)}.brief-form input[type=text],.brief-form input[type=email]{font:inherit;font-weight:400;padding:13px 14px;border:1px solid var(--line);border-radius:7px;background:#fff;min-width:0}.brief-form input:focus{outline:2px solid var(--copper);outline-offset:1px}.opt{grid-column:1/-1;display:flex;gap:10px;align-items:flex-start}.opt input{margin-top:5px;width:18px;height:18px;flex-shrink:0}.opt label{font-weight:400;font-size:14px;color:#4b5e6c}.brief-form .button{grid-column:1/-1;justify-self:start}
+@media(max-width:900px){.p-hero-grid{gap:30px}.two-col{gap:36px}.flow{grid-template-columns:repeat(3,minmax(0,1fr))}.flow li:nth-child(3n):after{display:none}.get-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.brief-card{grid-template-columns:1fr;gap:28px}}
+@media(max-width:650px){.p-hero-grid,.two-col{grid-template-columns:minmax(0,1fr)}.p-hero h1{font-size:38px}.how-head{gap:16px}.p-hero .hero-art img{height:260px}.facts{grid-template-columns:1fr 1fr;gap:18px}.fact{display:grid;grid-template-columns:7px 1fr;column-gap:9px;align-items:center}.fact span{grid-column:2;line-height:1.3}.problem-sec,.how,.get,.brief{padding:55px 0}.flow{grid-template-columns:1fr}.flow li{min-height:0}.flow li:not(:last-child):after{content:'↓';right:auto;left:50%;top:auto;bottom:-15px;transform:translateX(-50%)}.flow li:nth-child(3n):after{display:block}.how-photo{height:230px}.get-grid{grid-template-columns:1fr}.brief-card{padding:26px 20px}.brief-form{grid-template-columns:1fr}}
+.c-hero{padding:40px 0 90px;overflow:hidden}.c-grid{display:grid;grid-template-columns:1fr minmax(0,520px);gap:64px;align-items:start}.c-hero h1{font-size:clamp(42px,5vw,64px);font-weight:800;margin-bottom:26px}.c-copy p{font-size:18px}.c-copy p+p{margin-top:14px}.pull{margin-top:26px!important;padding:20px 24px;background:var(--blue);border-left:0;border-radius:10px;font-family:Manrope,Arial,sans-serif;font-size:21px!important;font-weight:700;color:var(--navy)!important;letter-spacing:-.02em;line-height:1.35}.pull b{color:var(--copper)}
+.next{margin-top:50px}.next h2{font-size:clamp(26px,2.6vw,32px);margin-bottom:20px}.next-list{list-style:none;padding:0;margin:0;display:grid;gap:12px}.next-list li{display:flex;gap:16px;align-items:flex-start;background:#fff;border-radius:12px;padding:18px 20px;border:1px solid #efe7d6}.next-list li>span{flex-shrink:0;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:13px;color:#fff;background:var(--c)}.next-list b{display:block;font-family:Manrope,Arial,sans-serif;font-size:17px;color:var(--navy);margin-bottom:3px;letter-spacing:-.01em}.next-list p{font-size:15.5px!important;line-height:1.55}
+.form-card{position:sticky;top:110px;background:#fff;border-radius:16px;padding:34px;box-shadow:0 18px 40px rgba(23,46,67,.10);border-top:6px solid var(--yellow);scroll-margin-top:110px}.form-card h2{font-size:clamp(24px,2.3vw,30px);margin-bottom:22px}.c-form{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}.c-form label{min-width:0;display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:var(--navy)}.c-form .full{grid-column:1/-1}.c-form input,.c-form textarea{width:100%;font:inherit;font-weight:400;font-size:16px;padding:13px 14px;border:1px solid var(--line);border-radius:7px;background:var(--cream);min-width:0;color:var(--ink)}.c-form textarea{resize:vertical;min-height:130px}.c-form input:focus,.c-form textarea:focus{outline:2px solid var(--copper);outline-offset:1px;background:#fff}.hint{font-weight:400;font-size:13px;color:#5b6c78}.req{color:var(--copper)}.c-form .button{grid-column:1/-1;justify-self:start;margin-top:4px}.privacy{grid-column:1/-1;font-size:13px!important;color:#5b6c78!important}
+.email-alt{margin-top:22px;padding-top:20px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;font-size:15px}.email-alt span{color:#4b5e6c}.email-alt a{font-weight:700;color:var(--navy);border-bottom:2px solid var(--yellow)}.email-alt a:hover{color:var(--copper)}
+@media(max-width:900px){.c-grid{grid-template-columns:1fr;gap:44px}.form-card{position:static}}
+@media(max-width:650px){.c-hero{padding:24px 0 55px}.c-hero h1{font-size:40px}.c-copy p{font-size:17px}.form-card{padding:24px 20px}.c-form{grid-template-columns:1fr}}
+</style></head><body><a class="skip" href="#main">Skip to content</a><header><nav class="wrap" aria-label="Main navigation"><a class="brand" href="index.html" aria-label="Corework Systems home"><svg class="mark" width="27" height="30" viewBox="0 0 34 38" fill="none" aria-hidden="true"><rect x="0" y="1" width="34" height="7.5" rx="1.5" fill="#1A3A6B"/><rect x="5" y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/><rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.35"/></svg><span><strong>Corework</strong><small><i></i>SYSTEMS<i></i></small></span></a><button class="menu" aria-expanded="false" aria-controls="navlinks">Menu</button><div class="links" id="navlinks"><a href="how-we-help.html">How we help</a><a href="insights.html">Insights</a><a href="about.html">About</a><a class="button" href="contact.html#contact">Let’s talk <span aria-hidden="true">↗</span></a></div></nav></header>
+<main id="main">
+<section class="c-hero"><div class="wrap c-grid">
+<div class="c-copy">
+<span class="eyebrow">Contact</span>
+<h1>Start with <span class="highlight">what you are seeing.</span></h1>
+<p>You do not need to have the problem fully diagnosed before reaching out.</p>
+<p>Maybe a workforce strategy is not translating into practice. Manager execution is inconsistent. Leadership or succession decisions are harder than they should be. An AI or skills-first initiative is moving forward, but the surrounding systems have not caught up.</p>
+<p class="pull">Or maybe you simply know something should be working better by now<b>.</b></p>
+<p>Tell us what you are seeing. We can start there.</p>
 
-:root {
-  --ink: #0E1117;
-  --navy: #1A3A6B;
-  --paper: #F7F5F1;
-  --warm: #B85C2A;
-  --muted: #76726c;
-  --rule: #ddd9d3;
-}
+<div class="next">
+<span class="eyebrow">What happens next</span>
+<h2>A conversation, not a sales pitch.</h2>
+<ol class="next-list">
+<li style="--c:var(--navy)"><span>1</span><div><b>A 30-minute discovery conversation</b><p>Corework begins with a 30-minute discovery conversation to understand the situation, what you have already tried, and what you are hoping to change.</p></div></li>
+<li style="--c:var(--copper)"><span>2</span><div><b>The most useful next step</b><p>If there is a clear fit, we will talk through the most useful next step. That may be a focused working session, one of Corework’s established engagements, or another next step that better fits the problem.</p></div></li>
+<li style="--c:#6B7A93"><span>3</span><div><b>No homework first</b><p>There is no preparation required for the first conversation.</p></div></li>
+</ol>
+</div>
+</div>
 
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--paper);
-  color: var(--ink);
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 300;
-  line-height: 1.75;
-  font-size: 17px;
-  -webkit-font-smoothing: antialiased;
-}
-
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 4rem;
-  background: var(--paper);
-  border-bottom: 1px solid var(--rule);
-}
-.nav-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
-.nav-mark { flex-shrink: 0; display: block; }
-.nav-wordmark { display: flex; flex-direction: column; line-height: 1; }
-.nav-word { font-family: 'DM Serif Display', serif; font-size: 1.18rem; color: var(--ink); letter-spacing: -0.01em; line-height: 1; }
-.nav-systems { display: flex; align-items: center; gap: 5px; margin-top: 4px; font-family: 'DM Sans', sans-serif; font-size: 0.5rem; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: var(--warm); }
-.nav-systems i { height: 1px; width: 14px; background: var(--warm); display: block; }
-
-.nav-links { display: flex; align-items: center; gap: 2.5rem; }
-.nav-link { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.nav-link:hover, .nav-link.active { color: var(--ink); }
-
-.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px; }
-.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); margin: 5px 0; transition: transform 0.2s ease, opacity 0.2s ease; }
-.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-.hero { max-width: 720px; margin: 0 auto; padding: 11rem 4rem 3rem; }
-.eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm); margin-bottom: 1.4rem; }
-.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 300; line-height: 1.2; color: var(--navy); margin-bottom: 1.6rem; }
-.hero p { color: var(--muted); max-width: 640px; margin-bottom: 1.1rem; }
-.hero p strong { color: var(--ink); font-weight: 500; }
-
-section.block { max-width: 720px; margin: 0 auto; padding: 2.75rem 4rem; border-top: 1px solid var(--rule); }
-section.block h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 2.8vw, 2rem); font-weight: 300; color: var(--navy); margin-bottom: 1.3rem; line-height: 1.3; }
-section.block p { color: var(--muted); margin-bottom: 1.1rem; max-width: 100%; }
-
-.contact-form-box { background: #fff; border: 1px solid var(--rule); padding: 2.5rem; margin-top: 0.5rem; }
-.form-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem 1.2rem; margin-bottom: 1.2rem; }
-.form-fields label, .form-full label {
-  display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.78rem; font-weight: 500;
-  letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);
-}
-.form-fields input, .form-full input, .form-full textarea {
-  font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 300; color: var(--ink);
-  padding: 0.75rem 0.9rem; border: 1px solid var(--rule); background: var(--paper);
-}
-.form-fields input:focus, .form-full textarea:focus { outline: none; border-color: var(--warm); }
-.form-full { margin-bottom: 1.6rem; }
-.form-full span.hint { display: block; font-style: italic; text-transform: none; letter-spacing: normal; font-size: 0.85rem; color: var(--muted); font-weight: 400; margin-top: 0.5rem; }
-.form-full textarea { width: 100%; resize: vertical; min-height: 120px; font-family: 'DM Sans', sans-serif; }
-.form-submit {
-  font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
-  background: var(--navy); color: #fff; border: none; padding: 0.95rem 2rem; cursor: pointer; transition: background 0.2s;
-}
-.form-submit:hover { background: var(--ink); }
-.form-privacy { font-size: 0.8rem; color: var(--muted); margin-top: 0.9rem; }
-
-.email-fallback { max-width: 720px; margin: 0 auto; padding: 2.5rem 4rem 5rem; text-align: center; }
-.email-fallback p:first-child { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--warm); margin-bottom: 0.8rem; }
-.email-fallback a { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 2px; }
-.email-fallback a:hover { color: var(--warm); border-color: var(--warm); }
-
-footer { background: var(--ink); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.06); }
-.footer-logo { display: flex; align-items: center; gap: 10px; }
-.footer-lockup { display: flex; flex-direction: column; line-height: 1; }
-.footer-word { font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: #fff; letter-spacing: -0.01em; }
-.footer-systems { display: flex; align-items: center; gap: 4px; margin-top: 4px; font-size: 0.46rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--warm); }
-.footer-systems i { height: 1px; width: 11px; background: var(--warm); display: block; }
-.footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
-.footer-link { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; }
-.footer-link:hover { color: var(--warm); }
-
-@media (max-width: 900px) {
-  nav { padding: 1.2rem 2rem; }
-  .nav-toggle { display: block; }
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 100%; left: 0; right: 0;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.4rem;
-    background: var(--paper);
-    border-bottom: 1px solid var(--rule);
-    padding: 1.8rem 2rem 2.2rem;
-  }
-  .nav-links.open { display: flex; }
-  .hero, section.block, .email-fallback { padding-left: 2rem; padding-right: 2rem; }
-  .contact-form-box { padding: 1.6rem; }
-  .form-fields { grid-template-columns: 1fr; }
-  footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
-}
-</style>
-</head>
-<body>
-
-<nav>
-  <a href="index.html" class="nav-logo" aria-label="Corework Systems home">
-    <svg class="nav-mark" width="23" height="26" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
-      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
-      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.35"/>
-    </svg>
-    <span class="nav-wordmark">
-      <span class="nav-word">Corework</span>
-      <span class="nav-systems"><i></i>Systems<i></i></span>
-    </span>
-  </a>
-  <div class="nav-links" id="nav-links">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="how-we-help.html" class="nav-link">How We Help</a>
-    <a href="insights.html" class="nav-link">Insights</a>
-    <a href="about.html" class="nav-link">About</a>
-    <a href="contact.html#contact" class="nav-link active">Contact</a>
-  </div>
-  <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<section class="hero">
-  <p class="eyebrow">Contact</p>
-  <h1>Start with what you are seeing.</h1>
-  <p>You do not need to have the problem fully diagnosed before reaching out.</p>
-  <p>Maybe a workforce strategy is not translating into practice. Manager execution is inconsistent. Leadership or succession decisions are harder than they should be. An AI or skills-first initiative is moving forward, but the surrounding systems have not caught up.</p>
-  <p>Or maybe you simply know something should be working better by now.</p>
-  <p><strong>Tell us what you are seeing. We can start there.</strong></p>
-</section>
-
-<section class="block">
-  <h2>What happens next</h2>
-  <p>Corework begins with a 30-minute discovery conversation to understand the situation, what you have already tried, and what you are hoping to change.</p>
-  <p>If there is a clear fit, we will talk through the most useful next step. That may be a focused working session, one of Corework's established engagements, or another next step that better fits the problem.</p>
-  <p>There is no preparation required for the first conversation.</p>
-</section>
-
-<section class="block" id="contact">
-  <h2>Tell us a little about what you are working through</h2>
-  <div class="contact-form-box">
-    <form action="https://formspree.io/f/moeqovlw" method="POST">
-      <div class="form-fields">
-        <label>First name<input type="text" name="first_name" required></label>
-        <label>Last name<input type="text" name="last_name" required></label>
-        <label>Work email<input type="email" name="email" required></label>
-        <label>Organization<input type="text" name="organization" required></label>
-      </div>
-      <label style="display:flex; flex-direction:column; gap:0.4rem; font-size:0.78rem; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); margin-bottom:1.2rem;">
-        Role / Title
-        <input type="text" name="role">
-      </label>
-      <div class="form-full">
-        <label>What are you seeing?</label>
-        <textarea name="context" rows="5"></textarea>
-        <span class="hint">Share as much or as little context as is useful.</span>
-      </div>
-      <button type="submit" class="form-submit">Start the Conversation</button>
-      <p class="form-privacy">We'll only use this information to respond to your inquiry.</p>
-    </form>
-  </div>
-</section>
-
-<section class="email-fallback">
-  <p>Prefer Email?</p>
-  <p>You can also reach Corework directly at<br><a href="mailto:richard@coreworksystems.com">richard@coreworksystems.com</a></p>
-</section>
-
-<footer>
-  <div class="footer-logo">
-    <svg class="footer-mark" width="20" height="23" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
-      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
-      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.45"/>
-    </svg>
-    <span class="footer-lockup">
-      <span class="footer-word">Corework</span>
-      <span class="footer-systems"><i></i>Systems<i></i></span>
-    </span>
-  </div>
-  <div class="footer-copy">© 2026 Corework Systems</div>
-  <a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" class="footer-link">LinkedIn</a>
-</footer>
-
-<script>
-var navToggle = document.getElementById('nav-toggle');
-var navLinks = document.getElementById('nav-links');
-navToggle.addEventListener('click', function() {
-  var isOpen = navLinks.classList.toggle('open');
-  navToggle.setAttribute('aria-expanded', String(isOpen));
-});
-navLinks.querySelectorAll('.nav-link').forEach(function(link) {
-  link.addEventListener('click', function() {
-    navLinks.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-  });
-});
-</script>
-
-</body>
-</html>
+<div class="form-card" id="contact">
+<h2>Tell us a little about what you are working through</h2>
+<form action="https://formspree.io/f/moeqovlw" method="POST" class="c-form">
+<label>First name <input type="text" name="first_name" required autocomplete="given-name"></label>
+<label>Last name <input type="text" name="last_name" required autocomplete="family-name"></label>
+<label class="full">Work email <input type="email" name="email" required autocomplete="email"></label>
+<label>Organization <input type="text" name="organization" required autocomplete="organization"></label>
+<label>Role / Title <input type="text" name="role" autocomplete="organization-title"></label>
+<label class="full">What are you seeing? <textarea name="context" rows="5"></textarea><span class="hint">Share as much or as little context as is useful.</span></label>
+<button type="submit" class="button">Start the conversation <span aria-hidden="true">↗</span></button>
+<p class="privacy">We’ll only use this information to respond to your inquiry.</p>
+</form>
+<div class="email-alt"><span>Prefer email?</span><a href="mailto:hello@coreworksystems.com">hello@coreworksystems.com</a></div>
+</div>
+</div></section>
+</main>
+<footer><div class="wrap"><div><div style="display:flex;align-items:center;gap:10px;font-family:'DM Serif Display',Georgia,serif;font-size:24px"><svg class="mark" width="27" height="30" viewBox="0 0 34 38" fill="none" aria-hidden="true"><rect x="0" y="1" width="34" height="7.5" rx="1.5" fill="#3B5E96"/><rect x="5" y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/><rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#94A1B5" opacity="1"/></svg>Corework</div><p>Workforce &amp; talent strategy advisory · © 2026</p></div><div class="footer-links"><a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="contact.html#contact">Contact ↗</a></div></div></footer><script>const b=document.querySelector('.menu'),n=document.querySelector('.links');b.addEventListener('click',()=>{let o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o))});n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{n.classList.remove('open');b.setAttribute('aria-expanded','false')}));</script></body></html>

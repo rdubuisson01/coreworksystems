@@ -1,206 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Your Brief Is Ready | Corework Systems</title>
-<meta name="description" content="Thanks for your interest in Corework Systems. Your product brief is ready to download.">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --ink: #0E1117;
-  --navy: #1A3A6B;
-  --paper: #F7F5F1;
-  --warm: #B85C2A;
-  --muted: #76726c;
-  --rule: #ddd9d3;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--paper);
-  color: var(--ink);
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 300;
-  line-height: 1.7;
-  font-size: 17px;
-  -webkit-font-smoothing: antialiased;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 4rem;
-  background: var(--paper);
-  border-bottom: 1px solid var(--rule);
-}
-.nav-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
-.nav-mark { flex-shrink: 0; display: block; }
-.nav-wordmark { display: flex; flex-direction: column; line-height: 1; }
-.nav-word { font-family: 'DM Serif Display', serif; font-size: 1.18rem; color: var(--ink); letter-spacing: -0.01em; line-height: 1; }
-.nav-systems { display: flex; align-items: center; gap: 5px; margin-top: 4px; font-family: 'DM Sans', sans-serif; font-size: 0.5rem; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: var(--warm); }
-.nav-systems i { height: 1px; width: 14px; background: var(--warm); display: block; }
-
-.nav-links { display: flex; align-items: center; gap: 2.5rem; }
-.nav-link { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.nav-link:hover, .nav-link.active { color: var(--ink); }
-
-.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px; }
-.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); margin: 5px 0; transition: transform 0.2s ease, opacity 0.2s ease; }
-.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 9rem 2rem 4rem; }
-
-.confirm-box { max-width: 560px; text-align: center; }
-.eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm); margin-bottom: 1.4rem; }
-.confirm-box h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 300; line-height: 1.2; color: var(--navy); margin-bottom: 1.2rem; }
-.confirm-box p { color: var(--muted); margin-bottom: 2.2rem; }
-.confirm-box p strong { color: var(--ink); font-weight: 500; }
-
-.download-btn {
-  display: inline-block; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
-  background: var(--navy); color: #fff; text-decoration: none; padding: 1.1rem 2.4rem;
-  border: none; cursor: pointer; transition: background 0.2s;
-}
-.download-btn:hover { background: var(--ink); }
-
-.secondary-line { margin-top: 2rem; font-size: 0.92rem; color: var(--muted); }
-.secondary-line a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 2px; }
-.secondary-line a:hover { color: var(--warm); border-color: var(--warm); }
-
-footer { background: var(--ink); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.06); }
-.footer-logo { display: flex; align-items: center; gap: 10px; }
-.footer-lockup { display: flex; flex-direction: column; line-height: 1; }
-.footer-word { font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: #fff; letter-spacing: -0.01em; }
-.footer-systems { display: flex; align-items: center; gap: 4px; margin-top: 4px; font-size: 0.46rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--warm); }
-.footer-systems i { height: 1px; width: 11px; background: var(--warm); display: block; }
-.footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
-.footer-link { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; }
-.footer-link:hover { color: var(--warm); }
-
-@media (max-width: 900px) {
-  nav { padding: 1.2rem 2rem; }
-  .nav-toggle { display: block; }
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 100%; left: 0; right: 0;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.4rem;
-    background: var(--paper);
-    border-bottom: 1px solid var(--rule);
-    padding: 1.8rem 2rem 2.2rem;
-  }
-  .nav-links.open { display: flex; }
-  footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
-}
-</style>
-</head>
-<body>
-
-<nav>
-  <a href="index.html" class="nav-logo" aria-label="Corework Systems home">
-    <svg class="nav-mark" width="23" height="26" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
-      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
-      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.35"/>
-    </svg>
-    <span class="nav-wordmark">
-      <span class="nav-word">Corework</span>
-      <span class="nav-systems"><i></i>Systems<i></i></span>
-    </span>
-  </a>
-  <div class="nav-links" id="nav-links">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="how-we-help.html" class="nav-link">How We Help</a>
-    <a href="insights.html" class="nav-link">Insights</a>
-    <a href="about.html" class="nav-link">About</a>
-    <a href="contact.html" class="nav-link">Contact</a>
-  </div>
-  <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<main>
-  <div class="confirm-box">
-    <p class="eyebrow">Your Brief Is Ready</p>
-    <h1 id="headline">Thanks — here's your brief.</h1>
-    <p id="subtext">Your copy is ready to download.</p>
-    <a href="#" id="download-link" class="download-btn">Download the Brief →</a>
-    <p class="secondary-line">Prefer to talk now? <a href="contact.html#contact">Let's talk</a>.</p>
-  </div>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Your Brief Is Ready | Corework Systems</title><meta name="description" content="Thanks for your interest in Corework Systems. Your brief is ready to download."><meta name="robots" content="noindex"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>
+:root{--navy:#1A3A6B;--ink:#172e43;--copper:#B85C2A;--slate:#94A1B5;--gold:#E8A92A;--yellow:#ffd257;--cream:#fffaf0;--blue:#e9f1f8;--line:#d7dfe4}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;color:var(--ink);font-family:'DM Sans',Arial,sans-serif;background:var(--cream);font-size:17px;line-height:1.6}a{color:inherit;text-decoration:none}button{font:inherit}img{display:block;width:100%;object-fit:cover}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:Manrope,Arial,sans-serif;line-height:1.13;letter-spacing:-.045em}p{color:#4b5e6c}.wrap{width:min(1200px,90%);margin:auto}.eyebrow{text-transform:uppercase;letter-spacing:.15em;font-size:11px;font-weight:800;color:var(--copper);display:block;margin-bottom:20px}.button{display:inline-flex;align-items:center;justify-content:center;gap:24px;border:0;background:var(--navy);color:white;border-radius:7px;padding:16px 23px;font-size:14px;font-weight:700;transition:transform .2s,background .2s}.button:hover{background:#254d77;transform:translateY(-2px)}.button.light{background:var(--yellow);color:var(--ink)}.text-link{font-size:14px;font-weight:700;border-bottom:1px solid currentColor;padding-bottom:5px}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--copper);outline-offset:5px}header{background:var(--cream);border-bottom:1px solid #e8e3d7;position:sticky;top:0;z-index:20}nav{height:88px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;gap:12px;align-items:center}.mark{display:block;flex-shrink:0}.brand strong{display:block;font-family:'DM Serif Display',Georgia,serif;font-size:27px;font-weight:400;line-height:1;letter-spacing:-.01em;color:#0E1117}.brand small{display:flex;align-items:center;gap:6px;font-size:8.5px;font-weight:500;letter-spacing:.28em;color:var(--copper);margin-top:5px}.brand small i{flex:1;height:1px;background:var(--copper)}.links{display:flex;align-items:center;gap:32px;font-size:13px;font-weight:600}.links .button{padding:11px 19px}.menu{display:none}.hero{padding:65px 0 0;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}.hero h1{font-size:clamp(44px,5.2vw,70px);font-weight:800;max-width:620px}.highlight{background:linear-gradient(transparent 66%,var(--yellow) 66%);box-decoration-break:clone;-webkit-box-decoration-break:clone}.hero-copy p{font-size:18px;max-width:495px;margin:25px 0 28px}.actions{display:flex;align-items:center;flex-wrap:wrap;gap:25px}.hero-art{position:relative;padding:0 0 25px 20px}.hero-art:before{content:'';position:absolute;inset:24px -65px 0 0;background:var(--yellow);border-radius:90px 0 0 12px}.hero-art img{background:#e9f1f8;color:transparent;height:370px;border-radius:65px 10px 10px 10px;position:relative;object-position:53% center}.photo-note{position:absolute;bottom:5px;left:0;background:var(--navy);padding:16px 24px;color:#fff;border-radius:8px;font-family:Manrope,Arial,sans-serif;font-size:17px;font-weight:800;letter-spacing:-.02em;line-height:1.2}.photo-note b{color:var(--yellow)}.product-strip{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 18px;margin-top:45px;padding:24px 0;border-top:1px solid #dedfd8;font-size:13px;font-weight:600;color:var(--navy)}.product-strip a{display:flex;align-items:center;gap:18px}.product-strip a:hover{color:var(--copper)}.product-strip a+a:before{content:'';width:6px;height:6px;border-radius:50%;background:var(--sep);flex-shrink:0}.product-strip a:nth-child(2){--sep:var(--copper)}.product-strip a:nth-child(3){--sep:var(--slate)}.product-strip a:nth-child(4){--sep:var(--gold)}.product-strip a:nth-child(5){--sep:var(--navy)}.problems{padding:80px 0 90px;background:#fff}.section-head{display:flex;justify-content:space-between;gap:35px;align-items:end;margin-bottom:35px}h2{font-size:clamp(34px,3.6vw,49px);font-weight:800}.section-head p{max-width:380px;font-size:15px}.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.problem{display:flex;flex-direction:column;min-height:275px;padding:27px;background:var(--blue);border-radius:9px;transition:transform .2s,box-shadow .2s}.problem:nth-child(2),.problem:nth-child(5){background:#fcf0df}.problem:nth-child(3){background:#edf2e9}.problem:hover{transform:translateY(-5px);box-shadow:0 14px 22px #17385e12}.num{font-size:11px;letter-spacing:.14em;color:#5b6c78;margin-bottom:22px}.problem h3{font-size:23px;font-weight:700;letter-spacing:-.035em;line-height:1.28}.problem-foot{border-top:1px solid #17385e22;margin-top:auto;padding-top:18px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:11px;font-weight:700}.problem h3{margin-bottom:27px}.arrow{font-size:24px;line-height:1}.problem.last{background:var(--navy);color:#fff}.last .num{color:var(--yellow)}.last .problem-foot{border-color:#ffffff33}.compare{margin-top:28px;display:flex;justify-content:end}.system{padding:90px 0}.system-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:75px;align-items:start}.system h2{max-width:470px}.system p{margin:25px 0;max-width:440px}.system-photo{background:#e9f1f8;color:transparent;height:270px;border-radius:8px;margin-top:32px;object-position:center 44%}.dimensions{border-top:1px solid var(--line)}details{border-bottom:1px solid var(--line)}summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:20px;padding:22px 0;font-weight:600;font-size:17px}summary::-webkit-details-marker{display:none}summary span{font-size:11px;color:var(--copper)}summary:after{content:'+';margin-left:auto;font-size:23px;font-weight:400}details[open] summary:after{content:'−'}details p{margin:0 25px 22px 38px!important;font-size:15px}.founder{background:var(--blue);padding:65px 0}.founder-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center}.founder-title{font-size:clamp(32px,4vw,49px);line-height:1.15;font-weight:800;letter-spacing:-.05em}.founder-title .sun{color:var(--copper);display:block;font-family:Georgia,serif;font-weight:400;font-style:italic;letter-spacing:-.04em}.founder p{font-size:17px;margin:18px 0 25px}.name{font-size:12px;font-weight:700}.founder-bio{display:flex;align-items:center;gap:32px}.founder-photo{width:140px;height:140px;flex-shrink:0;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 0 0 2px var(--copper)}.founder-bio p{margin:10px 0 20px}.insights{background:#fff;padding:80px 0}.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}.editorial{height:190px;position:relative;overflow:hidden;border-radius:8px;background:var(--blue);display:flex;align-items:center;justify-content:center;margin-bottom:20px}.editorial svg{width:100%;height:100%}.insight h3{font-size:22px;line-height:1.3;letter-spacing:-.03em;margin:12px 0 15px}.insight:hover h3{color:var(--copper)}.tag{font-size:10px;letter-spacing:.14em;font-weight:700;color:var(--copper);text-transform:uppercase}.read{font-size:12px;font-weight:700}.closing{padding:75px 0;background:var(--yellow)}.closing .wrap{display:flex;align-items:center;justify-content:space-between;gap:40px}.closing h2{max-width:670px}.closing p{margin-top:17px;color:#344451;max-width:590px}.closing .eyebrow{color:#6f381e}.closing .button{white-space:nowrap}footer{padding:35px 0;background:var(--navy);color:white}footer .wrap{display:flex;justify-content:space-between;gap:25px;align-items:center}footer p{color:#c0cedb;font-size:11px}footer a{font-size:12px}.footer-links{display:flex;gap:24px}.skip{position:absolute;top:-100px}.skip:focus{top:0;z-index:50;background:white;padding:10px}@media(min-width:1500px){.hero-art img{height:390px}}@media(max-width:900px){.hero-grid{gap:25px}.hero h1{font-size:45px}.hero-art img{height:300px}.problem-grid{grid-template-columns:repeat(2,1fr)}.system-grid{gap:35px}.founder-grid{gap:40px}.links{gap:20px}.insight h3{font-size:19px}}@media(max-width:650px){nav{height:74px}.menu{display:block;background:none;border:1px solid var(--line);border-radius:5px;padding:7px 11px;color:var(--navy)}.links{display:none;position:absolute;top:74px;left:0;right:0;background:var(--cream);padding:22px 5%;border-bottom:1px solid var(--line)}.links.open{display:flex;flex-direction:column;align-items:stretch}.hero{padding-top:38px}.hero-grid,.system-grid,.founder-grid{grid-template-columns:1fr;gap:35px}.hero h1{font-size:46px}.hero-copy p{font-size:17px}.hero-art{padding-left:12px}.hero-art img{height:250px;border-top-left-radius:45px}.product-strip{justify-content:flex-start;gap:10px 14px;margin-top:30px;font-size:12px}.product-strip a{gap:14px}.section-head{display:block}.section-head p{margin-top:20px}.problems,.system,.insights{padding:55px 0}.problem-grid,.insight-grid{grid-template-columns:1fr}.problem{min-height:225px}.problem h3{font-size:24px}.problem-foot{font-size:12px}.system-photo{height:260px}.founder{padding:50px 0}.founder-bio{align-items:flex-start;gap:20px}.founder-photo{width:88px;height:88px;border-width:3px}.insight-grid{gap:35px}.editorial{height:185px}.insight h3{font-size:24px}.closing{padding:50px 0}.closing .wrap,footer .wrap{align-items:start;flex-direction:column}.closing h2{font-size:39px}h2{font-size:36px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+.ty{padding:70px 0 95px;overflow:hidden}.ty-card{position:relative;max-width:760px;margin:auto;background:#fff;border-radius:18px;padding:56px 56px 48px;box-shadow:0 18px 40px rgba(23,46,67,.10);border-top:6px solid var(--yellow)}.ty-card:before{content:'';position:absolute;z-index:-1;top:-30px;right:-60px;width:220px;height:220px;border-radius:90px 0 90px 12px;background:var(--yellow);opacity:.55}.ty-badge{width:64px;height:64px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;margin-bottom:26px}.ty h1{font-size:clamp(38px,4.4vw,56px);font-weight:800;margin-bottom:18px}.ty-sub{font-size:19px;max-width:560px}.ty-sub strong{color:var(--navy)}.ty-sub .text-link{font-size:inherit;padding-bottom:1px}.ty .actions{margin-top:32px}.ty-next{margin-top:42px;padding-top:30px;border-top:1px solid var(--line)}.ty-next h2{font-size:22px;letter-spacing:-.03em;margin-bottom:18px}.ty-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.ty-links a{display:flex;flex-direction:column;gap:6px;background:var(--tint);border-radius:12px;padding:18px 20px;transition:transform .2s}.ty-links a:hover{transform:translateY(-3px)}.ty-links b{font-family:Manrope,Arial,sans-serif;font-size:16px;color:var(--navy);letter-spacing:-.01em}.ty-links span{font-size:14px;color:#4b5e6c;line-height:1.45}
+.ty-briefs{display:flex;flex-wrap:wrap;gap:10px}.ty-brief{display:inline-flex;gap:10px;align-items:center;background:var(--blue);color:var(--navy);border-radius:7px;padding:11px 16px;font-size:14px;font-weight:700;transition:background .2s}.ty-brief:hover{background:var(--yellow)}
+@media(max-width:650px){.ty{padding:36px 0 60px}.ty-card{padding:34px 22px 30px}.ty-card:before{display:none}.ty h1{font-size:38px}.ty-sub{font-size:17px}.ty-links{grid-template-columns:minmax(0,1fr)}}
+</style></head><body><a class="skip" href="#main">Skip to content</a><header><nav class="wrap" aria-label="Main navigation"><a class="brand" href="index.html" aria-label="Corework Systems home"><svg class="mark" width="27" height="30" viewBox="0 0 34 38" fill="none" aria-hidden="true"><rect x="0" y="1" width="34" height="7.5" rx="1.5" fill="#1A3A6B"/><rect x="5" y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/><rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.35"/></svg><span><strong>Corework</strong><small><i></i>SYSTEMS<i></i></small></span></a><button class="menu" aria-expanded="false" aria-controls="navlinks">Menu</button><div class="links" id="navlinks"><a href="how-we-help.html">How we help</a><a href="insights.html">Insights</a><a href="about.html">About</a><a class="button" href="contact.html#contact">Let’s talk <span aria-hidden="true">↗</span></a></div></nav></header>
+<main id="main">
+<section class="ty"><div class="wrap">
+<div class="ty-card">
+<div class="ty-badge" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M8 15.5l4.5 4.5L22 10" stroke="#1A3A6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<span class="eyebrow" id="eyebrow">Your brief is ready</span>
+<h1 id="headline">Thanks. <span class="highlight">Here’s your brief.</span></h1>
+<p class="ty-sub" id="subtext">Your copy is ready to download.</p>
+<div class="actions" id="actions">
+<a href="#" id="download-link" class="button">Download the brief <span aria-hidden="true">↓</span></a>
+<a href="contact.html#contact" class="text-link">Prefer to talk now? Let’s talk</a>
+</div>
+<div class="ty-next">
+<h2>While you’re here</h2>
+<div class="ty-links">
+<a href="how-we-help.html" style="--tint:var(--blue)"><b>How we help</b><span>Five common problems and where Corework starts.</span></a>
+<a href="insights.html" style="--tint:#fcf0df"><b>Insights</b><span>Why workforce initiatives stall, and what helps.</span></a>
+<a href="about.html" style="--tint:#edf2e9"><b>About</b><span>The thinking and the person behind Corework.</span></a>
+</div>
+</div>
+</div>
+</div></section>
 </main>
-
-<footer>
-  <div class="footer-logo">
-    <svg class="footer-mark" width="20" height="23" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
-      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
-      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.45"/>
-    </svg>
-    <span class="footer-lockup">
-      <span class="footer-word">Corework</span>
-      <span class="footer-systems"><i></i>Systems<i></i></span>
-    </span>
-  </div>
-  <div class="footer-copy">© 2026 Corework Systems</div>
-  <a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" class="footer-link">LinkedIn</a>
-</footer>
-
-<script>
-var navToggle = document.getElementById('nav-toggle');
-var navLinks = document.getElementById('nav-links');
-navToggle.addEventListener('click', function() {
-  var isOpen = navLinks.classList.toggle('open');
-  navToggle.setAttribute('aria-expanded', String(isOpen));
-});
-navLinks.querySelectorAll('.nav-link').forEach(function(link) {
-  link.addEventListener('click', function() {
-    navLinks.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-  });
-});
-
-// Map each product slug to its brief file and display name
-var briefs = {
-  'manager-effectiveness': { file: 'Corework_Manager_Effectiveness_Program_Brief.pdf', name: 'Manager Effectiveness Program' },
-  'leadership-pathway': { file: 'Corework_Leadership_Pathway_Brief.pdf', name: 'Corework Leadership Pathway' },
-  'succession-mobility': { file: 'Corework_Succession_Internal_Mobility_Design_Brief.pdf', name: 'Succession & Internal Mobility Design' },
-  'strategy-intensive': { file: 'Corework_Workforce_Talent_Strategy_Intensive_Brief.pdf', name: 'Workforce & Talent Strategy Intensive' },
-  'workforce-diagnostic': { file: 'Corework_Workforce_System_Diagnostic_Brief.pdf', name: 'Workforce System Diagnostic' }
+<footer><div class="wrap"><div><div style="display:flex;align-items:center;gap:10px;font-family:'DM Serif Display',Georgia,serif;font-size:24px"><svg class="mark" width="27" height="30" viewBox="0 0 34 38" fill="none" aria-hidden="true"><rect x="0" y="1" width="34" height="7.5" rx="1.5" fill="#3B5E96"/><rect x="5" y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/><rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#94A1B5" opacity="1"/></svg>Corework</div><p>Workforce &amp; talent strategy advisory · © 2026</p></div><div class="footer-links"><a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="contact.html#contact">Contact ↗</a></div></div></footer><script>const b=document.querySelector('.menu'),n=document.querySelector('.links');b.addEventListener('click',()=>{let o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o))});n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{n.classList.remove('open');b.setAttribute('aria-expanded','false')}));</script><script>
+var briefs={
+'manager-effectiveness':{file:'Corework_Manager_Effectiveness_Program_Brief.pdf',name:'Manager Effectiveness Program'},
+'leadership-pathway':{file:'Corework_Leadership_Pathway_Brief.pdf',name:'Corework Leadership Pathway'},
+'succession-mobility':{file:'Corework_Succession_Internal_Mobility_Design_Brief.pdf',name:'Succession & Internal Mobility Design'},
+'strategy-intensive':{file:'Corework_Workforce_Talent_Strategy_Intensive_Brief.pdf',name:'Workforce & Talent Strategy Intensive'},
+'workforce-diagnostic':{file:'Corework_Workforce_System_Diagnostic_Brief.pdf',name:'Workforce System Diagnostic'}
 };
-
-var params = new URLSearchParams(window.location.search);
-var slug = params.get('brief');
-var entry = briefs[slug];
-var link = document.getElementById('download-link');
-var subtext = document.getElementById('subtext');
-
-if (entry) {
-  var url = 'briefs/' + entry.file;
-  link.href = url;
-  link.setAttribute('download', entry.file);
-  subtext.innerHTML = 'Your copy of the <strong>' + entry.name + '</strong> brief is ready to download.';
-} else {
-  document.getElementById('headline').textContent = "We couldn't find that brief.";
-  subtext.innerHTML = 'Head back to <a href="how-we-help.html">How We Help</a> to find the right one, or reach out and we\'ll send it directly.';
-  link.style.display = 'none';
-}
-</script>
-
-</body>
-</html>
+var slug=new URLSearchParams(window.location.search).get('brief'),entry=briefs[slug],link=document.getElementById('download-link'),sub=document.getElementById('subtext');
+if(entry){link.href='briefs/'+entry.file;link.setAttribute('download',entry.file);sub.innerHTML='Your copy of the <strong>'+entry.name+'</strong> brief is ready to download. Thanks for your interest in Corework.';}
+else{document.getElementById('eyebrow').textContent='Thanks for your interest';document.getElementById('headline').innerHTML='Thanks for <span class="highlight">stopping by.</span>';sub.innerHTML='Find the offering that fits on How we help, or reach out and we’ll send the brief you need.';link.href='how-we-help.html';link.innerHTML='See how we help <span aria-hidden="true">→</span>';}
+</script></body></html>

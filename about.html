@@ -1,261 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>About | Corework Systems</title>
-<meta name="description" content="Corework Systems is a principal-led workforce and talent advisory firm helping organizations turn workforce priorities into clearer decisions, stronger management practice, and systems that support execution.">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>About | Corework Systems</title><meta name="description" content="Meet Richard Dubuisson and Corework Systems: workforce and talent advisory grounded in developing people and improving the systems that help them succeed."><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>
+:root{--navy:#1A3A6B;--ink:#172e43;--copper:#B85C2A;--slate:#94A1B5;--gold:#E8A92A;--yellow:#ffd257;--cream:#fffaf0;--blue:#e9f1f8;--line:#d7dfe4}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;color:var(--ink);font-family:'DM Sans',Arial,sans-serif;background:var(--cream);font-size:17px;line-height:1.6}a{color:inherit;text-decoration:none}button{font:inherit}img{display:block;width:100%;object-fit:cover}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:Manrope,Arial,sans-serif;line-height:1.13;letter-spacing:-.045em}p{color:#4b5e6c}.wrap{width:min(1200px,90%);margin:auto}.eyebrow{text-transform:uppercase;letter-spacing:.15em;font-size:11px;font-weight:800;color:var(--copper);display:block;margin-bottom:20px}.button{display:inline-flex;align-items:center;justify-content:center;gap:24px;border:0;background:var(--navy);color:white;border-radius:7px;padding:16px 23px;font-size:14px;font-weight:700;transition:transform .2s,background .2s}.button:hover{background:#254d77;transform:translateY(-2px)}.button.light{background:var(--yellow);color:var(--ink)}.text-link{font-size:14px;font-weight:700;border-bottom:1px solid currentColor;padding-bottom:5px}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--copper);outline-offset:5px}header{background:var(--cream);border-bottom:1px solid #e8e3d7;position:sticky;top:0;z-index:20}nav{height:88px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;gap:12px;align-items:center}.mark{display:block;flex-shrink:0}.brand strong{display:block;font-family:'DM Serif Display',Georgia,serif;font-size:27px;font-weight:400;line-height:1;letter-spacing:-.01em;color:#0E1117}.brand small{display:flex;align-items:center;gap:6px;font-size:8.5px;font-weight:500;letter-spacing:.28em;color:var(--copper);margin-top:5px}.brand small i{flex:1;height:1px;background:var(--copper)}.links{display:flex;align-items:center;gap:32px;font-size:13px;font-weight:600}.links .button{padding:11px 19px}.menu{display:none}.hero{padding:65px 0 0;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}.hero h1{font-size:clamp(44px,5.2vw,70px);font-weight:800;max-width:620px}.highlight{background:linear-gradient(transparent 66%,var(--yellow) 66%);box-decoration-break:clone;-webkit-box-decoration-break:clone}.hero-copy p{font-size:18px;max-width:495px;margin:25px 0 28px}.actions{display:flex;align-items:center;flex-wrap:wrap;gap:25px}.hero-art{position:relative;padding:0 0 25px 20px}.hero-art:before{content:'';position:absolute;inset:24px -65px 0 0;background:var(--yellow);border-radius:90px 0 0 12px}.hero-art img{background:#e9f1f8;color:transparent;height:370px;border-radius:65px 10px 10px 10px;position:relative;object-position:53% center}.photo-note{position:absolute;bottom:5px;left:0;background:var(--navy);padding:16px 24px;color:#fff;border-radius:8px;font-family:Manrope,Arial,sans-serif;font-size:17px;font-weight:800;letter-spacing:-.02em;line-height:1.2}.photo-note b{color:var(--yellow)}.product-strip{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 18px;margin-top:45px;padding:24px 0;border-top:1px solid #dedfd8;font-size:13px;font-weight:600;color:var(--navy)}.product-strip a{display:flex;align-items:center;gap:18px}.product-strip a:hover{color:var(--copper)}.product-strip a+a:before{content:'';width:6px;height:6px;border-radius:50%;background:var(--sep);flex-shrink:0}.product-strip a:nth-child(2){--sep:var(--copper)}.product-strip a:nth-child(3){--sep:var(--slate)}.product-strip a:nth-child(4){--sep:var(--gold)}.product-strip a:nth-child(5){--sep:var(--navy)}.problems{padding:80px 0 90px;background:#fff}.section-head{display:flex;justify-content:space-between;gap:35px;align-items:end;margin-bottom:35px}h2{font-size:clamp(34px,3.6vw,49px);font-weight:800}.section-head p{max-width:380px;font-size:15px}.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.problem{display:flex;flex-direction:column;min-height:275px;padding:27px;background:var(--blue);border-radius:9px;transition:transform .2s,box-shadow .2s}.problem:nth-child(2),.problem:nth-child(5){background:#fcf0df}.problem:nth-child(3){background:#edf2e9}.problem:hover{transform:translateY(-5px);box-shadow:0 14px 22px #17385e12}.num{font-size:11px;letter-spacing:.14em;color:#5b6c78;margin-bottom:22px}.problem h3{font-size:23px;font-weight:700;letter-spacing:-.035em;line-height:1.28}.problem-foot{border-top:1px solid #17385e22;margin-top:auto;padding-top:18px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:11px;font-weight:700}.problem h3{margin-bottom:27px}.arrow{font-size:24px;line-height:1}.problem.last{background:var(--navy);color:#fff}.last .num{color:var(--yellow)}.last .problem-foot{border-color:#ffffff33}.compare{margin-top:28px;display:flex;justify-content:end}.system{padding:90px 0}.system-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:75px;align-items:start}.system h2{max-width:470px}.system p{margin:25px 0;max-width:440px}.system-photo{background:#e9f1f8;color:transparent;height:270px;border-radius:8px;margin-top:32px;object-position:center 44%}.dimensions{border-top:1px solid var(--line)}details{border-bottom:1px solid var(--line)}summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:20px;padding:22px 0;font-weight:600;font-size:17px}summary::-webkit-details-marker{display:none}summary span{font-size:11px;color:var(--copper)}summary:after{content:'+';margin-left:auto;font-size:23px;font-weight:400}details[open] summary:after{content:'−'}details p{margin:0 25px 22px 38px!important;font-size:15px}.founder{background:var(--blue);padding:65px 0}.founder-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center}.founder-title{font-size:clamp(32px,4vw,49px);line-height:1.15;font-weight:800;letter-spacing:-.05em}.founder-title .sun{color:var(--copper);display:block;font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-style:italic;letter-spacing:-.04em}.founder p{font-size:17px;margin:18px 0 25px}.name{font-size:12px;font-weight:700}.founder-bio{display:flex;align-items:center;gap:32px}.founder-photo{width:140px;height:140px;flex-shrink:0;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 0 0 2px var(--copper)}.founder-bio p{margin:10px 0 20px}.insights{background:#fff;padding:80px 0}.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}.editorial{height:190px;position:relative;overflow:hidden;border-radius:8px;background:var(--blue);display:flex;align-items:center;justify-content:center;margin-bottom:20px}.editorial svg{width:100%;height:100%}.insight h3{font-size:22px;line-height:1.3;letter-spacing:-.03em;margin:12px 0 15px}.insight:hover h3{color:var(--copper)}.tag{font-size:10px;letter-spacing:.14em;font-weight:700;color:var(--copper);text-transform:uppercase}.read{font-size:12px;font-weight:700}.closing{padding:75px 0;background:var(--yellow)}.closing .wrap{display:flex;align-items:center;justify-content:space-between;gap:40px}.closing h2{max-width:670px}.closing p{margin-top:17px;color:#344451;max-width:590px}.closing .eyebrow{color:#6f381e}.closing .button{white-space:nowrap}footer{padding:35px 0;background:var(--navy);color:white}footer .wrap{display:flex;justify-content:space-between;gap:25px;align-items:center}footer p{color:#c0cedb;font-size:11px}footer a{font-size:12px}.footer-links{display:flex;gap:24px}.skip{position:absolute;top:-100px}.skip:focus{top:0;z-index:50;background:white;padding:10px}@media(min-width:1500px){.hero-art img{height:390px}}@media(max-width:900px){.hero-grid{gap:25px}.hero h1{font-size:45px}.hero-art img{height:300px}.problem-grid{grid-template-columns:repeat(2,1fr)}.system-grid{gap:35px}.founder-grid{gap:40px}.links{gap:20px}.insight h3{font-size:19px}}@media(max-width:650px){nav{height:74px}.menu{display:block;background:none;border:1px solid var(--line);border-radius:5px;padding:7px 11px;color:var(--navy)}.links{display:none;position:absolute;top:74px;left:0;right:0;background:var(--cream);padding:22px 5%;border-bottom:1px solid var(--line)}.links.open{display:flex;flex-direction:column;align-items:stretch}.hero{padding-top:38px}.hero-grid,.system-grid,.founder-grid{grid-template-columns:1fr;gap:35px}.hero h1{font-size:46px}.hero-copy p{font-size:17px}.hero-art{padding-left:12px}.hero-art img{height:250px;border-top-left-radius:45px}.product-strip{justify-content:flex-start;gap:10px 14px;margin-top:30px;font-size:12px}.product-strip a{gap:14px}.section-head{display:block}.section-head p{margin-top:20px}.problems,.system,.insights{padding:55px 0}.problem-grid,.insight-grid{grid-template-columns:1fr}.problem{min-height:225px}.problem h3{font-size:24px}.problem-foot{font-size:12px}.system-photo{height:260px}.founder{padding:50px 0}.founder-bio{align-items:flex-start;gap:20px}.founder-photo{width:88px;height:88px;border-width:3px}.insight-grid{gap:35px}.editorial{height:185px}.insight h3{font-size:24px}.closing{padding:50px 0}.closing .wrap,footer .wrap{align-items:start;flex-direction:column}.closing h2{font-size:39px}h2{font-size:36px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+.subscribe{margin-top:40px;padding:25px;background:var(--cream);border-radius:8px;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}.subscribe label{font-weight:600}.subscribe input{font:inherit;padding:14px;border:1px solid var(--line);border-radius:6px;max-width:100%;min-width:0}.subscribe div{display:flex;gap:8px;flex-wrap:wrap}.crumb{padding-top:28px;font-size:13px;font-weight:600}.crumb a{color:var(--copper)}.crumb a:hover{color:var(--navy)}
+.p-hero{padding:30px 0 0;overflow:hidden}.p-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}.p-hero h1{font-size:clamp(40px,4.6vw,60px);font-weight:800}.tagline{font-family:Manrope,Arial,sans-serif;font-size:clamp(20px,1.9vw,25px);font-weight:700;color:var(--navy);letter-spacing:-.02em;margin:16px 0 22px}.p-hero p+p{margin-top:12px}.p-hero .actions{margin-top:28px}.p-hero .hero-art img{height:400px}.p-hero .photo-note{max-width:330px;font-size:16px;line-height:1.35}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:50px;padding:26px 0;border-top:1px solid #dedfd8}.fact{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}.fact:before{content:'';width:7px;height:7px;border-radius:50%;background:var(--dot);align-self:center}.fact b{font-family:Manrope,Arial,sans-serif;font-size:22px;font-weight:800;color:var(--navy);letter-spacing:-.03em}.fact span{font-size:14px;color:#4b5e6c}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.problem-sec{background:#fff;padding:85px 0}.problem-sec h2{margin-bottom:20px}.question{margin-top:28px;background:var(--navy);color:#fff;border-radius:12px;padding:26px 28px;font-family:Manrope,Arial,sans-serif;font-size:21px;font-weight:700;line-height:1.35;letter-spacing:-.02em}.question span{display:block;font-family:'DM Sans',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow);margin-bottom:10px}.fit-lead{font-weight:700;color:var(--navy);margin-bottom:16px}
+.checks{list-style:none;padding:0;margin:0;display:grid;gap:12px}.checks li{position:relative;background:var(--cream);border:1px solid #efe7d6;border-radius:10px;padding:18px 20px 18px 56px;color:var(--ink);font-weight:500}.checks li:before{content:'';position:absolute;left:20px;top:19px;width:22px;height:22px;border-radius:50%;background:var(--yellow)}.checks li:after{content:'';position:absolute;left:27px;top:24px;width:6px;height:10px;border:solid var(--navy);border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+.how{padding:85px 0}.how-head{align-items:end;margin-bottom:38px}.flow{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;counter-reset:none}.flow li{position:relative;background:#fff;border-radius:12px;padding:20px 18px;border-top:5px solid var(--c,var(--line));display:flex;flex-direction:column;gap:8px;min-height:120px}.flow li b{font-family:Manrope,Arial,sans-serif;font-size:17px;line-height:1.25;letter-spacing:-.02em;color:var(--navy)}.flow .step{font-size:11px;font-weight:700;letter-spacing:.14em;color:#5b6c78}.flow li:not(:last-child):after{content:'→';position:absolute;right:-12px;top:50%;transform:translateY(-50%);width:20px;text-align:center;color:var(--copper);font-weight:700;z-index:1}.flow .bookend{background:var(--blue);border-top-color:var(--navy);border-top-style:dashed}.tag-sm{align-self:flex-start;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--navy);color:#fff;padding:3px 8px;border-radius:100px}
+.how-detail{margin-top:46px;align-items:center}.how-photo{height:330px;border-radius:14px;background:var(--blue);color:transparent}.how-detail p+p{margin-top:16px}.goal{font-family:Manrope,Arial,sans-serif;font-size:22px;font-weight:700;color:var(--navy)!important;letter-spacing:-.02em;line-height:1.3}
+.get{background:#fff;padding:85px 0}.get h2{max-width:720px}.get-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:34px}.get-card{background:var(--tint);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:16px}.get-card svg{width:46px;height:46px}.get-card b{font-weight:600;color:var(--ink);line-height:1.45}.result{margin-top:34px;font-size:19px;max-width:860px}.result strong{color:var(--navy);background:linear-gradient(transparent 70%,var(--yellow) 70%)}
+.brief{padding:85px 0}.brief-card{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;background:var(--blue);border-radius:16px;padding:48px}.brief-card h2{font-size:clamp(28px,2.8vw,38px);margin-bottom:16px}.brief-form{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;align-content:start}.brief-form label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:var(--navy)}.brief-form input[type=text],.brief-form input[type=email]{font:inherit;font-weight:400;padding:13px 14px;border:1px solid var(--line);border-radius:7px;background:#fff;min-width:0}.brief-form input:focus{outline:2px solid var(--copper);outline-offset:1px}.opt{grid-column:1/-1;display:flex;gap:10px;align-items:flex-start}.opt input{margin-top:5px;width:18px;height:18px;flex-shrink:0}.opt label{font-weight:400;font-size:14px;color:#4b5e6c}.brief-form .button{grid-column:1/-1;justify-self:start}
+@media(max-width:900px){.p-hero-grid{gap:30px}.two-col{gap:36px}.flow{grid-template-columns:repeat(3,minmax(0,1fr))}.flow li:nth-child(3n):after{display:none}.get-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.brief-card{grid-template-columns:1fr;gap:28px}}
+@media(max-width:650px){.p-hero-grid,.two-col{grid-template-columns:minmax(0,1fr)}.p-hero h1{font-size:38px}.how-head{gap:16px}.p-hero .hero-art img{height:260px}.facts{grid-template-columns:1fr 1fr;gap:18px}.fact{display:grid;grid-template-columns:7px 1fr;column-gap:9px;align-items:center}.fact span{grid-column:2;line-height:1.3}.problem-sec,.how,.get,.brief{padding:55px 0}.flow{grid-template-columns:1fr}.flow li{min-height:0}.flow li:not(:last-child):after{content:'↓';right:auto;left:50%;top:auto;bottom:-15px;transform:translateX(-50%)}.flow li:nth-child(3n):after{display:block}.how-photo{height:230px}.get-grid{grid-template-columns:1fr}.brief-card{padding:26px 20px}.brief-form{grid-template-columns:1fr}}
+.a-hero{padding:50px 0 80px;overflow:hidden}.a-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}.a-hero h1{font-size:clamp(38px,4.4vw,58px);font-weight:800;margin-bottom:26px}.a-hero p{font-size:18px}.a-hero p+p{margin-top:14px}.a-hero .hero-art img{height:420px}.a-hero .photo-note{font-size:16px;line-height:1.35;max-width:330px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:64px}.why{background:#fff;padding:85px 0}.why p+p{margin-top:14px}.why h2{margin-bottom:22px}.idea-card{background:var(--navy);color:#fff;border-radius:14px;padding:34px 32px}.idea-card span{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow);margin-bottom:14px}.idea-card p{font-family:Manrope,Arial,sans-serif;font-size:clamp(22px,2.2vw,28px);font-weight:700;line-height:1.3;letter-spacing:-.02em;color:#fff}.idea-after{margin-top:18px;font-weight:600;color:var(--navy)}
+.team{padding:85px 0}.team-head{align-items:end;margin-bottom:36px}.team-head p+p{margin-top:14px}.exp{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.exp li{display:flex;align-items:center;gap:12px;background:#fff;border-radius:10px;padding:16px 18px;font-weight:600;color:var(--navy);font-size:15.5px;line-height:1.35}.exp li:before{content:'';flex-shrink:0;width:8px;height:8px;border-radius:50%;background:var(--d)}.team-foot{margin-top:36px;align-items:start}.team-foot p+p{margin-top:14px}.lead-line{font-family:Manrope,Arial,sans-serif;font-size:21px;font-weight:700;color:var(--navy)!important;letter-spacing:-.02em;line-height:1.35}
+.founder-sec{background:var(--blue);padding:85px 0}.f-grid{display:grid;grid-template-columns:300px 1fr;gap:60px;align-items:start}.f-card{background:#fff;border-radius:16px;padding:32px 28px;text-align:center;position:sticky;top:110px}.f-card img{width:170px;height:170px;border-radius:50%;object-fit:cover;margin:0 auto 18px;border:5px solid #fff;box-shadow:0 0 0 3px var(--copper)}.f-card b{display:block;font-family:Manrope,Arial,sans-serif;font-size:21px;color:var(--navy);letter-spacing:-.02em}.f-card small{display:block;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--copper);margin-top:4px}.f-card a{display:inline-block;margin-top:16px;font-size:13px;font-weight:700;color:var(--navy);border-bottom:2px solid var(--yellow)}.f-copy h2{margin-bottom:22px}.f-copy p+p{margin-top:14px}.f-copy .idea-card{margin-top:28px}.f-copy .idea-after{margin-top:16px}
+.how-we{padding:85px 0;background:#fff}.how-we p+p{margin-top:14px}.cases{list-style:none;padding:0;margin:20px 0;display:grid;gap:10px}.cases li{background:var(--cream);border:1px solid #efe7d6;border-radius:10px;padding:14px 18px;color:var(--ink);font-weight:500;display:flex;gap:12px;align-items:center}.cases li:before{content:'';width:8px;height:8px;border-radius:50%;background:var(--copper);flex-shrink:0}
+@media(max-width:900px){.a-hero-grid,.two-col{gap:36px}.exp{grid-template-columns:repeat(2,minmax(0,1fr))}.f-grid{grid-template-columns:1fr;gap:30px}.f-card{position:static;max-width:360px}}
+@media(max-width:650px){.a-hero{padding:30px 0 55px}.a-hero-grid,.two-col{grid-template-columns:minmax(0,1fr)}.a-hero h1{font-size:36px}.a-hero .hero-art img{height:260px}.why,.team,.founder-sec,.how-we{padding:55px 0}.exp{grid-template-columns:1fr}}
 
-:root {
-  --ink: #0E1117;
-  --navy: #1A3A6B;
-  --paper: #F7F5F1;
-  --warm: #B85C2A;
-  --muted: #76726c;
-  --rule: #ddd9d3;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--paper);
-  color: var(--ink);
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 300;
-  line-height: 1.75;
-  font-size: 17px;
-  -webkit-font-smoothing: antialiased;
-}
-
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 4rem;
-  background: var(--paper);
-  border-bottom: 1px solid var(--rule);
-}
-.nav-logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
-.nav-mark { flex-shrink: 0; display: block; }
-.nav-wordmark { display: flex; flex-direction: column; line-height: 1; }
-.nav-word { font-family: 'DM Serif Display', serif; font-size: 1.18rem; color: var(--ink); letter-spacing: -0.01em; line-height: 1; }
-.nav-systems { display: flex; align-items: center; gap: 5px; margin-top: 4px; font-family: 'DM Sans', sans-serif; font-size: 0.5rem; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: var(--warm); }
-.nav-systems i { height: 1px; width: 14px; background: var(--warm); display: block; }
-
-.nav-links { display: flex; align-items: center; gap: 2.5rem; }
-.nav-link { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.nav-link:hover, .nav-link.active { color: var(--ink); }
-
-.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px; }
-.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); margin: 5px 0; transition: transform 0.2s ease, opacity 0.2s ease; }
-.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-.hero { max-width: 720px; margin: 0 auto; padding: 11rem 4rem 3rem; }
-.eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm); margin-bottom: 1.4rem; }
-.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 300; line-height: 1.2; color: var(--navy); margin-bottom: 1.6rem; }
-.hero p { color: var(--muted); max-width: 640px; margin-bottom: 1.1rem; }
-
-section.block { max-width: 720px; margin: 0 auto; padding: 2.75rem 4rem; border-top: 1px solid var(--rule); }
-section.block h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 2.8vw, 2.1rem); font-weight: 300; color: var(--navy); margin-bottom: 1.4rem; line-height: 1.3; }
-section.block p { color: var(--muted); margin-bottom: 1.1rem; max-width: 100%; }
-section.block p strong { color: var(--ink); font-weight: 500; }
-
-.pull-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--navy); line-height: 1.5; margin: 1.8rem 0; padding: 1.4rem 1.6rem; border-left: 2px solid var(--warm); background: rgba(184,92,42,0.05); }
-
-.bio-layout { display: flex; gap: 2rem; align-items: flex-start; margin-top: 0.5rem; }
-.bio-portrait {
-  flex-shrink: 0; width: 128px; height: 128px; border-radius: 4px;
-  overflow: hidden; background: var(--navy);
-}
-.bio-portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.bio-text { flex: 1; }
-.bio-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--ink); margin-bottom: 0.2rem; }
-.bio-title { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--warm); margin-bottom: 1rem; }
-
-.capability-grid { display: flex; flex-direction: column; gap: 1.6rem; margin: 1.6rem 0; }
-.capability-item { padding-top: 1.3rem; border-top: 1px solid var(--rule); }
-.capability-item:first-child { border-top: none; padding-top: 0; }
-.capability-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--navy); margin-bottom: 0.4rem; }
-.capability-item p { margin-bottom: 0; }
-
-.tag-cloud { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1.6rem 0; }
-.tag-cloud span { font-size: 0.82rem; font-weight: 500; color: var(--navy); background: rgba(26,58,107,0.06); border: 1px solid rgba(26,58,107,0.15); padding: 0.45rem 0.95rem; border-radius: 100px; }
-
-.model-note { border: 1px solid var(--rule); background: #fff; padding: 1.8rem 2rem; margin-top: 1.6rem; }
-.model-note p { margin-bottom: 0.9rem; }
-.model-note p:last-child { margin-bottom: 0; }
-
-.cta { padding: 6.5rem 4rem; text-align: center; max-width: 700px; margin: 0 auto; }
-.cta .section-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm); margin-bottom: 1.5rem; display: block; }
-.cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 300; line-height: 1.2; margin-bottom: 1.3rem; color: var(--navy); }
-.cta p { color: var(--muted); margin-bottom: 2rem; }
-.cta-email { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--warm); padding-bottom: 3px; }
-.cta-email:hover { color: var(--warm); }
-
-footer { background: var(--ink); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.06); }
-.footer-logo { display: flex; align-items: center; gap: 10px; }
-.footer-lockup { display: flex; flex-direction: column; line-height: 1; }
-.footer-word { font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: #fff; letter-spacing: -0.01em; }
-.footer-systems { display: flex; align-items: center; gap: 4px; margin-top: 4px; font-size: 0.46rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--warm); }
-.footer-systems i { height: 1px; width: 11px; background: var(--warm); display: block; }
-.footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
-.footer-link { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; }
-.footer-link:hover { color: var(--warm); }
-
-@media (max-width: 900px) {
-  nav { padding: 1.2rem 2rem; }
-  .nav-toggle { display: block; }
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 100%; left: 0; right: 0;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.4rem;
-    background: var(--paper);
-    border-bottom: 1px solid var(--rule);
-    padding: 1.8rem 2rem 2.2rem;
-  }
-  .nav-links.open { display: flex; }
-  .hero, section.block, .cta { padding-left: 2rem; padding-right: 2rem; }
-  .bio-layout { flex-direction: column; }
-  footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
-}
-</style>
-</head>
-<body>
-
-<nav>
-  <a href="index.html" class="nav-logo" aria-label="Corework Systems home">
-    <svg class="nav-mark" width="23" height="26" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
-      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
-      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.35"/>
-    </svg>
-    <span class="nav-wordmark">
-      <span class="nav-word">Corework</span>
-      <span class="nav-systems"><i></i>Systems<i></i></span>
-    </span>
-  </a>
-  <div class="nav-links" id="nav-links">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="how-we-help.html" class="nav-link">How We Help</a>
-    <a href="insights.html" class="nav-link">Insights</a>
-    <a href="about.html" class="nav-link active">About</a>
-    <a href="contact.html#contact" class="nav-link">Contact</a>
-  </div>
-  <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<section class="hero">
-  <p class="eyebrow">About</p>
-  <h1>Workforce strategy works when the systems around it make execution possible.</h1>
-  <p>Corework Systems is a workforce and talent advisory firm that helps organizations turn important workforce priorities into clearer decisions, stronger management practice, and operating systems that hold up in the real world.</p>
-  <p>We work with leaders who are trying to improve how their organizations hire, develop, deploy, and advance talent, especially when the strategy is clear but execution remains uneven.</p>
-  <p>Our work spans workforce and talent strategy, leadership and manager effectiveness, succession and mobility, skills-first transformation, AI-enabled workforce change, and the systems that connect those priorities to everyday decisions.</p>
-</section>
-
-<section class="block">
-  <h2>Why Corework exists</h2>
-  <p>Organizations invest heavily in new workforce strategies, technologies, leadership programs, and talent practices. Too often, those investments struggle because the systems around them were never redesigned to support the change.</p>
-  <p>Ownership remains unclear. Managers are asked to execute new expectations without the right conditions. Job and skill structures do not match the strategy. Decision processes remain inconsistent. Measurement focuses on activity instead of whether the system is actually working.</p>
-  <p>Corework was built around a simple idea:</p>
-  <div class="pull-quote">When strategy changes, the systems through which people make decisions and get work done have to change with it.</div>
-  <p>That is the work we help organizations do.</p>
-</section>
-
-<section class="block">
-  <h2>Principal-led. Expert-supported.</h2>
-  <p>Corework is intentionally principal-led. Clients work directly with the senior advisor responsible for understanding the problem, shaping the work, facilitating the difficult conversations, and staying accountable for the quality of the engagement.</p>
-  <p>When an engagement calls for additional expertise or capacity, Corework brings in experienced leaders, educators, facilitators, researchers, designers, and talent practitioners whose capabilities fit the work. They bring experience across employers, workforce organizations, education, consulting, and leadership development, including:</p>
-  <div class="tag-cloud">
-    <span>Workforce & Talent Strategy</span>
-    <span>Organizational Effectiveness</span>
-    <span>Leadership & Manager Development</span>
-    <span>Learning Design & Facilitation</span>
-    <span>Skills-First Talent Practices</span>
-    <span>Talent Acquisition & Mobility</span>
-    <span>Research & Measurement</span>
-    <span>Change & Implementation</span>
-    <span>Workforce Technology & AI-Enabled Transformation</span>
-  </div>
-  <div class="model-note">
-    <p>The specialists supporting an engagement are chosen based on the work itself, not a fixed staffing model. This keeps senior expertise close to the work while allowing Corework to assemble the right combination of capabilities for each engagement.</p>
-    <p>The goal is not to force every problem into one methodology. It is to understand what is getting in the way, identify where the system needs to change, and build a path forward that fits the organization.</p>
-  </div>
-</section>
-
-<section class="block">
-  <h2>Founded and led by Richard Dubuisson</h2>
-  <div class="bio-layout">
-    <div class="bio-portrait"><img src="images/richard-dubuisson.jpg" alt="Richard Dubuisson, Founder and Principal Advisor of Corework Systems"></div>
-    <div class="bio-text">
-      <div class="bio-name">Richard Dubuisson</div>
-      <div class="bio-title">Founder & Principal Advisor</div>
-      <p>For more than 25 years, Richard has worked at the intersection of employers, workforce systems, talent strategy, learning, and organizational change. His work has included building and scaling learning systems, advising employers on skills-first talent practices, developing leaders and managers, designing workforce strategies, and helping organizations translate ambitious ideas into practices that can work across teams and business units.</p>
-      <p>Before founding Corework Systems, Richard held senior leadership roles with OneTen, Grads of Life, and Year Up, where his work included advising major employers, building leadership and learning strategies, developing workforce and talent systems, and working with executives to improve how organizations make decisions about people and capability.</p>
-    </div>
-  </div>
-  <p>His work is grounded in a consistent question:</p>
-  <div class="pull-quote">What has to be true inside the organization for the strategy to actually work?</div>
-  <p>That question continues to shape Corework's approach.</p>
-</section>
-
-<section class="block">
-  <h2>How we work</h2>
-  <p>Corework starts with the problem the organization is trying to solve.</p>
-  <p>Sometimes that problem is clear: manager execution is inconsistent, succession decisions are difficult to defend, leadership capability is uneven, or a workforce strategy has stalled.</p>
-  <p>Other times, the symptoms are visible but the underlying cause is less obvious.</p>
-  <p>Our role is to help leaders understand what is happening, identify where the surrounding system is helping or getting in the way, and determine what should change first.</p>
-  <p>The result is work that is practical, specific to the organization, and designed to improve how decisions get made and how work actually gets done.</p>
-</section>
-
-<section class="cta" id="contact">
-  <span class="section-label">Have Something That Should Be Working Better by Now?</span>
-  <h2>Start with what you are seeing.</h2>
-  <a href="contact.html#contact" class="cta-email">Let's Talk</a>
-</section>
-
-<footer>
-  <div class="footer-logo">
-    <svg class="footer-mark" width="20" height="23" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect x="0"  y="1"  width="34" height="7.5" rx="1.5" fill="#1A3A6B"/>
-      <rect x="5"  y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/>
-      <rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.45"/>
-    </svg>
-    <span class="footer-lockup">
-      <span class="footer-word">Corework</span>
-      <span class="footer-systems"><i></i>Systems<i></i></span>
-    </span>
-  </div>
-  <div class="footer-copy">© 2026 Corework Systems</div>
-  <a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" class="footer-link">LinkedIn</a>
-</footer>
-
-<script>
-var navToggle = document.getElementById('nav-toggle');
-var navLinks = document.getElementById('nav-links');
-navToggle.addEventListener('click', function() {
-  var isOpen = navLinks.classList.toggle('open');
-  navToggle.setAttribute('aria-expanded', String(isOpen));
-});
-navLinks.querySelectorAll('.nav-link').forEach(function(link) {
-  link.addEventListener('click', function() {
-    navLinks.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-  });
-});
-</script>
-
-</body>
-</html>
+.about-intro{padding:76px 0 64px}.intro-top{display:grid;grid-template-columns:1.4fr .6fr;gap:70px;align-items:end}.about-intro h1{font-size:clamp(44px,5.7vw,72px);max-width:800px;line-height:1.08}.intro-top p{font-size:18px;line-height:1.65}.about-label{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--copper);margin-bottom:26px}.about-label:before{content:'';width:28px;height:3px;background:var(--copper)}
+.person-band{display:grid;grid-template-columns:360px 1fr;background:var(--blue);border-radius:16px;overflow:hidden;margin-top:48px}.person-photo{padding:30px;background:#dbe6ed;position:relative}.person-photo img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px}.person-caption{margin-top:18px}.person-caption strong{display:block;font-family:Manrope,sans-serif;font-size:21px}.person-caption span{font-size:13px;color:#4b5e6c}.person-story{padding:42px 48px;display:flex;flex-direction:column;justify-content:center}.person-story h2{font-size:clamp(28px,3vw,39px);max-width:650px;margin-bottom:22px}.person-story p+p{margin-top:16px}.person-story p{max-width:670px;font-size:17px}.person-story a{align-self:start;margin-top:24px}.why-new{padding:76px 0;background:white}.story-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px}.story-grid h2{font-size:clamp(32px,3.6vw,46px)}.story-grid p{font-size:18px}.story-grid p+p{margin-top:18px}.belief{margin-top:30px;padding-left:24px;border-left:4px solid var(--gold);font-family:Manrope,sans-serif;font-size:23px!important;line-height:1.4;font-weight:700;color:var(--navy)}
+.track{padding:80px 0}.track-head{max-width:710px;margin-bottom:40px}.track-head h2{margin-bottom:20px}.track-head p{font-size:17px}.experience-row{display:grid;grid-template-columns:70px 250px 1fr;gap:28px;padding:28px 0;border-top:1px solid var(--line)}.experience-row:last-child{border-bottom:1px solid var(--line)}.experience-row .index{font-family:Manrope,sans-serif;font-size:32px;color:var(--copper);font-weight:500}.experience-row h3{font-size:24px;padding-top:7px}.experience-row p{max-width:660px}.experience-row .what{display:block;color:var(--navy);font-weight:700;margin-bottom:7px;font-size:18px}
+.partner{background:var(--navy);color:white;padding:74px 0}.partner .eyebrow{color:var(--yellow)}.partner h2{font-size:clamp(34px,4vw,52px);max-width:460px}.partner h2 span{color:var(--yellow)}.partner p{color:#e0e8ef}.partner-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px}.working-item{padding:22px 0;border-bottom:1px solid #ffffff35}.working-item:first-child{padding-top:0}.working-item h3{font-size:21px;margin-bottom:10px;letter-spacing:-.02em}.working-item p{font-size:16px}.partner-note{margin-top:22px;font-size:15px;max-width:610px}.about-close{background:var(--yellow);padding:65px 0}.about-close .wrap{display:flex;align-items:center;justify-content:space-between;gap:40px}.about-close h2{font-size:clamp(32px,4vw,48px)}.about-close p{margin-top:15px;color:#344451;max-width:580px}.about-close .button{flex-shrink:0}.button:focus-visible,.text-link:focus-visible{outline:3px solid var(--copper);outline-offset:5px}
+@media(max-width:900px){.intro-top{grid-template-columns:1fr;gap:25px}.intro-top p{max-width:650px}.person-band{grid-template-columns:280px 1fr}.person-story{padding:30px}.story-grid,.partner-grid{gap:40px}.experience-row{grid-template-columns:45px 190px 1fr;gap:20px}}
+@media(max-width:650px){.about-intro{padding:38px 0 45px}.about-intro h1{font-size:43px}.person-band{grid-template-columns:1fr;margin-top:30px}.person-photo{display:block;padding:24px 24px 22px}.person-photo img{max-width:240px}.person-caption{margin-top:16px!important}.person-caption{margin:0}.person-story{padding:28px 24px 32px}.story-grid,.partner-grid{grid-template-columns:1fr;gap:28px}.why-new,.track,.partner{padding:48px 0}.experience-row{grid-template-columns:35px 1fr;gap:12px 16px}.experience-row p{grid-column:2}.experience-row h3{padding-top:5px}.experience-row .index{font-size:27px}.about-close{padding:45px 0}.about-close .wrap{flex-direction:column;align-items:start;gap:25px}.about-label{margin-bottom:20px}}
+</style></head><body><a class="skip" href="#main">Skip to content</a><header><nav class="wrap" aria-label="Main navigation"><a class="brand" href="index.html" aria-label="Corework Systems home"><svg class="mark" width="27" height="30" viewBox="0 0 34 38" fill="none" aria-hidden="true"><rect x="0" y="1" width="34" height="7.5" rx="1.5" fill="#1A3A6B"/><rect x="5" y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/><rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#1A3A6B" opacity="0.35"/></svg><span><strong>Corework</strong><small><i></i>SYSTEMS<i></i></small></span></a><button class="menu" aria-expanded="false" aria-controls="navlinks">Menu</button><div class="links" id="navlinks"><a href="how-we-help.html">How we help</a><a href="insights.html">Insights</a><a href="about.html" aria-current="page" style="color:var(--copper)">About</a><a class="button" href="contact.html#contact">Let’s talk <span aria-hidden="true">↗</span></a></div></nav></header>
+<main id="main">
+<section class="about-intro"><div class="wrap">
+<div class="about-label">About Corework</div>
+<div class="intro-top"><h1>Better workplaces take<br><span class="highlight">deliberate work.</span></h1><p>Corework helps organizations develop stronger managers, make better decisions about talent, and build the systems that help people succeed.</p></div>
+<div class="person-band"><div class="person-photo"><img src="images/richard-dubuisson.jpg" alt="Richard Dubuisson, founder of Corework Systems" width="300" height="300" fetchpriority="high"><div class="person-caption"><strong>Richard Dubuisson</strong><span>Founder &amp; Principal Advisor</span></div></div>
+<div class="person-story"><span class="eyebrow">The person behind the work</span><h2>A career spent helping people grow. And organizations get better at it.</h2><p>Richard began his career in the classroom. Over more than 25 years, his work has grown to include building learning systems, developing leaders, and helping employers rethink how they hire and advance talent.</p><p>He brings that experience to Corework: a practical understanding of how people learn, what managers face, and what organizations need to change for good ideas to take hold.</p><a class="text-link" href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" rel="noopener">Meet Richard on LinkedIn <span aria-hidden="true">↗</span></a></div></div>
+</div></section>
+<section class="why-new"><div class="wrap story-grid"><div><span class="eyebrow">Why Corework exists</span><h2>Good intentions need<br><span class="highlight">a way to work.</span></h2></div><div><p>A leadership program can give managers new skills. They still need the time, authority, and support to use them. A commitment to internal mobility can open possibilities. People still need a fair, consistent way to show they are ready.</p><p>Corework grew out of seeing these gaps across education, workforce development, and employer advisory work. We help organizations develop their people and improve the decisions, expectations, and practices that shape what those people can do.</p><p class="belief">The question behind our work: what needs to change so people can put their capabilities to work?</p></div></div></section>
+<section class="track"><div class="wrap"><div class="track-head"><span class="eyebrow">Experience behind Corework</span><h2>Built through hands-on work.</h2><p>Before founding Corework, Richard held leadership roles at Year Up, Grads of Life, and OneTen. That experience informs the work he leads today.</p></div>
+<div class="experience-row"><span class="index">01</span><h3>Year Up</h3><p><span class="what">Building learning that could scale.</span>Helped build and scale curriculum, instructional practice, and learning systems across a national workforce development organization.</p></div>
+<div class="experience-row"><span class="index">02</span><h3>Grads of Life</h3><p><span class="what">Helping employers put skills-first practices to work.</span>Led learning and development work with employer partners, helping leaders and managers apply new approaches to hiring, development, and advancement.</p></div>
+<div class="experience-row"><span class="index">03</span><h3>OneTen</h3><p><span class="what">Connecting employer commitments to action.</span>As Executive Vice President of Talent Solutions, led work supporting employers in adopting skills-first talent practices and measuring progress.</p></div>
+</div></section>
+<section class="partner"><div class="wrap partner-grid"><div><span class="eyebrow">Working with Corework</span><h2>Serious about the work.<br><span>Human in how we do it.</span></h2></div><div><div class="working-item"><h3>Direct access. Clear accountability.</h3><p>You work directly with Richard to understand the challenge, shape the engagement, and carry the work forward.</p></div><div class="working-item"><h3>Room for honest conversations.</h3><p>We make space to examine what is happening, challenge assumptions, and work through difficult questions with respect for the people involved.</p></div><div class="working-item"><h3>Something useful to put into practice.</h3><p>Clearer expectations. Better ways to assess readiness. Management practices people can use. The work is shaped around what your organization needs to do next.</p></div><p class="partner-note">When an engagement calls for additional expertise, Corework brings in experienced collaborators whose capabilities fit the work.</p></div></div></section>
+<section class="about-close"><div class="wrap"><div><h2>Start with what you are seeing.</h2><p>You don’t need to have the problem fully diagnosed. Let’s talk about what should be working better.</p></div><a class="button" href="contact.html#contact">Let’s talk <span aria-hidden="true">↗</span></a></div></section>
+</main>
+<footer><div class="wrap"><div><div style="display:flex;align-items:center;gap:10px;font-family:'DM Serif Display',Georgia,serif;font-size:24px"><svg class="mark" width="27" height="30" viewBox="0 0 34 38" fill="none" aria-hidden="true"><rect x="0" y="1" width="34" height="7.5" rx="1.5" fill="#3B5E96"/><rect x="5" y="14" width="29" height="7.5" rx="1.5" fill="#B85C2A"/><rect x="11" y="27" width="23" height="7.5" rx="1.5" fill="#94A1B5" opacity="1"/></svg>Corework</div><p>Workforce &amp; talent strategy advisory · © 2026</p></div><div class="footer-links"><a href="https://www.linkedin.com/in/richard-dubuisson/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="contact.html#contact">Contact ↗</a></div></div></footer><script>const b=document.querySelector('.menu'),n=document.querySelector('.links');b.addEventListener('click',()=>{let o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o))});n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{n.classList.remove('open');b.setAttribute('aria-expanded','false')}));</script></body></html>
